@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-var favicon = require('serve-favicon');
 
 /*use files in the public folder */
 app.use(express.static(path.join(__dirname, 'public')));
