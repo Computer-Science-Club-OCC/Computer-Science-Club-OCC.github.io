@@ -1,5 +1,5 @@
 const path = require('path');
-const texpress = require('express');
+const express = require('express');
 const app = express();
 
 /*use files in the public folder */
