@@ -1,6 +1,6 @@
-const express = require('express');
-const app = express();
 const path = require('path');
+const texpress = require('express');
+const app = express();
 
 /*use files in the public folder */
 app.use(express.static(path.join(__dirname, 'public')));
