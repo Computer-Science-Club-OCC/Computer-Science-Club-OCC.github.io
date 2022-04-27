@@ -1,6 +1,6 @@
 ## OCC CS Club
 
-Link to [website](https://hwaengfan.github.io/CS-Club/public)
+Link to [website](https://Computer-Science-Club-OCC.github.io/)
 
 Install express and path packages using: `npm install (package)`
 
