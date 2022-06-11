@@ -1,0 +1,33 @@
+.navbar-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: 15px;
+	background-color: #FF9617;
+	border-bottom-style: solid;
+	border-bottom-color: #FF9617;
+	border-bottom-width: 2px;
+	height: 60px;
+}
+
+.middle-items {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	list-style-type: none;
+	padding: 0px;
+}
+
+.list-item {
+	font-size: 25px;
+	margin-right: 10px;
+	font-weight: bold;
+}
+
+.link {
+	color: black;
+	text-decoration: none;
+}

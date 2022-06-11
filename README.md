@@ -1,5 +1,12 @@
-## OCC CS Club
+Command to install necessary packages:
 
-Link to [website](https://Computer-Science-Club-OCC.github.io/)
+### `npm install`
 
-New updates coming soon! 
+Commands to build and run website on http://localhost:3000/
+To build:
+
+### `npm run build`
+
+Then run:
+
+### `npm start`
