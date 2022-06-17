@@ -1,0 +1,11 @@
+.resources-container{
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.resources-wrapper {
+    width: 80vw;
+    display: flex;
+    justify-content: space-between;
+}
