@@ -8,16 +8,41 @@ export default function Resources() {
         <div className="resources-info">
           <div className="resources-title">Scholarships & Programs</div>
           <div className="resources-desc">
-			
-		  </div>
+            <span>Scholarships:</span>
+            <ul className="resources-list">
+              <li>Our scholarship application period is currently closed.</li>
+            </ul>
+            <span>Programs:</span>
+            <ul className="resources-list">
+              <li>Early Research Scholars Programs.</li>
+            </ul>
+          </div>
         </div>
         <div className="resources-info">
           <div className="resources-title">Must Reads</div>
-          <div className="resources-desc"></div>
+          <div className="resources-desc">
+            <span>Scholarships:</span>
+            <ul className="resources-list">
+              <li>Our scholarship application period is currently closed.</li>
+            </ul>
+            <span>Programs:</span>
+            <ul className="resources-list">
+              <li>Early Research Scholars Programs.</li>
+            </ul>
+          </div>
         </div>
         <div className="resources-info">
           <div className="resources-title">Similar Orgs</div>
-          <div className="resources-desc"></div>
+          <div className="resources-desc">
+            <span>Scholarships:</span>
+            <ul className="resources-list">
+              <li>Our scholarship application period is currently closed.</li>
+            </ul>
+            <span>Programs:</span>
+            <ul className="resources-list">
+              <li>Early Research Scholars Programs.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

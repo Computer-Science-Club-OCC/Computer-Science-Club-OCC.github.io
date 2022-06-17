@@ -9,3 +9,11 @@
     display: flex;
     justify-content: space-between;
 }
+.resources-info {
+    width: 30%;
+    background-color: rgb(102, 62, 202);
+}
+.resources-list li {
+    padding: 0;
+    margin: 0;
+}
