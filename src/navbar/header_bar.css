@@ -31,13 +31,6 @@ header {
 	margin: auto 1em;
 }
 
-nav {
-	background-color: orange;
-	padding: 0.5em;
-	font: 16px sans-serif;
-	color: white;
-}
-
 a {
 	padding: 0.5em;
 }

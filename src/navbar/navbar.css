@@ -1,3 +1,51 @@
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+header {
+	height: 8em;
+	width: auto;
+	background-color: black;
+}
+.bg {
+	background-image: url("https://neovim.io/images/showcase/floating-win.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: cover;
+	filter: blur(2px);
+	height: 100%;
+}
+.content {
+	z-index: 1;
+	position: absolute;
+	top: 0px;
+	display: flex;
+	align-items: left;
+}
+
+.content h1 {
+	color: white;
+	font: 36px sans-serif;
+	font-weight: bold;
+	margin: auto 1em;
+}
+
+nav {
+	background-color: orange;
+	padding: 0.5em;
+	font: 16px sans-serif;
+	color: white;
+}
+
+a {
+	padding: 0.5em;
+}
+
+#active {
+	background-color: #b26910;
+}
+
 .navbar-container {
 	display: flex;
 	flex-direction: row;
@@ -23,11 +71,12 @@
 
 .list-item {
 	font-size: 25px;
+	margin-top:10px;
 	margin-right: 10px;
 	font-weight: bold;
 }
 
 .link {
-	color: black;
+	color: white;
 	text-decoration: none;
 }
