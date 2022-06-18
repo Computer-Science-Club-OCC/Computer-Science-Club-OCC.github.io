@@ -1,3 +1,8 @@
+You can view a preview of the site here: 
+https://Computer-Science-Club-OCC.github.io
+
+# To run locally
+
 Command to install necessary packages:
 
 ### `npm install`
