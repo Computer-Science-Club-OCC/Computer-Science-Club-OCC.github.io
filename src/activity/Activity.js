@@ -1,33 +1,17 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
+
+
 const Activity = () => {
 	return (
 	<div>
 		Activity
 		<TestCarousel />;
-		<ClubEvents />;
+		<Projects />;
 	</div>);
 };
 
 export default Activity;
-
-// function DummyCarouselItems(numOfItem) {
-// 	let title = "Dummy Title";
-// 	let description = 
-// 		"Lorem ipsum dolor sit amet, consectetur adipiscing elit, n\
-// 			sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  n\
-// 			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
-// 	let time = "from 1st moment on 2nd moment on day xxxx"
-
-// 	let content = []
-// 	let map = new Map();
-// 	for (let i = 1; i <= numOfItem; i++){
-// 		map.set("title" ,<h1>{title} {i} </h1>)
-// 		map.set("description" ,<h1>{description} {i} </h1>)
-// 		content.push(map)
-// 	}
-// 	return content
-// }
 
 function TestCarousel() {
 	return (
@@ -75,7 +59,7 @@ function TestCarousel() {
 	);
 };
 
-function ClubEvents() {
+function Projects() {
 	let title = "Dummy Title"
 	let description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, n\
 	sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, n\
