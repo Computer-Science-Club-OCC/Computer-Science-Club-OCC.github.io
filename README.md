@@ -1,5 +1,5 @@
 You can view a preview of the site here: 
-https://Computer-Science-Club-OCC.github.io
+https://Computer-Science-Club-OCC.github.io/public
 
 # To run locally
 
