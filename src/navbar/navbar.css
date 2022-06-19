@@ -1,85 +1,117 @@
-html, body {
-	height: 100%;
-	margin: 0;
-	padding: 0;
-}
-header {
-	height: 8em;
-	width: auto;
-	background-color: black;
-}
-.bg {
-	background-image: url("https://neovim.io/images/showcase/floating-win.png");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: cover;
-	filter: blur(2px);
-	height: 100%;
-}
-.content {
-	z-index: 1;
-	position: absolute;
-	top: 0px;
-	display: flex;
-	align-items: left;
-}
 
-.content h1 {
+/* <nav> */
+.navbar {
+	background-color: #ff9617;
+	overflow: hidden;
 	color: white;
-	font: 36px sans-serif;
-	font-weight: bold;
-	margin: auto 1em;
-}
-
-nav {
-	background-color: orange;
-	padding: 0.5em;
-	font: 16px sans-serif;
-	color: white;
-}
-
-a {
-	padding: 0.5em;
-}
-
-#active {
-	background-color: #b26910;
-}
-
-.navbar-container {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	padding: 15px;
-	background-color: #FF9617;
-	border-bottom-style: solid;
-	border-bottom-color: #FF9617;
-	border-bottom-width: 2px;
+	padding: 0 1rem;
 	height: 60px;
-	position:sticky;
-	top: 0;
-    z-index: 1;
+	border-bottom: 1px solid #ff9617;
+	flex-direction: row;
 }
 
-.middle-items {
+/* Navbar Brand */
+/* <div> */
+.navbar-brand {
+	float: left;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: row;
+	max-width: 300px;
+}
+
+/* On debugging: increase size will increase padding top */
+.navbar-brand h1 {
+	color: #212121;
+	font-size: 24px;
+}
+
+/* <Link> */
+.navbar-img-link {
+	margin: 0;
+}
+
+/* <img> */
+.navbar-brand-img {
+	width: 40px;
+	height: 40px;
+	margin: 0.2rem;
+	border-radius: 50%;
+	-moz-border-radius: 50%;
+	-o-border-image-radius: 50%;
+
+}
+/* End of Navbar Brand */
+
+/* Navbar Components */
+/* <ul> */
+.navbar-nav {
+	max-width: 100%;
+	height: 100%;
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
-	align-items: center;
+	justify-content: flex-end;
 	list-style-type: none;
+	margin-right: 10%;
 	padding: 0px;
 }
 
-.list-item {
-	font-size: 25px;
-	margin-top:10px;
-	margin-right: 10px;
+/* <li> */
+.navbar-item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	font-weight: bold;
+	padding: 5px;
 }
 
-.link {
-	color: white;
+/* <Link> */
+.navbar-link {
+	float: center;
+	color: #212121;
+	padding: 10px;
+	font-size: 24px;
+	text-align: center;
 	text-decoration: none;
 }
+
+/* <Link> */
+.navbar-link:hover {
+	color: #fff;
+	background-color: rgb(190, 114, 0);
+	transition: 0.3s background-color ease-out;
+	border-radius: 4px;
+}
+
+/* <div> dropdown box */
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #fff;
+	margin-top: 0.5rem;
+	min-width: 8rem;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+/* <Link> */
+.dropdown-link {
+	color: #212121;
+	font-size: 18px;
+	padding: 0.5rem 0.5rem;
+	text-decoration: none;
+	display: block;
+}
+
+/* <Link> */
+.dropdown-link:hover {
+	color: #fff;
+	background-color: #535353;
+	transition: all 0.3s ease-out;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block; 
+}
+/* End of Navbar Component Section */
+
