@@ -17,6 +17,7 @@ header {
 	filter: blur(2px);
 	height: 100%;
 }
+
 .content {
 	z-index: 1;
 	position: absolute;
@@ -32,11 +33,9 @@ header {
 	margin: auto 1em;
 }
 
-nav {
-	background-color: orange;
-	padding: 0.5em;
-	font: 16px sans-serif;
-	color: white;
+ul {
+	margin: 0;
+	padding: 0;
 }
 
 a {

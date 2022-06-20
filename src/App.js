@@ -16,6 +16,7 @@ const App = () => {
         <Route path="/resources" element={<Resources />} />
         <Route path="*" element={<Navigate to="/homepage" replace />} />
       </Routes>
+      {/* Add Footer */}
     </BrowserRouter>
   );
 
