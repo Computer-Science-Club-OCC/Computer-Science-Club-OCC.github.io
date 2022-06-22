@@ -1,0 +1,39 @@
+.tab-container {
+  overflow: hidden;
+  height: 100%;
+  max-width: 1000px;
+  margin: 20px 20px;
+  display: block;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+  margin-bottom: 0;
+}
+
+.tab-button {
+  font-size: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px 60px;
+  cursor: pointer;
+  opacity: 0.6;
+  outline: 0;
+  border: 0;
+  color: #535353;
+  background-color: #ff9617;
+  text-decoration: none;
+  border-bottom: 5px solid black
+}
+
+.tab-button.active {
+  border-bottom: 2px solid white;
+  opacity: 1;
+}
+
+.tab-button:hover {
+  color: #fff;
+  background-color: #535353;
+}
