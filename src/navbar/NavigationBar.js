@@ -6,7 +6,6 @@ import './navbar.css';
 
 const NavigationBar = () => {
 	// Will refine navbar in React way 
-	// Test fork contribution
 	return (
 			<nav className='navbar'>
 				<div className="navbar-brand">
@@ -20,10 +19,10 @@ const NavigationBar = () => {
 				<ul className="navbar-nav">
 					<li className="navbar-item">
 						<div className="dropdown">
-							<Link className="navbar-link" to="/homepage">Home</Link>
+							<Link className="navbar-link" to="/homepage"> Home</Link>
 							<div className="dropdown-content">
-								<Link className="dropdown-link" to="/about">About</Link>
-								<Link className="dropdown-link" to="/opportunity">Opportunity</Link>
+								<Link className="dropdown-link" to="/about"> &gt; About</Link>
+								<Link className="dropdown-link" to="/opportunity"> &gt; Opportunity</Link>
 							</div>
 						</div>
 					</li>
@@ -31,8 +30,8 @@ const NavigationBar = () => {
 						<div class="dropdown">
 							<Link className="navbar-link" to="/activity">Activity</Link>
 							<div className="dropdown-content">
-								<Link className="dropdown-link" to="/events">Event</Link>
-								<Link className="dropdown-link" to="/projects">Project</Link>
+								<Link className="dropdown-link" to="/activity/events"> &gt; Event</Link>
+								<Link className="dropdown-link" to="/activity/projects"> &gt; Project</Link>
 							</div>
 						</div>
 					</li>
@@ -40,9 +39,9 @@ const NavigationBar = () => {
 						<div class="dropdown">
 							<Link className="navbar-link" to="/resources">Resources</Link>
 							<div className="dropdown-content">
-								<Link className="dropdown-link" to="/events">Tutorial</Link>
-								<Link className="dropdown-link" to="/projects">Research</Link>
-								<Link className="dropdown-link" to="/projects">Organizations</Link>
+								<Link className="dropdown-link" to="/events"> &gt; Tutorial</Link>
+								<Link className="dropdown-link" to="/projects"> &gt; Research</Link>
+								<Link className="dropdown-link" to="/projects"> &gt; Organizations</Link>
 							</div>
 						</div>
 					</li>

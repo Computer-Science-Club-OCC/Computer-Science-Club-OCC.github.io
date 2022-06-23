@@ -1,16 +1,18 @@
+/* TAB BUTTON  */
+
 .tab-container {
   overflow: hidden;
   height: 100%;
-  max-width: 1000px;
-  margin: 20px 20px;
+  min-width: 600px;
+  margin: 20px 60px;
   display: block;
 }
 
 .tabs {
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  margin: 2rem;
-  margin-bottom: 0;
+  margin: 1.6rem;
 }
 
 .tab-button {
@@ -19,13 +21,13 @@
   margin-right: 10px;
   padding: 10px 60px;
   cursor: pointer;
-  opacity: 0.6;
   outline: 0;
   border: 0;
   color: #535353;
   background-color: #ff9617;
   text-decoration: none;
-  border-bottom: 5px solid black
+  border-bottom: 5px solid black;
+  border-radius: 8px;
 }
 
 .tab-button.active {
@@ -36,4 +38,26 @@
 .tab-button:hover {
   color: #fff;
   background-color: #535353;
+  transform: scale(1.1);
 }
+
+/* TAB LINE SECLECT ANIMATION */
+
+/* TAB CONTENT */
+.tab-contents {
+  flex-grow: 1;
+}
+
+.tab-content {
+  background-color: black;
+  color: white;  /* Will change due to switching tab*/
+  margin: 1rem;
+  padding: 30px;
+  border: 2px white outset;
+}
+
+.tab-content-active {
+  display: block;
+}
+
+/* Add expand for news */
