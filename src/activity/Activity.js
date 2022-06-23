@@ -26,10 +26,8 @@ Container inlcude:
 const Activity = () => {
 	return (
 	<div>
-		Activity
+		<h1>Activity</h1>
 		<Tab />
-		<Events />;
-		<Projects />;
 	</div>);
 };
 
@@ -46,6 +44,24 @@ function Tab() {
 				<div className='tabs'>
 					<button type='button' className='tab-button'>Events</button>
 					<button type='button' className='tab-button'>Projects</button>
+				</div>
+				<div className="tab-contents">
+					<div className="tab-content">
+						<h2>Title 1</h2>
+						<img src="#" />
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+							nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
+					<div className="tab-content">
+						<h2>Title 2</h2>
+						<img src="#" />
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+							nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
 				</div>
 			</div>
 		</>

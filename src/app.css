@@ -3,6 +3,7 @@ html, body {
 	margin: 0;
 	padding: 0;
 	background-color: #212121;
+	font-family:'Courier New', Courier, monospace;
 }
 header {
 	height: 8em;
