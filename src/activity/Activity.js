@@ -16,7 +16,7 @@ Click view detail, box will expand
 
 Line break
 
-Container inlcude: 
+Container inlcude:
 	Shadow: Hover expand
 	Card: Image, title, Url, Description, update (except project)
 */
@@ -25,8 +25,8 @@ Container inlcude:
 
 const Activity = () => {
 	return (
-	<div>
-		<h1>Activity</h1>
+	<div className="activity-container">
+		<h1 className="activity-title">Activity</h1>
 		<Tab />
 	</div>);
 };
@@ -35,7 +35,6 @@ export default Activity;
 
 function Tab() {
 	// const [buttonActive, showActive] = useState(False)
-
 	return (
 		<>
 			<div className='tab-container'>
@@ -49,17 +48,17 @@ function Tab() {
 					<div className="tab-content">
 						<h2>Title 1</h2>
 						<img src="#" />
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
 							nisi ut aliquip ex ea commodo consequat.</p>
 					</div>
 					<div className="tab-content">
 						<h2>Title 2</h2>
 						<img src="#" />
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
 							nisi ut aliquip ex ea commodo consequat.</p>
 					</div>
 				</div>
