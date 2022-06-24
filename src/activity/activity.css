@@ -24,6 +24,7 @@
   outline: 0;
   border: 0;
   color: #535353;
+  opacity: 0.6;
   background-color: #ff9617;
   text-decoration: none;
   border-bottom: 5px solid black;
@@ -33,6 +34,7 @@
 .tab-button.active {
   border-bottom: 2px solid white;
   opacity: 1;
+  transform: scale(1.1);
 }
 
 .tab-button:hover {
@@ -54,9 +56,10 @@
   margin: 1rem;
   padding: 30px;
   border: 2px white outset;
+  display: none;
 }
 
-.tab-content-active {
+.active-content {
   display: block;
 }
 
