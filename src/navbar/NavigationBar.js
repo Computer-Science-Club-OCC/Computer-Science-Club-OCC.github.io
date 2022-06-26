@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ClubLogo from "../asset/images/club-logo.png";
 import "./navbar.css";
@@ -6,8 +6,29 @@ import { DensityMedium, Clear } from "@mui/icons-material";
 
 const NavigationBar = () => {
   // Will refine navbar in React way
-	const [isSwitch, setIsSwitch] = useState(false);
-	
+  const [isSwitch, setIsSwitch] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [screenSize, getDimension] = useState({
+    dynamicWidth: window.innerWidth,
+  });
+
+  const setDimension = () => {
+    getDimension({
+      dynamicWidth: window.innerWidth,
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", setDimension);
+    if (screenSize.dynamicWidth <= 630) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+    return () => {
+      window.removeEventListener("resize", setDimension);
+    };
+  }, [screenSize]);
 
   return (
     <nav className="navbar">
@@ -23,22 +44,33 @@ const NavigationBar = () => {
           <h1>OCC CS Club</h1>
         </div>
 
-        <div
-          className="nav-toggle-icons"
-          onClick={() => setIsSwitch((prev) => !prev)}
-        >
-          {isSwitch ? (
-            <Clear className="nav-toggle-icon" fontSize="large" />
-          ) : (
-            <DensityMedium className="nav-toggle-icon" fontSize="large" />
-          )}
-        </div>
+        {isMobile && (
+          <div
+            className="nav-toggle-icons"
+            onClick={() => setIsSwitch((prev) => !prev)}
+          >
+            {isSwitch ? (
+              <Clear className="nav-toggle-icon" fontSize="large" />
+            ) : (
+              <DensityMedium className="nav-toggle-icon" fontSize="large" />
+            )}
+          </div>
+        )}
       </div>
-      {isSwitch && <div className="navbar-nav nav-responsive">
-        <ul className="nav-responsive-lists">
-          <li className="navbar-item nav-responsive-nav-item">
+      {(isSwitch || !isMobile) && <div className={isMobile ? "navbar-nav nav-responsive" : "navbar-nav"}>
+        <ul className={isMobile && "nav-responsive-lists"}>
+          <li
+            className={
+              isMobile ? "navbar-item nav-responsive-nav-item" : "navbar-item"
+            }
+          >
             <div className="dropdown">
-              <Link className="navbar-link nav-responsive-link " to="/homepage">
+              <Link
+                className={
+                  isMobile ? "navbar-link nav-responsive-link" : "navbar-link"
+                }
+                to="/homepage"
+              >
                 {" "}
                 Home
               </Link>
@@ -54,9 +86,18 @@ const NavigationBar = () => {
               </div>
             </div>
           </li>
-          <li className="navbar-item nav-responsive-nav-item">
+          <li
+            className={
+              isMobile ? "navbar-item nav-responsive-nav-item" : "navbar-item"
+            }
+          >
             <div class="dropdown">
-              <Link className="navbar-link nav-responsive-link " to="/activity">
+              <Link
+                className={
+                  isMobile ? "navbar-link nav-responsive-link" : "navbar-link"
+                }
+                to="/activity"
+              >
                 Activity
               </Link>
               <div className="dropdown-content">
@@ -71,10 +112,16 @@ const NavigationBar = () => {
               </div>
             </div>
           </li>
-          <li className="navbar-item nav-responsive-nav-item">
-            <div class="dropdown">
+          <li
+            className={
+              isMobile ? "navbar-item nav-responsive-nav-item" : "navbar-item"
+            }
+          >
+            <div className="dropdown">
               <Link
-                className="navbar-link nav-responsive-link "
+                className={
+                  isMobile ? "navbar-link nav-responsive-link" : "navbar-link"
+                }
                 to="/resources"
               >
                 Resources

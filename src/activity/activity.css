@@ -1,33 +1,44 @@
-/* TAB BUTTON  */
-
-.tab-container {
-  overflow: hidden;
-  height: 100%;
-  min-width: 600px;
-  margin: 20px 60px;
-  display: block;
+.activity-container {
+  width: 100vw;
 }
 
-.tabs {
+.tab-components {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 1.6rem;
+  align-items: center;
+}
+/* TAB BUTTON  */
+
+.tab-container {
+  padding: 0 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tabs {
+  width: 90%;
+  display: flex;
+  justify-content: center;
 }
 
 .tab-button {
-  font-size: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding: 10px 60px;
+  min-width: 150px;
+  height: 3rem;
+  font-size: 1rem;
   cursor: pointer;
+  margin-right: 10px;
   outline: 0;
   border: 0;
   color: #535353;
   background-color: #ff9617;
   text-decoration: none;
   border-bottom: 5px solid black;
-  border-radius: 8px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .tab-button.active {
@@ -50,7 +61,7 @@
 
 .tab-content {
   background-color: black;
-  color: white;  /* Will change due to switching tab*/
+  color: white; /* Will change due to switching tab*/
   margin: 1rem;
   padding: 30px;
   border: 2px white outset;
@@ -61,8 +72,6 @@
 }
 
 /* Add expand for news */
-
-
 
 /* tab-container */
 .activity-title {

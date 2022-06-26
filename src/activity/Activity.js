@@ -27,7 +27,7 @@ const Activity = () => {
 	return (
 	<div className="activity-container">
 		<h1 className="activity-title">Activity</h1>
-		<Tab />
+		<Tab className="tab-components"/>
 	</div>);
 };
 
