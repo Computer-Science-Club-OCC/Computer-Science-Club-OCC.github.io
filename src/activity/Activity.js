@@ -34,18 +34,25 @@ const Activity = () => {
 export default Activity;
 
 function Tab() {
-	// const [buttonActive, showActive] = useState(False)
+
+	const [tabState, setTab] = useState(1)
+
+	const toggleTab = (index) => {
+		setTab(index)
+	}
+
+
 	return (
 		<>
 			<div className='tab-container'>
 				{/* <Link to='/activity/events' className='tab-button'>Events</Link>
 				<Link to='activity/projects' className='tab-button'>Projects</Link> */}
 				<div className='tabs'>
-					<button type='button' className='tab-button'>Events</button>
-					<button type='button' className='tab-button'>Projects</button>
+					<button type='button' onClick={() => toggleTab(1)} className={tabState == 1 ? 'tab-button active' : 'tab-button'}>Events</button>
+					<button type='button' onClick={() => toggleTab(2)} className={tabState == 2 ? 'tab-button active' : 'tab-button'}>Projects</button>
 				</div>
 				<div className="tab-contents">
-					<div className="tab-content">
+					<div className={tabState == 1 ? 'tab-content active-content': 'tab-content'}>
 						<h2>Title 1</h2>
 						<img src="#" />
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -53,13 +60,21 @@ function Tab() {
 							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
 							nisi ut aliquip ex ea commodo consequat.</p>
 					</div>
-					<div className="tab-content">
+					<div  className={tabState == 2 ? 'tab-content active-content': 'tab-content'}>
 						<h2>Title 2</h2>
 						<img src="#" />
+
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
 							nisi ut aliquip ex ea commodo consequat.</p>
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+							Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+							Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
 					</div>
 				</div>
 			</div>
