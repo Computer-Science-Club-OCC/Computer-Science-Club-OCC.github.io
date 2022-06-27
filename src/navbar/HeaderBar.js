@@ -1,5 +1,6 @@
 import React from 'react';
 import './header_bar.css'
+import NavigationBar from './NavigationBar'
 
 const HeaderBar = () => {
     return (
