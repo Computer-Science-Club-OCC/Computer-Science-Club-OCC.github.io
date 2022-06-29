@@ -1,3 +1,5 @@
+/* General styling */
+
 .resources-container{
     color: white;
     display: flex;
@@ -17,3 +19,15 @@
     padding: 0;
     margin: 0;
 }
+
+/* Tab styling */
+.tab-container {
+    overflow: hidden;
+    height: 100%;
+    min-width: 600px;
+    margin: 20px 60px;
+    display: block;
+    color: white
+}
+
+  
