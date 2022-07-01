@@ -2,18 +2,33 @@
     color: white;
     display: flex;
     justify-content: center;
+
 }
 
 .resources-wrapper {
     width: 80vw;
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
 }
 .resources-info {
-    width: 30%;
+    width: 100%;
     background-color: rgb(102, 62, 202);
 }
 .resources-list li {
     padding: 0;
     margin: 0;
+}
+
+.resources-buttons {
+    width: 50%;
+}
+.resources-button {
+    width: 30%;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+}
+.resources-button:focus {
+    background-color: rgb(102, 62, 202);
 }
