@@ -103,11 +103,11 @@ const NavigationBar = () => {
               <div className="dropdown-content">
                 <Link className="dropdown-link" to="/activity/events">
                   {" "}
-                  &gt; Event
+                  &gt; Events
                 </Link>
                 <Link className="dropdown-link" to="/activity/projects">
                   {" "}
-                  &gt; Project
+                  &gt; Projects
                 </Link>
               </div>
             </div>
@@ -127,15 +127,15 @@ const NavigationBar = () => {
                 Resources
               </Link>
               <div className="dropdown-content">
-                <Link className="dropdown-link" to="/events">
+                <Link className="dropdown-link" to="/resources/tutorials">
                   {" "}
-                  &gt; Tutorial
+                  &gt; Tutorials
                 </Link>
-                <Link className="dropdown-link" to="/projects">
+                <Link className="dropdown-link" to="/resources/research">
                   {" "}
                   &gt; Research
                 </Link>
-                <Link className="dropdown-link" to="/projects">
+                <Link className="dropdown-link" to="/resources/organizations">
                   {" "}
                   &gt; Organizations
                 </Link>
