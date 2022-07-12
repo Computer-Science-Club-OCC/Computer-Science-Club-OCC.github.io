@@ -1,12 +1,9 @@
-/* General styling */
-
-.resources-container{
+h1 {
     color: white;
-    display: flex;
-    justify-content: center;
 }
 
-.resources-wrapper {
+/* Demo content */
+/* .resources-wrapper {
     width: 80vw;
     display: flex;
     justify-content: space-between;
@@ -18,16 +15,90 @@
 .resources-list li {
     padding: 0;
     margin: 0;
-}
+} */
 
-/* Tab styling */
-.tab-container {
+/* Tab button */
+.resource-container {
     overflow: hidden;
+    flex-direction: column;
+    display: flex;
+    color: white;
     height: 100%;
-    min-width: 600px;
-    margin: 20px 60px;
-    display: block;
-    color: white
+    min-width: 400px;
+    margin: 20px 10rem;
+    
 }
 
-  
+.resource-tab-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0rem 28rem 0rem 28rem;
+    background-color: black;
+}
+
+.resource-tab-btn {
+    height: 3rem;
+    font-size: 22px;
+    margin: 0rem 0.1rem 0rem 0.1rem;
+    padding: 2rem 6rem 3rem 6rem;
+    cursor: pointer;
+    color: #535353;
+    border: 0;
+    background-color: #ff9617;
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.resource-tab-btn.active {
+    text-decoration: underline;
+    color: white;
+    background-color:#535353;
+}
+
+.resource-tab-btn:hover {
+    color: #fff;
+    background-color: #535353;
+}
+
+/* Tab content */
+.resource-tab-contents {
+    flex-grow: 1;
+    z-index: 2;
+}
+
+.resource-tab-content {
+    background-color: #212121;
+    color: white; /* Will change due to switching tab*/
+    margin: 0rem 10rem 2rem 10rem;
+    padding: 2rem 15rem 2rem 15rem;
+    display: none;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(0,0,0,10);
+}
+
+.resource-tab-text {
+    font-size: 20px;
+}
+
+.resource-tab-content.active {
+    display: block;
+}
+
+/* Responsive */
+.resp-tab {
+    width: 400px;
+}
+
+.resp-tab-btn {
+    height: 3rem;
+    margin-right: 10px;
+    border-radius: none;
+}
+
+.resp-tab-content {
+    margin: 1rem 1rem 2rem 1rem;
+}
+
