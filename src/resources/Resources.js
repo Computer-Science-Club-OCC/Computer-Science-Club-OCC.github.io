@@ -1,25 +1,11 @@
-import React, { useState, useRef } from 'react';
+
+import { BookOnline } from "@mui/icons-material";
+import React, { useState, useEffect, useRef } from "react";
 import "./resources.css";
 import Tutorials from './Tutorials.js';
 import Research from './Research';
 import Organizations from './Organizations';
 
-/*
-Create card tab Tutorials | Research | Organizations both underline + hover highlight box
-v-Link tab to component -> how to link subpage
-Use Hook to change card tab
-Create Tutorials, Research, and Organizations Container
-Container:
-
-Square box: Dat center large font 46px, Time below
-Click view detail, box will expand
-
-Line break
-
-Container includes:
-    Shadow: Hover expand
-    Card: Title, Url, Description
-*/
 
 const Resources = () => {
     return (
@@ -29,7 +15,6 @@ const Resources = () => {
         </div>
     );
 };
-
 export default Resources;
 
 function Tab() {
@@ -80,3 +65,4 @@ function Tab() {
         </div>
     )
 }
+

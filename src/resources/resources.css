@@ -1,81 +1,105 @@
-.resources-container {
-    width: 100vw;
-}
-  
-.tab-components {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-  /* TAB BUTTON  */
-  
-.tab-container {
-    padding: 0 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-  
-.tabs {
-    width: 90%;
-    display: flex;
-    justify-content: center;
-}
-  
-.tab-button {
-    min-width: 150px;
-    height: 3rem;
-    font-size: 1rem;
-    cursor: pointer;
-    margin-right: 10px;
-    outline: 0;
-    border: 0;
-    color: #535353;
-    background-color: #ff9617;
-    text-decoration: none;
-    border-bottom: 5px solid black;
-    border-radius: 10px;
-    font-weight: bold;
-    text-align: center;
-}
-  
-.tab-button.active {
-    border-bottom: 2px solid white;
-    opacity: 1;
-    transform: scale(1.1);
-}
-  
-.tab-button:hover {
-    color: #fff;
-    background-color: #535353;
-    transform: scale(1.1);
-}
-  
-  /* TAB LINE SELECT ANIMATION */
-  
-  /* TAB CONTENT */
-.tab-contents {
-    flex-grow: 1;
-}
-  
-.tab-content {
-    background-color: black;
-    color: white; /* Will change due to switching tab*/
-    margin: 1rem;
-    padding: 30px;
-    border: 2px white outset;
-    display: none;
-}
-  
-.active-content {
-    display: block;
-}
-  
-/* Add expand for news */
-  
-/* tab-container */
-.resources-title {
+
+h1 {
     color: white;
 }
+
+/* Demo content */
+/* .resources-wrapper {
+    width: 80vw;
+    display: flex;
+    justify-content: space-between;
+}
+.resources-info {
+    width: 30%;
+    background-color: rgb(102, 62, 202);
+}
+.resources-list li {
+    padding: 0;
+    margin: 0;
+} */
+
+/* Tab button */
+.resource-container {
+    overflow: hidden;
+    flex-direction: column;
+    display: flex;
+    color: white;
+    height: 100%;
+    min-width: 400px;
+    margin: 20px 10rem;
+    
+}
+
+.resource-tab-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0rem 28rem 0rem 28rem;
+    background-color: black;
+}
+
+.resource-tab-btn {
+    height: 3rem;
+    font-size: 22px;
+    margin: 0rem 0.1rem 0rem 0.1rem;
+    padding: 2rem 6rem 3rem 6rem;
+    cursor: pointer;
+    color: #535353;
+    border: 0;
+    background-color: #ff9617;
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.resource-tab-btn.active {
+    text-decoration: underline;
+    color: white;
+    background-color:#535353;
+}
+
+.resource-tab-btn:hover {
+    color: #fff;
+    background-color: #535353;
+}
+
+/* Tab content */
+.resource-tab-contents {
+    flex-grow: 1;
+    z-index: 2;
+}
+
+.resource-tab-content {
+    background-color: #212121;
+    color: white; /* Will change due to switching tab*/
+    margin: 0rem 10rem 2rem 10rem;
+    padding: 2rem 15rem 2rem 15rem;
+    display: none;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(0,0,0,10);
+}
+
+.resource-tab-text {
+    font-size: 20px;
+}
+
+.resource-tab-content.active {
+    display: block;
+}
+
+/* Mobile Responsive */
+.resp-tab {
+    width: 400px;
+}
+
+.resp-tab-btn {
+    height: 3rem;
+    margin-right: 10px;
+    border-radius: none;
+}
+
+.resp-tab-content {
+    margin: 1rem 1rem 2rem 1rem;
+}
+
