@@ -1,4 +1,4 @@
-.activity-container {
+/* .activity-container {
   width: 100vw;
 }
 
@@ -7,10 +7,10 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
+} */
 /* TAB BUTTON  */
 
-.tab-container {
+/* .tab-container {
   padding: 0 3rem;
   display: flex;
   flex-direction: column;
@@ -42,8 +42,6 @@
 }
 
 .tab-button.active {
-  border-bottom: 2px solid white;
-  opacity: 1;
   transform: scale(1.1);
 }
 
@@ -51,31 +49,33 @@
   color: #fff;
   background-color: #535353;
   transform: scale(1.1);
-}
+} */
 
 /* TAB LINE SECLECT ANIMATION */
 
 /* TAB CONTENT */
-.tab-contents {
+/* .tab-contents {
   flex-grow: 1;
-}
+} */
 
-.tab-content {
+/* .tab-content {
   background-color: black;
-  color: white; /* Will change due to switching tab*/
+  color: white; 
   margin: 1rem;
   padding: 30px;
   border: 2px white outset;
   display: none;
-}
+} */
 
-.active-content {
+/* .active-content {
   display: block;
-}
+} */
 
 /* Add expand for news */
 
 /* tab-container */
-.activity-title {
+/* .activity-title {
   color: white;
 }
+
+ */
