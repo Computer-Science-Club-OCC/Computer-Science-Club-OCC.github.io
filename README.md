@@ -17,7 +17,7 @@ Then run:
 ### `npm start`
 
 
-# Format Stylings before raising PR
+# Format code before raising PR
 Run:
 
 ### `npm run format:fix`
