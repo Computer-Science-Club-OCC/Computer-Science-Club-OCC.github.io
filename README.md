@@ -15,3 +15,9 @@ To build:
 Then run:
 
 ### `npm start`
+
+
+# Format Stylings before raising PR
+Run:
+
+### `npm run format:fix`
