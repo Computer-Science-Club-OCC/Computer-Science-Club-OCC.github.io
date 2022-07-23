@@ -5,10 +5,10 @@
         "jest": true
     },
     "extends": [
-        "plugin:react/recommended",
+        "react-app",
         "react-app/jest",
         "airbnb",
-        "plugin:prettier/recommened"
+        "plugin:prettier/recommended"
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -26,12 +26,14 @@
             "error",
             "double",
             {
-                "avoidescape": true
+                "avoidEscape": true
             }
         ],
+        "prettier/prettier": "error",
+        "no-unused-vars": "off",
         "react/jsx-uses-react": ["off"],
         "react/react-in-jsx-scope": ["off"],
-        "react/jsx-props-no=spreading": ["warn"],
+        "react/jsx-props-no-spreading": ["warn"],
         "no-shadow": "off"
     }
 }
