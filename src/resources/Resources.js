@@ -1,6 +1,7 @@
 
 import { BookOnline } from "@mui/icons-material";
 import React, { useState, useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import "./resources.css";
 import Tutorials from './Tutorials.js';
 import Research from './Research';
@@ -23,6 +24,11 @@ function Tab() {
     const toggleTab = (index) => {
         setTab(index)
     }
+    
+    let location = useLocation();
+    useEffect(() => {
+        toggleTab(location.state.option);
+    }, [location]);
 
     return (
         <div className='tab-container'>

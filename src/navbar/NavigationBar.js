@@ -123,19 +123,30 @@ const NavigationBar = () => {
                   isMobile ? "navbar-link nav-responsive-link" : "navbar-link"
                 }
                 to="/resources"
+                state={{option: 1}}
               >
                 Resources
               </Link>
               <div className="dropdown-content">
-                <Link className="dropdown-link" to="/resources/tutorials">
+                <Link 
+                className="dropdown-link" 
+                to="/resources"
+                state={{option: 1}}
+                >
                   {" "}
                   &gt; Tutorials
                 </Link>
-                <Link className="dropdown-link" to="/resources/research">
+                <Link className="dropdown-link" 
+                to="/resources"
+                state={{option: 2}}
+                >
                   {" "}
                   &gt; Research
                 </Link>
-                <Link className="dropdown-link" to="/resources/organizations">
+                <Link className="dropdown-link" 
+                to="/resources"
+                state={{option: 3}}
+                >
                   {" "}
                   &gt; Organizations
                 </Link>
