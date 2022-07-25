@@ -28,8 +28,8 @@
     ],
     "rules": {
         "indent": "off",
-        "no-unused-vars": "warn",
-        "no-empty-function": "warn",
+        "no-unused-vars": "error",
+        "no-empty-function": "error",
         "no-underscore-dangle": "off",
         "no-unused-expressions": "error",
         "prettier/prettier": "error",
