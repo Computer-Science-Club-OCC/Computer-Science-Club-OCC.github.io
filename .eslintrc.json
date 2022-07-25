@@ -28,7 +28,7 @@
     ],
     "rules": {
         "indent": "off",
-        "no-unused-vars": "error",
+        "no-unused-vars": "warn",
         "no-empty-function": "error",
         "no-underscore-dangle": "off",
         "no-unused-expressions": "error",
