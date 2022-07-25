@@ -1,14 +1,18 @@
 {
     "env": {
         "browser": true,
+        "node": true,
         "es2021": true,
         "jest": true
     },
     "extends": [
-        "plugin:react/recommended",
-        "react-app/jest",
         "airbnb",
-        "plugin:prettier/recommened"
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:jest/recommended",
+        "plugin:jsx-a11y/recommended",
+        "plugin:prettier/recommended"
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -19,19 +23,42 @@
     },
     "plugins": [
         "react",
+        "jsx-a11y",
         "prettier"
     ],
     "rules": {
-        "quotes": [
-            "error",
-            "double",
+        "indent": "off",
+        "no-unused-vars": "error",
+        "no-empty-function": "error",
+        "no-underscore-dangle": "off",
+        "no-unused-expressions": "error",
+        "prettier/prettier": "error",
+        "arrow-body-style": "off",
+        "prefer-arrow-callback": "off",
+        "jsx-a11y/anchor-is-valid": [ 
+            "error", 
             {
-                "avoidescape": true
+                "components": [ "Link" ],
+                "specialLink": [ "onClick", "to" ],
+                "aspects": [ "noHref" ]
             }
         ],
-        "react/jsx-uses-react": ["off"],
-        "react/react-in-jsx-scope": ["off"],
-        "react/jsx-props-no=spreading": ["warn"],
-        "no-shadow": "off"
+        "jsx-a11y/click-events-have-key-events": "off",
+        "jsx-a11y/interactive-supports-focus": "warn",
+        "react/button-has-type": "warn",
+        "react/jsx-uses-react": "off",
+        "react/jsx-filename-extension": "off",
+        "react/react-in-jsx-scope": "off", 
+        "react/jsx-props-no-spreading": "warn",
+        "react/jsx-key": "off",
+        "no-shadow": "off",
+        "no-use-before-define": "warn",
+        "spaced-comment": [
+            "error", 
+            "always", 
+            { 
+                "exceptions": [ "-", "*" ] 
+            }
+        ]
     }
 }
