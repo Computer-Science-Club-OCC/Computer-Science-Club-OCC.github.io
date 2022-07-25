@@ -1,11 +1,8 @@
-import React from 'react';
-import './activity.css';
-
+import React from "react";
+import "./activity.css";
 
 function Events() {
-  return (
-    <div>Events</div>
-  )
+	return <div>Events</div>;
 }
 
 export default Events;
