@@ -1,19 +1,89 @@
-.resources-container{
-    color: white;
-    display: flex;
-    justify-content: center;
+/* Animation */
+@keyframes dropContent {
+	0% {
+		right: -80rem;
+		opacity: 0;
+	}
+	100% {
+		right: 0rem;
+		opacity: 1;
+	}
 }
 
-.resources-wrapper {
-    width: 80vw;
-    display: flex;
-    justify-content: space-between;
+/* Tab button */
+.resources-container {
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	margin-top: 6rem;
+	width: 80%;
+	height: 1000px;
+	z-index: 3;
 }
-.resources-info {
-    width: 30%;
-    background-color: rgb(102, 62, 202);
+
+.resources-container h1 {
+	margin: auto;
+	margin-bottom: 4rem;
+	color: white;
 }
-.resources-list li {
-    padding: 0;
-    margin: 0;
+
+.resources-tabs {
+	display: flex;
+	text-align: center;
 }
+
+.resources-tabs button {
+	display: block;
+	padding: 10px;
+	flex-grow: 1;
+	background: transparent;
+	color: #fff;
+	font-size: 22px;
+	font-weight: bold;
+	cursor: pointer;
+	text-decoration: none;
+	border: 0;
+	box-shadow: 0px 2px 0px 0px #ccc;
+}
+
+.resources-tabs button.active {
+	background-color: #ff9617;
+	color: #212121;
+	transition: all 0.3s ease-in-out;
+	box-shadow: 0px 3px 0px 0px rgb(255, 150, 23);
+}
+
+.resources-tabs button:hover {
+	transition: all 0.3s ease-in-out;
+	box-shadow: 0px 2px 0px 0px rgb(255, 150, 23, 0.8);
+}
+
+/* Tab content */
+.resource-contents {
+	flex-grow: 1;
+	overflow: auto;
+	z-index: 2;
+}
+
+.resources-content {
+	color: white;
+	padding: 3rem 12% 2rem 12%;
+	display: none;
+	justify-content: center;
+	border-radius: 20px;
+	position: relative;
+	animation-name: dropContent;
+	animation-duration: 0.8s;
+}
+
+.resources-content.active {
+	display: block;
+}
+
+.pagination-container {
+	margin: auto;
+	display: flex;
+}
+
+/* TODO: Add pagination css */
