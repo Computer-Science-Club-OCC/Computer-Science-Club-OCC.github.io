@@ -1,5 +1,6 @@
+
 /* Animation */
-@keyframes dropContent {
+@keyframes arrivedContent {
 	0% {
 		right: -80rem;
 		opacity: 0;
@@ -73,7 +74,7 @@
 	justify-content: center;
 	border-radius: 20px;
 	position: relative;
-	animation-name: dropContent;
+	animation-name: arrivedContent;
 	animation-duration: 0.8s;
 }
 
@@ -87,3 +88,4 @@
 }
 
 /* TODO: Add pagination css */
+
