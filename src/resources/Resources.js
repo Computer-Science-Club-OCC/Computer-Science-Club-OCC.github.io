@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { tutorialsMap, readingsMap, organizationsMap } from "./fakeData";
 import "./resources.css";
+import Tutorials from './Tutorials.js';
+import Research from './Research';
+import Organizations from './Organizations';
 
 function Resources() {
 	return (
@@ -131,3 +134,4 @@ function Tab() {
 		</>
 	);
 }
+
