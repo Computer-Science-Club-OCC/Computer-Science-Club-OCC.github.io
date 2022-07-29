@@ -17,7 +17,10 @@ Then run:
 ### `npm start`
 
 
-# Format code before raising PR
-Run:
-
+# Format code
+Before running server or pushing your commits. 
+Please run:
 ### `npm run format:fix`
+
+Fix any red error messages that appear on browser or terminal, then save debugged files. The website will run normally after that.
+
