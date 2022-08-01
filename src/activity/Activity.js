@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./activity.css";
-import Events from "./Events";
+import Events from "./events/Events";
 import Projects from "./Projects";
 
 function Activity() {
