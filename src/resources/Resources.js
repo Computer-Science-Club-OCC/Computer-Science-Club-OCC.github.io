@@ -2,9 +2,9 @@ import { BookOnline } from "@mui/icons-material";
 import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import "./resources.css";
-import Tutorials from './Tutorials.js';
-import Research from './Research';
-import Organizations from './Organizations';
+import Tutorials from "./Tutorials.js";
+import Research from "./Research";
+import Organizations from "./Organizations";
 
 function Resources() {
 	return (
@@ -16,17 +16,16 @@ function Resources() {
 export default Resources;
 
 function Tab() {
+	const [tabState, setTab] = useState(1);
 
-  const [tabState, setTab] = useState(1)
+	const toggleTab = index => {
+		setTab(index);
+	};
 
-  const toggleTab = (index) => {
-      setTab(index)
-  }
-    
-  let location = useLocation();
-  useEffect(() => {
-      toggleTab(location.state.option);
-  }, [location]);
+	const location = useLocation();
+	useEffect(() => {
+		toggleTab(location.state.option);
+	}, [location]);
 
 	return (
 		<>
@@ -94,4 +93,3 @@ function Tab() {
 		</>
 	);
 }
-

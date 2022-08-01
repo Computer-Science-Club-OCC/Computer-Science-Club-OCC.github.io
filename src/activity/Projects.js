@@ -1,10 +1,8 @@
-import React from 'react';
-import './activity.css';
+import React from "react";
+import "./activity.css";
 
 function Projects() {
-  return (
-    <div>Projects</div>
-  )
+	return <div>Projects</div>;
 }
 
 export default Projects;
