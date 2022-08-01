@@ -2,6 +2,9 @@ import { BookOnline } from "@mui/icons-material";
 import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import "./resources.css";
+import Tutorials from './Tutorials.js';
+import Research from './Research';
+import Organizations from './Organizations';
 
 function Resources() {
 	return (
