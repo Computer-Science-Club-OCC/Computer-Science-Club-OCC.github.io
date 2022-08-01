@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { BookOnline } from "@mui/icons-material";
+import React, { useState, useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import "./resources.css";
 
 function Resources() {
@@ -11,7 +14,17 @@ function Resources() {
 export default Resources;
 
 function Tab() {
-	const [tabState, setTab] = useState(1);
+
+  const [tabState, setTab] = useState(1)
+
+  const toggleTab = (index) => {
+      setTab(index)
+  }
+    
+  let location = useLocation();
+  useEffect(() => {
+      toggleTab(location.state.option);
+  }, [location]);
 
 	const toggleTab = index => {
 		setTab(index);
