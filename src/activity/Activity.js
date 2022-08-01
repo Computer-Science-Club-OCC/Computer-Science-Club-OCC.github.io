@@ -28,14 +28,14 @@ function Tab() {
 				<button
 					type="button"
 					onClick={() => toggleTab(1)}
-					className={tabState == 1 ? "tab-button active" : "tab-button"}
+					className={tabState === 1 ? "tab-button active" : "tab-button"}
 				>
 					Events
 				</button>
 				<button
 					type="button"
 					onClick={() => toggleTab(2)}
-					className={tabState == 2 ? "tab-button active" : "tab-button"}
+					className={tabState === 2 ? "tab-button active" : "tab-button"}
 				>
 					Projects
 				</button>
@@ -43,7 +43,7 @@ function Tab() {
 			<div className="tab-contents">
 				<div
 					className={
-						tabState == 1 ? "tab-content active-content" : "tab-content"
+						tabState === 1 ? "tab-content active-content" : "tab-content"
 					}
 				>
 					<h2>Title 1</h2>
@@ -57,7 +57,7 @@ function Tab() {
 				</div>
 				<div
 					className={
-						tabState == 2 ? "tab-content active-content" : "tab-content"
+						tabState === 2 ? "tab-content active-content" : "tab-content"
 					}
 				>
 					<h2>Title 2</h2>
