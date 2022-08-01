@@ -1,105 +1,91 @@
 
-h1 {
-    color: white;
+/* Animation */
+@keyframes arrivedContent {
+	0% {
+		right: -80rem;
+		opacity: 0;
+	}
+	100% {
+		right: 0rem;
+		opacity: 1;
+	}
 }
-
-/* Demo content */
-/* .resources-wrapper {
-    width: 80vw;
-    display: flex;
-    justify-content: space-between;
-}
-.resources-info {
-    width: 30%;
-    background-color: rgb(102, 62, 202);
-}
-.resources-list li {
-    padding: 0;
-    margin: 0;
-} */
 
 /* Tab button */
-.resource-container {
-    overflow: hidden;
-    flex-direction: column;
-    display: flex;
-    color: white;
-    height: 100%;
-    min-width: 400px;
-    margin: 20px 10rem;
-    
+.resources-container {
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	margin-top: 6rem;
+	width: 80%;
+	height: 1000px;
+	z-index: 3;
 }
 
-.resource-tab-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0rem 28rem 0rem 28rem;
-    background-color: black;
+.resources-container h1 {
+	margin: auto;
+	margin-bottom: 4rem;
+	color: white;
 }
 
-.resource-tab-btn {
-    height: 3rem;
-    font-size: 22px;
-    margin: 0rem 0.1rem 0rem 0.1rem;
-    padding: 2rem 6rem 3rem 6rem;
-    cursor: pointer;
-    color: #535353;
-    border: 0;
-    background-color: #ff9617;
-    text-decoration: none;
-    font-weight: bold;
-    z-index: 10;
+.resources-tabs {
+	display: flex;
+	text-align: center;
 }
 
-.resource-tab-btn.active {
-    text-decoration: underline;
-    color: white;
-    background-color:#535353;
+.resources-tabs button {
+	display: block;
+	padding: 10px;
+	flex-grow: 1;
+	background: transparent;
+	color: #fff;
+	font-size: 22px;
+	font-weight: bold;
+	cursor: pointer;
+	text-decoration: none;
+	border: 0;
+	box-shadow: 0px 2px 0px 0px #ccc;
 }
 
-.resource-tab-btn:hover {
-    color: #fff;
-    background-color: #535353;
+.resources-tabs button.active {
+	background-color: #ff9617;
+	color: #212121;
+	transition: all 0.3s ease-in-out;
+	box-shadow: 0px 3px 0px 0px rgb(255, 150, 23);
+}
+
+.resources-tabs button:hover {
+	transition: all 0.3s ease-in-out;
+	box-shadow: 0px 2px 0px 0px rgb(255, 150, 23, 0.8);
 }
 
 /* Tab content */
-.resource-tab-contents {
-    flex-grow: 1;
-    z-index: 2;
+.resource-contents {
+	flex-grow: 1;
+	overflow: auto;
+	z-index: 2;
 }
 
-.resource-tab-content {
-    background-color: #212121;
-    color: white; /* Will change due to switching tab*/
-    margin: 0rem 10rem 2rem 10rem;
-    padding: 2rem 15rem 2rem 15rem;
-    display: none;
-    justify-content: center;
-    border-radius: 20px;
-    box-shadow: 0 0 50px rgba(0,0,0,10);
+.resources-content {
+	color: white;
+	padding: 3rem 12% 2rem 12%;
+	display: none;
+	justify-content: center;
+	border-radius: 20px;
+	position: relative;
+	animation-name: arrivedContent;
+	animation-duration: 0.8s;
 }
 
-.resource-tab-text {
-    font-size: 20px;
+.resources-content.active {
+	display: block;
 }
 
-.resource-tab-content.active {
-    display: block;
+.pagination-container {
+	margin: auto;
+	display: flex;
 }
 
-/* Mobile Responsive */
-.resp-tab {
-    width: 400px;
-}
-
-.resp-tab-btn {
-    height: 3rem;
-    margin-right: 10px;
-    border-radius: none;
-}
-
-.resp-tab-content {
-    margin: 1rem 1rem 2rem 1rem;
-}
+/* TODO: Add pagination css */
 
