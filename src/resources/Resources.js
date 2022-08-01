@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { BookOnline } from "@mui/icons-material";
 import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
@@ -25,10 +24,6 @@ function Tab() {
   useEffect(() => {
       toggleTab(location.state.option);
   }, [location]);
-
-	const toggleTab = index => {
-		setTab(index);
-	};
 
 	return (
 		<>
