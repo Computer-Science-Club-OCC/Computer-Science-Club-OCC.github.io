@@ -1,11 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { DensityMedium, Clear } from "@mui/icons-material";
 import ClubLogo from "../asset/images/club-logo.png";
 import "./navbar.css";
-import { DensityMedium, Clear } from "@mui/icons-material";
 
 function NavigationBar() {
-	// Will refine navbar in React way
 	const [isSwitch, setIsSwitch] = useState(false);
 	const [isMobile, setIsMobile] = useState(false);
 	const [screenSize, getDimension] = useState({
@@ -68,16 +67,13 @@ function NavigationBar() {
 									}
 									to="/homepage"
 								>
-									{" "}
 									Home
 								</Link>
 								<div className="dropdown-content">
 									<Link className="dropdown-link" to="/about">
-										{" "}
 										&gt; About
 									</Link>
 									<Link className="dropdown-link" to="/opportunity">
-										{" "}
 										&gt; Opportunity
 									</Link>
 								</div>
@@ -99,11 +95,9 @@ function NavigationBar() {
 								</Link>
 								<div className="dropdown-content">
 									<Link className="dropdown-link" to="/activity/events">
-										{" "}
 										&gt; Events
 									</Link>
 									<Link className="dropdown-link" to="/activity/projects">
-										{" "}
 										&gt; Projects
 									</Link>
 								</div>
@@ -130,7 +124,6 @@ function NavigationBar() {
 										to="/resources"
 										state={{ option: 1 }}
 									>
-										{" "}
 										&gt; Tutorials
 									</Link>
 									<Link
@@ -138,7 +131,6 @@ function NavigationBar() {
 										to="/resources"
 										state={{ option: 2 }}
 									>
-										{" "}
 										&gt; Research
 									</Link>
 									<Link
@@ -146,7 +138,6 @@ function NavigationBar() {
 										to="/resources"
 										state={{ option: 3 }}
 									>
-										{" "}
 										&gt; Organizations
 									</Link>
 								</div>
@@ -160,20 +151,3 @@ function NavigationBar() {
 }
 
 export default NavigationBar;
-
-function Dropdown() {}
-
-const NavItemMap = [
-	{
-		title: "Home",
-		submenu: [],
-	},
-	{
-		title: "Activity",
-		submenu: [],
-	},
-	{
-		title: "Resource",
-		submenu: [],
-	},
-];
