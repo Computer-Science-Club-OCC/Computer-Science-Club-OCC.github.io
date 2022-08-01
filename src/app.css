@@ -1,23 +1,17 @@
-html, body {
+html,
+body {
 	height: 100vh;
 	width: 100vw;
 	margin: 0;
 	padding: 0;
-	background-color: #212121;
-	font-family:'Courier New', Courier, monospace;
+	background: url("./asset/images/background.jpg") no-repeat;
+	background-size: cover;
 }
+
 header {
 	height: 8em;
 	width: auto;
 	background-color: black;
-}
-.bg {
-	background-image: url("https://neovim.io/images/showcase/floating-win.png");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: cover;
-	filter: blur(2px);
-	height: 100%;
 }
 
 .content {

@@ -1,81 +1,81 @@
 .activity-container {
-  width: 100vw;
+	width: 100vw;
 }
 
 .tab-components {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 }
 /* TAB BUTTON  */
 
 .tab-container {
-  padding: 0 3rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	padding: 0 3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .tabs {
-  width: 90%;
-  display: flex;
-  justify-content: center;
+	width: 90%;
+	display: flex;
+	justify-content: center;
 }
 
 .tab-button {
-  min-width: 150px;
-  height: 3rem;
-  font-size: 1rem;
-  cursor: pointer;
-  margin-right: 10px;
-  outline: 0;
-  border: 0;
-  color: #535353;
-  background-color: #ff9617;
-  text-decoration: none;
-  border-bottom: 5px solid black;
-  border-radius: 10px;
-  font-weight: bold;
-  text-align: center;
+	min-width: 150px;
+	height: 3rem;
+	font-size: 1rem;
+	cursor: pointer;
+	margin-right: 10px;
+	outline: 0;
+	border: 0;
+	color: #535353;
+	background-color: #ff9617;
+	text-decoration: none;
+	border-bottom: 5px solid black;
+	border-radius: 10px;
+	font-weight: bold;
+	text-align: center;
 }
 
 .tab-button.active {
-  border-bottom: 2px solid white;
-  opacity: 1;
-  transform: scale(1.1);
+	border-bottom: 2px solid white;
+	opacity: 1;
+	transform: scale(1.1);
 }
 
 .tab-button:hover {
-  color: #fff;
-  background-color: #535353;
-  transform: scale(1.1);
+	color: #fff;
+	background-color: #535353;
+	transform: scale(1.1);
 }
 
 /* TAB LINE SECLECT ANIMATION */
 
 /* TAB CONTENT */
 .tab-contents {
-  flex-grow: 1;
+	flex-grow: 1;
 }
 
 .tab-content {
-  background-color: black;
-  color: white; /* Will change due to switching tab*/
-  margin: 1rem;
-  padding: 30px;
-  border: 2px white outset;
-  display: none;
+	background-color: black;
+	color: white; /* Will change due to switching tab*/
+	margin: 1rem;
+	padding: 30px;
+	border: 2px white outset;
+	display: none;
 }
 
 .active-content {
-  display: block;
+	display: block;
 }
 
 /* Add expand for news */
 
 /* tab-container */
 .activity-title {
-  color: white;
+	color: white;
 }
