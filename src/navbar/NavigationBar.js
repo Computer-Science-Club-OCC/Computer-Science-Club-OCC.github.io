@@ -43,6 +43,8 @@ function NavigationBar() {
 					<div
 						className="nav-toggle-icons"
 						onClick={() => setIsSwitch(prev => !prev)}
+						role="button"
+						tabIndex={0}
 					>
 						{isSwitch ? (
 							<Clear className="nav-toggle-icon" fontSize="large" />
