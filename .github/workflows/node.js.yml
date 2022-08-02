@@ -18,6 +18,8 @@ jobs:
   build_test:
 
     runs-on: ${{ matrix.os }}
+    env:
+      CI: false
     strategy:
       fail-fast: false
       matrix:
