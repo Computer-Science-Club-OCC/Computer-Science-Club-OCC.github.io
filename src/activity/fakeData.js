@@ -5,18 +5,23 @@ const eventsMap = [];
 for (let i = 1; i <= 20; i += 1) {
 	const title = faker.company.catchPhrase();
 	const description = faker.lorem.paragraph(3);
-	const location = faker.address.buildingNumber();
-	const image = faker.image.nature(640, 480, true);
+	const location = `Room ${faker.address.buildingNumber()}`;
+	const image = faker.image.nature(640, 360, true);
 
-	const dateTime = faker.date.recent(30);
-	const date = dateTime.toLocaleDateString();
+	const dateTime = faker.date.future(60);
+	const day =
+		dateTime.getDate() < 10
+			? `0${dateTime.getDate().toLocaleString()}`
+			: dateTime.getDate().toLocaleString();
+	const month = dateTime.toLocaleString("en-US", { month: "short" });
 	const time = dateTime.toLocaleTimeString();
 
 	eventsMap.push({
 		id: i,
 		title,
 		description,
-		date,
+		day,
+		month,
 		time,
 		location,
 		image,

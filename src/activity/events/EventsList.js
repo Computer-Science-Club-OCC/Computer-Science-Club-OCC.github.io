@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { PacmanLoader } from "react-spinners";
+import { eventsMap as eventsList } from "../fakeData";
 import "./events.css";
 
 function EventsList() {
@@ -10,39 +12,32 @@ function EventsList() {
 }
 export default EventsList;
 
-// TODO: Remove eventsList when using fakeData.js
-const eventsList = [
-	{
-		id: 1,
-		title: "Event #1",
-		month: "Jul",
-		day: "01",
-		location: "Room101",
-		time: "3:00pm",
-	},
-	{
-		id: 2,
-		title:
-			"Event #2 Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-		month: "Aug",
-		day: "08",
-		location: "Room202",
-		time: "4:00pm",
-	},
-];
-
 function ListEvents() {
-	return eventsList.map(singleEvent => {
-		const click = () => {
-			console.log("Clicked");
-		};
+	const [isCollapse, setCollapse] = useState(false);
+	const [index, setIndex] = useState(null);
 
+	function handleClick(id) {
+		setCollapse(!isCollapse);
+		setIndex(id);
+		console.log("Clicked", isCollapse);
+		console.log(id);
+	}
+
+	const [isLoading, setLoading] = useState(false);
+	useEffect(() => {
+		setLoading(true);
+		setTimeout(() => {
+			setLoading(false);
+		}, 2000);
+	}, []);
+
+	return eventsList.map(singleEvent => {
 		return (
 			<button
-				className="event"
 				key={singleEvent.id}
+				className="event"
 				type="button"
-				onClick={click}
+				onClick={() => handleClick(singleEvent.id)}
 			>
 				<div className="event-date">
 					<p id="month">{singleEvent.month}</p>
@@ -50,6 +45,26 @@ function ListEvents() {
 				</div>
 				<div className="event-info">
 					<h3 id="title">{singleEvent.title}</h3>
+
+					{isCollapse &&
+						singleEvent.id === index &&
+						(isLoading ? (
+							<PacmanLoader
+								cssOverride={{
+									margin: 10,
+								}}
+								size={30}
+								color="orange"
+								loadding={isLoading}
+							/>
+						) : (
+							<div className="event-expand">
+								<img src={singleEvent.image} alt="event" />
+								<p>Details: </p>
+								<p>{singleEvent.description}</p>
+							</div>
+						))}
+
 					<p id="important">Time: {singleEvent.time}</p>
 					<p id="important">Location: {singleEvent.location}</p>
 				</div>

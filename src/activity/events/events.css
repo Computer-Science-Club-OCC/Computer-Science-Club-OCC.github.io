@@ -89,14 +89,14 @@
 
 .event-date {
 	display: inline-block;
-	padding: 0 0.75rem 0 0.25rem;
+	padding: 0 0.5rem 0 0.25rem;
 	vertical-align: top;
 	color: white;
 	font-weight: normal;
 }
 
 .event-date p {
-	margin: 0;
+	margin: 0 0.5rem 0 0;
 	padding: inherit;
 }
 
@@ -128,10 +128,30 @@
 
 .event-info #important {
 	display: inline-block;
-	margin: 0px 20px 5px 0;
+	margin: 0px 20px 10px 0;
 	padding: 3px 10px;
 	font-size: 16px;
 	color: black;
 	border-radius: 5px;
 	background-color: white;
+}
+
+.event-expand {
+	margin-top: 20px;
+	margin-right: 20px;
+	color: white;
+	font-size: 18px;
+}
+
+.event-expand p {
+	margin: 2rem 2rem 2rem 0;
+}
+
+.event-expand img {
+	max-width: 640px;
+	max-height: 300px;
+}
+
+.loading {
+	margin: auto;
 }
