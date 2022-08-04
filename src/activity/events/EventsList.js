@@ -13,16 +13,25 @@ function EventsList() {
 export default EventsList;
 
 function ListEvents() {
-	const [isCollapse, setCollapse] = useState(false);
-	const [index, setIndex] = useState(null);
+	const [isCollapse, setCollapse] = useState({});
 
-	function handleClick(id) {
-		setCollapse(!isCollapse);
-		setIndex(id);
+	/**
+	 * @param {string} id
+	 * Store state as list of pair (id, collapseState)
+	 * The function stores individually collapsed state
+	 * for each event item whenever a click event happens
+	 */
+	function handleCollapse(id) {
+		setCollapse(prevCollapsed => ({
+			...prevCollapsed,
+			[id]: !prevCollapsed[id],
+		}));
 		console.log("Clicked", isCollapse);
 		console.log(id);
 	}
 
+	// Handle loading state
+	// TODO: Modify effect to await fetch API
 	const [isLoading, setLoading] = useState(false);
 	useEffect(() => {
 		setLoading(true);
@@ -37,7 +46,7 @@ function ListEvents() {
 				key={singleEvent.id}
 				className="event"
 				type="button"
-				onClick={() => handleClick(singleEvent.id)}
+				onClick={() => handleCollapse(singleEvent.id)}
 			>
 				<div className="event-date">
 					<p id="month">{singleEvent.month}</p>
@@ -46,8 +55,7 @@ function ListEvents() {
 				<div className="event-info">
 					<h3 id="title">{singleEvent.title}</h3>
 
-					{isCollapse &&
-						singleEvent.id === index &&
+					{isCollapse[singleEvent.id] &&
 						(isLoading ? (
 							<PacmanLoader
 								cssOverride={{
@@ -55,7 +63,6 @@ function ListEvents() {
 								}}
 								size={30}
 								color="orange"
-								loadding={isLoading}
 							/>
 						) : (
 							<div className="event-expand">
