@@ -1,0 +1,64 @@
+{
+    "env": {
+        "browser": true,
+        "node": true,
+        "es2021": true,
+        "jest": true
+    },
+    "extends": [
+        "airbnb",
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:jest/recommended",
+        "plugin:jsx-a11y/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "jsx-a11y",
+        "prettier"
+    ],
+    "rules": {
+        "indent": "off",
+        "no-unused-vars": "warn",
+        "no-empty-function": "error",
+        "no-underscore-dangle": "off",
+        "no-unused-expressions": "error",
+        "prettier/prettier": "error",
+        "arrow-body-style": "off",
+        "prefer-arrow-callback": "off",
+        "jsx-a11y/anchor-is-valid": [ 
+            "error", 
+            {
+                "components": [ "Link" ],
+                "specialLink": [ "onClick", "to" ],
+                "aspects": [ "noHref" ]
+            }
+        ],
+        "jsx-a11y/click-events-have-key-events": "off",
+        "jsx-a11y/interactive-supports-focus": "warn",
+        "react/button-has-type": "warn",
+        "react/jsx-uses-react": "off",
+        "react/jsx-filename-extension": "off",
+        "react/react-in-jsx-scope": "off", 
+        "react/jsx-props-no-spreading": "warn",
+        "react/jsx-key": "off",
+        "no-shadow": "off",
+        "no-use-before-define": "warn",
+        "spaced-comment": [
+            "error", 
+            "always", 
+            { 
+                "exceptions": [ "-", "*" ] 
+            }
+        ]
+    }
+}
