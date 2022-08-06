@@ -4,10 +4,9 @@ const eventsMap = [];
 
 for (let i = 1; i <= 20; i += 1) {
 	const title = faker.company.catchPhrase();
-	const description = faker.lorem.paragraph(3);
+	const description = faker.lorem.paragraph(2);
 	const location = `Room ${faker.address.buildingNumber()}`;
-	const image = faker.image.nature(640, 360, true);
-
+	const image = faker.image.technics();
 	const dateTime = faker.date.future(60);
 	const day =
 		dateTime.getDate() < 10
@@ -15,6 +14,7 @@ for (let i = 1; i <= 20; i += 1) {
 			: dateTime.getDate().toLocaleString();
 	const month = dateTime.toLocaleString("en-US", { month: "short" });
 	const time = dateTime.toLocaleTimeString();
+	const meetingUrl = "https://zoom.us/";
 
 	eventsMap.push({
 		id: i,
@@ -25,6 +25,7 @@ for (let i = 1; i <= 20; i += 1) {
 		time,
 		location,
 		image,
+		meetingUrl,
 	});
 }
 
