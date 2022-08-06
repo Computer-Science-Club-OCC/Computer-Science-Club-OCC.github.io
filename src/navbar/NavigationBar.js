@@ -133,7 +133,7 @@ function NavigationBar() {
 										to="/resources"
 										state={{ option: 2 }}
 									>
-										&gt; Research
+										&gt; Readings
 									</Link>
 									<Link
 										className="dropdown-link"
