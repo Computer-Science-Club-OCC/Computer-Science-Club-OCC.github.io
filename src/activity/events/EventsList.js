@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
-// import { PacmanLoader } from "react-spinners";
+import React, { useState, useEffect } from "react";
+import "photoswipe/dist/photoswipe.css";
+import { Gallery, Item } from "react-photoswipe-gallery";
 import { eventsMap as eventsList } from "../fakeData";
 import "./events.css";
 
@@ -12,28 +13,8 @@ function EventsList() {
 }
 export default EventsList;
 
+// Before Collapsed Components
 function EventDate(month, date) {
-	// const [isMobile, setIsMobile] = useState(false);
-	// const [screenSize, getDimension] = useState({
-	// 	dynamicWidth: window.innerWidth,
-	// });
-
-	// const setDimension = () => {
-	// 	getDimension({ dynamicWidth: window.innerWidth });
-	// };
-
-	// useEffect(() => {
-	// 	window.addEventListener("resize", setDimension);
-	// 	if (screenSize.dynamicWidth <= 630) {
-	// 		setIsMobile(true);
-	// 	} else {
-	// 		setIsMobile(false);
-	// 	}
-	// 	return () => {
-	// 		window.removeEventListener("resize", setDimension);
-	// 	};
-	// });
-	// <div className={!isMobile ? "event-date" : "event-date responsive"}>
 	return (
 		<div className="event-date">
 			<p id="month">{month}</p>
@@ -52,50 +33,66 @@ function EventHeader(title, time, location) {
 	);
 }
 
-function EventDetails(description, image, meetingUrl) {
+// Collapsed Contents
+function EventDetails(description, meetingUrl) {
 	return (
-		<div className="event-expand">
-			<div className="details">
-				<p>👨‍🔬{description}</p>
-				<p>🔥{description}</p>
-				<p>☄️{description}</p>
-				<p>
-					👉 Zoom link:
-					<a id="meeting-link" href={meetingUrl}>
-						{meetingUrl}
-					</a>
-				</p>
-				<p>🥳🥳🥳 Check out our posters!!!</p>
-			</div>
-			<ul className="poster-list">
-				<li>
-					<input className="poster-img" type="image" src={image} alt="text" />
-				</li>
-				<li>
-					<input className="poster-img" type="image" src={image} alt="text" />
-				</li>
-			</ul>
+		<div className="details">
+			<p>👨‍🔬{description}</p>
+			<p>🔥{description}</p>
+			<p>☄️{description}</p>
+			<p>
+				👉 Zoom link:
+				<a id="meeting-link" href={meetingUrl}>
+					{meetingUrl}
+				</a>
+			</p>
+			<p>🥳🥳🥳 Check out our posters!!!</p>
 		</div>
 	);
 }
 
+function EventPosters(posterImages) {
+	const images = posterImages;
+	return (
+		<Gallery>
+			<div className="poster-list">
+				{images.map(image => {
+					return (
+						<Item
+							original={image}
+							thumbnail={image}
+							width="1068"
+							height="1068"
+							alt="poster-img"
+						>
+							{({ ref, open }) => (
+								<input
+									className="poster-img"
+									type="image"
+									ref={ref}
+									onClick={open}
+									src={image}
+									alt="poster"
+								/>
+							)}
+						</Item>
+					);
+				})}
+			</div>
+		</Gallery>
+	);
+}
+
+// Render List
 function ListEvents() {
 	const [isCollapse, setCollapse] = useState({});
-	// const [isLoading, setLoading] = useState(false);
 
 	function handleCollapse(id) {
 		setCollapse(prevCollapsed => ({
 			...prevCollapsed,
 			[id]: !prevCollapsed[id],
 		}));
-		// setLoading(true);
 	}
-
-	// useEffect(() => {
-	// 	setTimeout(() => {
-	// 		setLoading(false);
-	// 	}, 1500);
-	// }, [isCollapse]);
 
 	return eventsList.map(singleEvent => {
 		return (
@@ -111,17 +108,15 @@ function ListEvents() {
 						<button
 							type="button"
 							onClick={() => handleCollapse(singleEvent.id)}
-						>
-							{/* <ArrowDropDown color="success" fontSize="large"/> */}
-						</button>
+						/>
 					</div>
 				</div>
-				{isCollapse[singleEvent.id] &&
-					EventDetails(
-						singleEvent.description,
-						singleEvent.image,
-						singleEvent.meetingUrl,
-					)}
+				{isCollapse[singleEvent.id] && (
+					<div className="event-expand">
+						{EventDetails(singleEvent.description, singleEvent.meetingUrl)}
+						{EventPosters(singleEvent.images)}
+					</div>
+				)}
 			</div>
 		);
 	});

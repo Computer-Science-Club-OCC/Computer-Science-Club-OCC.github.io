@@ -6,7 +6,11 @@ for (let i = 1; i <= 20; i += 1) {
 	const title = faker.company.catchPhrase();
 	const description = faker.lorem.paragraph(2);
 	const location = `Room ${faker.address.buildingNumber()}`;
-	const image = faker.image.technics();
+	const images = [
+		faker.image.nature(),
+		faker.image.technics(),
+		faker.image.nightlife(),
+	];
 	const dateTime = faker.date.future(60);
 	const day =
 		dateTime.getDate() < 10
@@ -24,7 +28,7 @@ for (let i = 1; i <= 20; i += 1) {
 		month,
 		time,
 		location,
-		image,
+		images,
 		meetingUrl,
 	});
 }

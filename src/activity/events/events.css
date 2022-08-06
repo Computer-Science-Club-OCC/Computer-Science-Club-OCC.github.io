@@ -160,20 +160,16 @@
 }
 
 .poster-list {
-	display: flex;
-	flex-direction: row;
-	margin: auto;
-}
-.poster-list li {
 	display: inline-flex;
-	list-style: none;
-	margin: 1rem;
-	border: none;
+	flex-direction: row;
+	margin: auto 10px;
 }
 
 .poster-img {
 	width: 150px;
 	height: 150px;
+	margin: auto 10px;
+	object-fit: cover;
 	border-radius: 10px;
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
 }
@@ -189,21 +185,6 @@
 
 /* Responsive feature*/
 @media only screen and (max-width: 700px) {
-	.event-date {
-		display: flex;
-		margin: auto 20px;
-		justify-content: center !important;
-		border-radius: 5px;
-	}
-
-	.event-date #month {
-		font-size: 20px;
-	}
-
-	.event-date #day {
-		font-size: 20px;
-	}
-
 	.event-info {
 		margin-left: 0px;
 		margin-right: 20px;
