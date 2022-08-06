@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import "./resources.css";
 import Tutorials from "./Tutorials";
-import Research from "./Research";
+import Readings from "./Readings";
 import Organizations from "./Organizations";
 
 function Resources() {
@@ -52,42 +52,28 @@ function Tab() {
 					Organizations
 				</button>
 			</div>
+
 			<div className="resources-contents">
 				<div
 					className={
 						tabState === 1 ? "resources-content active" : "resources-content"
 					}
 				>
-					<h2>Tutorials</h2>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-						ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-						aliquip ex ea commodo consequat.
-					</p>
+					<Tutorials />
 				</div>
-
 				<div
 					className={
 						tabState === 2 ? "resources-content active" : "resources-content"
 					}
 				>
-					<h2>Readings</h2>
-					<p>Something about Early Research Scholars Programs.</p>
+					<Readings />
 				</div>
-
 				<div
 					className={
 						tabState === 3 ? "resources-content active" : "resources-content"
 					}
 				>
-					<h2>Organizations</h2>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-						ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-						aliquip ex ea commodo consequat.
-					</p>
+					<Organizations />
 				</div>
 			</div>
 		</>
