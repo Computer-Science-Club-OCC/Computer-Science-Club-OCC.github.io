@@ -63,14 +63,6 @@ function NavigationBar() {
 							}
 						>
 							<div className="dropdown">
-								<Link
-									className={
-										isMobile ? "navbar-link nav-responsive-link" : "navbar-link"
-									}
-									to="/homepage"
-								>
-									Home
-								</Link>
 								<div className="dropdown-content">
 									<Link className="dropdown-link" to="/about">
 										&gt; About
@@ -79,6 +71,14 @@ function NavigationBar() {
 										&gt; Opportunity
 									</Link>
 								</div>
+								<Link
+									className={
+										isMobile ? "navbar-link nav-responsive-link" : "navbar-link"
+									}
+									to="/homepage"
+								>
+									Home
+								</Link>
 							</div>
 						</li>
 						<li
@@ -87,14 +87,6 @@ function NavigationBar() {
 							}
 						>
 							<div className="dropdown">
-								<Link
-									className={
-										isMobile ? "navbar-link nav-responsive-link" : "navbar-link"
-									}
-									to="/activity"
-								>
-									Activity
-								</Link>
 								<div className="dropdown-content">
 									<Link className="dropdown-link" to="/activity/events">
 										&gt; Events
@@ -103,6 +95,14 @@ function NavigationBar() {
 										&gt; Projects
 									</Link>
 								</div>
+								<Link
+									className={
+										isMobile ? "navbar-link nav-responsive-link" : "navbar-link"
+									}
+									to="/activity"
+								>
+									Activity
+								</Link>
 							</div>
 						</li>
 						<li
@@ -111,16 +111,8 @@ function NavigationBar() {
 							}
 						>
 							<div className="dropdown">
-								<Link
-									className={
-										isMobile ? "navbar-link nav-responsive-link" : "navbar-link"
-									}
-									to="/resources"
-									state={{ option: 1 }}
-								>
-									Resources
-								</Link>
 								<div className="dropdown-content">
+									<div className="header" />
 									<Link
 										className="dropdown-link"
 										to="/resources"
@@ -143,6 +135,15 @@ function NavigationBar() {
 										&gt; Organizations
 									</Link>
 								</div>
+								<Link
+									className={
+										isMobile ? "navbar-link nav-responsive-link" : "navbar-link"
+									}
+									to="/resources"
+									state={{ option: 1 }}
+								>
+									Resources
+								</Link>
 							</div>
 						</li>
 					</ul>

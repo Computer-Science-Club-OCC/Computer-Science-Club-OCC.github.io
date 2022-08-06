@@ -108,17 +108,20 @@
 	border-radius: 4px;
 }
 
+
 /* <div> dropdown box */
 .dropdown-content {
 	display: none;
 	position: absolute;
 	background-color: #fff;
-	margin: 10px;
+	border-top: 5px solid rgb(190, 114, 0);
 	margin-top: 16px;
-	width: inherit;
+	width: 401px;
+	right: 0;
 	min-width: 8rem;
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	z-index: 1;
+	transform: translateY(28px);
 }
 
 /* <Link> */
@@ -130,6 +133,7 @@
 	display: block;
 }
 
+
 /* <Link> */
 .dropdown-link:hover {
 	color: #fff;
@@ -140,6 +144,8 @@
 .dropdown:hover .dropdown-content {
 	display: block;
 }
+
+
 /* End of Navbar Component Section */
 
 .nav-toggle-icons {
@@ -148,3 +154,16 @@
 	right: 4%;
 	z-index: 20;
 }
+
+.dropdown:hover .dropdown-content + .navbar-link, .navbar-link:hover {
+	color: #fff;
+	background-color: rgb(190, 114, 0);
+	transition: 0.3s background-color ease-out;
+	border-radius: 4px;
+  }
+/*
+.header {
+	background-color: red;
+	border: 5px solid rgb(190, 114, 0);
+}
+*/
