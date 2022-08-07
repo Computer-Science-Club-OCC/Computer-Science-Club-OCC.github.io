@@ -36,6 +36,15 @@
 	justify-content: center;
 }
 
+@keyframes expanding {
+	0% {
+		height: 0;
+	}
+	100% {
+		height: 100%;
+	}
+}
+
 .event {
 	display: inline-flexbox;
 	max-width: 800px;
@@ -48,6 +57,10 @@
 	box-shadow: 0px 10px 10px 0px rgb(0, 0, 0, 0.8);
 	background-color: #3a414a;
 	transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.event #expanding {
+	animation: all expanding 1s ease-in-out;
 }
 
 .event:hover {
@@ -71,9 +84,9 @@
 	color: white;
 	font-weight: normal;
 	background-color: #21262d;
-	border: 2px solid rgb(56, 142, 60);
+	border: 2px solid rgb(33, 150, 243);
 	border-radius: 10px;
-	box-shadow: 0 0 10px rgba(56, 142, 60, 0.6);
+	box-shadow: 0 0 10px rgba(33, 150, 243, 0.6);
 }
 
 .event-date p {
@@ -101,22 +114,25 @@
 }
 
 .event-info #title {
-	margin: 0.5rem 0 1rem 0;
-	padding: 0;
+	margin: 0.2rem 0 10px 0;
+	padding: 5px 0.75rem;
 	color: white;
 	font-size: 2.5vh;
+	font-family: "Times New Roman", Times, serif;
 	font-size-adjust: inherit;
 	font-weight: bold;
+	border-radius: 8px;
+	background-color: #21262d;
 }
 
 .event-info #important {
 	display: inline-block;
-	margin: 5px 10px;
-	padding: 3px 10px;
-	font-size: 16px;
-	color: black;
+	margin: 0px 20px 5px 0;
+	padding: 5px 10px;
+	font-size: 18px;
+	color: white;
 	border-radius: 5px;
-	background-color: white;
+	background-color: #21262d;
 }
 
 /* Expand button */
@@ -136,7 +152,22 @@
 	border: 0;
 	border-radius: 50%;
 	cursor: pointer;
+	color: #ffa611;
 	background-color: #21262d;
+}
+
+#open {
+	transition: 0.5s;
+	transform: rotate(-180deg);
+}
+
+#closed {
+	transition: 0.5s;
+	transform: rotate(0deg);
+}
+
+.expand-button button:hover {
+	border: 3px solid #ffa611;
 }
 
 /* Expand content */
@@ -147,19 +178,18 @@
 	color: white;
 	background-color: #21262d;
 	border-radius: 10px;
-	transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .event-expand .details {
-	padding: 0.5rem 1rem;
+	padding: 0 1rem;
 }
 
-#meeting-link {
+.event-expand #meeting-link {
 	text-decoration: none;
 	color: #2d8cff;
 }
 
-.poster-list {
+.event-expand #poster-list {
 	display: inline-flex;
 	flex-direction: row;
 	margin: auto 10px;

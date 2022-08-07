@@ -1,19 +1,13 @@
-import React, { useState, useEffect } from "react";
-import "photoswipe/dist/photoswipe.css";
+import { useState, useEffect } from "react";
+// import { PacmanLoader } from "react-spinners";
+import { IconButton, Tooltip } from "@mui/material";
+import { KeyboardArrowDown } from "@mui/icons-material";
 import { Gallery, Item } from "react-photoswipe-gallery";
 import { eventsMap as eventsList } from "../fakeData";
 import "./events.css";
+import "photoswipe/dist/photoswipe.css";
 
-function EventsList() {
-	return (
-		<div className="events-list">
-			<ListEvents />
-		</div>
-	);
-}
-export default EventsList;
-
-// Before Collapsed Components
+// Before expanding components
 function EventDate(month, date) {
 	return (
 		<div className="event-date">
@@ -33,7 +27,7 @@ function EventHeader(title, time, location) {
 	);
 }
 
-// Collapsed Contents
+// Expanded Contents
 function EventDetails(description, meetingUrl) {
 	return (
 		<div className="details">
@@ -83,41 +77,65 @@ function EventPosters(posterImages) {
 	);
 }
 
-// Render List
-function ListEvents() {
-	const [isCollapse, setCollapse] = useState({});
+function ExpandButton(buttonState, isExpanded) {
+	return (
+		<div className="expand-button">
+			<Tooltip
+				title={!isExpanded ? "expand" : "collapse"}
+				fontSize="large"
+				placement="top"
+				sx={{ fontSize: "16px" }}
+				arrow
+			>
+				<IconButton type="button" onClick={buttonState}>
+					<KeyboardArrowDown
+						id={isExpanded ? "open" : "closed"}
+						fontSize="large"
+					/>
+				</IconButton>
+			</Tooltip>
+		</div>
+	);
+}
 
-	function handleCollapse(id) {
-		setCollapse(prevCollapsed => ({
-			...prevCollapsed,
-			[id]: !prevCollapsed[id],
+// Render List
+function EventsList() {
+	const [isExpanded, setExpand] = useState({});
+
+	function handleExpansion(id) {
+		setExpand(prevExpanded => ({
+			...prevExpanded,
+			[id]: !prevExpanded[id],
 		}));
 	}
 
-	return eventsList.map(singleEvent => {
-		return (
-			<div tabIndex={singleEvent.id} role="button" className="event">
-				<div className="event-header">
-					{EventDate(singleEvent.month, singleEvent.day)}
-					{EventHeader(
-						singleEvent.title,
-						singleEvent.time,
-						singleEvent.location,
-					)}
-					<div className="expand-button">
-						<button
-							type="button"
-							onClick={() => handleCollapse(singleEvent.id)}
-						/>
+	return (
+		<div className="events-list">
+			{eventsList.map(singleEvent => {
+				return (
+					<div tabIndex={singleEvent.id} role="button" className="event">
+						<div className="event-header">
+							{EventDate(singleEvent.month, singleEvent.day)}
+							{EventHeader(
+								singleEvent.title,
+								singleEvent.time,
+								singleEvent.location,
+							)}
+							{ExpandButton(
+								() => handleExpansion(singleEvent.id),
+								isExpanded[singleEvent.id],
+							)}
+						</div>
+						{isExpanded[singleEvent.id] && (
+							<div className="event-expand">
+								{EventDetails(singleEvent.description, singleEvent.meetingUrl)}
+								{EventPosters(singleEvent.images)}
+							</div>
+						)}
 					</div>
-				</div>
-				{isCollapse[singleEvent.id] && (
-					<div className="event-expand">
-						{EventDetails(singleEvent.description, singleEvent.meetingUrl)}
-						{EventPosters(singleEvent.images)}
-					</div>
-				)}
-			</div>
-		);
-	});
+				);
+			})}
+		</div>
+	);
 }
+export default EventsList;
