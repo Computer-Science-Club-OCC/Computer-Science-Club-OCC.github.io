@@ -89,8 +89,9 @@ function ExpandButton(buttonState, isExpanded) {
 			>
 				<IconButton type="button" onClick={buttonState}>
 					<KeyboardArrowDown
-						id={isExpanded ? "open" : "closed"}
+						className="expand-icon"
 						fontSize="large"
+						id={isExpanded ? "open" : "closed"}
 					/>
 				</IconButton>
 			</Tooltip>
@@ -126,12 +127,13 @@ function EventsList() {
 								isExpanded[singleEvent.id],
 							)}
 						</div>
-						{isExpanded[singleEvent.id] && (
-							<div className="event-expand">
-								{EventDetails(singleEvent.description, singleEvent.meetingUrl)}
-								{EventPosters(singleEvent.images)}
-							</div>
-						)}
+						<div
+							className="event-expand"
+							id={isExpanded[singleEvent.id] ? "expanded" : "collapsed"}
+						>
+							{EventDetails(singleEvent.description, singleEvent.meetingUrl)}
+							{EventPosters(singleEvent.images)}
+						</div>
 					</div>
 				);
 			})}

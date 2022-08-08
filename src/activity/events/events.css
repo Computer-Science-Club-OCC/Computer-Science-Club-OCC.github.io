@@ -48,6 +48,7 @@
 .event {
 	display: inline-flexbox;
 	max-width: 800px;
+	height: auto;
 	width: 90%;
 	padding: 5px;
 	margin: 20px auto 40px auto;
@@ -57,10 +58,6 @@
 	box-shadow: 0px 10px 10px 0px rgb(0, 0, 0, 0.8);
 	background-color: #3a414a;
 	transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.event #expanding {
-	animation: all expanding 1s ease-in-out;
 }
 
 .event:hover {
@@ -114,20 +111,19 @@
 }
 
 .event-info #title {
-	margin: 0.2rem 0 10px 0;
-	padding: 5px 0.75rem;
+	margin: 0.1rem 0 10px 0;
+	padding: 0.5rem 0.75rem;
 	color: white;
 	font-size: 2.5vh;
-	font-family: "Times New Roman", Times, serif;
 	font-size-adjust: inherit;
 	font-weight: bold;
-	border-radius: 8px;
+	border-radius: 5px;
 	background-color: #21262d;
 }
 
 .event-info #important {
 	display: inline-block;
-	margin: 0px 20px 5px 0;
+	margin: 5px 20px 5px 0;
 	padding: 5px 10px;
 	font-size: 18px;
 	color: white;
@@ -157,12 +153,12 @@
 }
 
 #open {
-	transition: 0.5s;
+	transition: all 0.5s;
 	transform: rotate(-180deg);
 }
 
 #closed {
-	transition: 0.5s;
+	transition: all 0.5s;
 	transform: rotate(0deg);
 }
 
@@ -172,12 +168,24 @@
 
 /* Expand content */
 .event-expand {
-	margin: 0.5rem 1.5rem 2rem 1.5rem;
-	padding: 1.5rem;
 	font-size: 18px;
 	color: white;
 	background-color: #21262d;
 	border-radius: 10px;
+	overflow: hidden;
+	transition: all 0.5s;
+}
+
+#expanded {
+	max-height: 800px;
+	margin: 0.5rem 1.5rem 2rem 1.5rem;
+	padding: 1.5rem;
+}
+
+#collapsed {
+	max-height: 0;
+	margin: 0 1.5rem;
+	padding: 0px 1.5rem;
 }
 
 .event-expand .details {
