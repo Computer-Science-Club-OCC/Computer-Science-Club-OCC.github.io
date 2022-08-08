@@ -9,7 +9,7 @@ for (let i = 1; i <= 20; i += 1) {
 	const images = [
 		faker.image.nature(),
 		faker.image.technics(),
-		faker.image.nightlife(),
+		faker.image.animals(),
 	];
 	const dateTime = faker.date.future(60);
 	const day =

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 // import { PacmanLoader } from "react-spinners";
 import { IconButton, Tooltip } from "@mui/material";
 import { KeyboardArrowDown } from "@mui/icons-material";
@@ -21,8 +21,10 @@ function EventHeader(title, time, location) {
 	return (
 		<div className="event-info">
 			<h3 id="title">{title}</h3>
-			<p id="important">Time: {time}</p>
-			<p id="important">Location: {location}</p>
+			<div className="timeplace">
+				<p>Time: {time}</p>
+				<p>Location: {location}</p>
+			</div>
 		</div>
 	);
 }

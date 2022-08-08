@@ -25,7 +25,7 @@
 	background-color: #21262d;
 	border-radius: 20px;
 	border: 4px solid rgb(255, 165, 0);
-	box-shadow: 0 10px 10px 0px rgba(255, 165, 0, 0.6);
+	box-shadow: 0 0px 10px 0px rgba(255, 165, 0, 0.6);
 }
 
 /* Events List */
@@ -82,7 +82,7 @@
 	font-weight: normal;
 	background-color: #21262d;
 	border: 2px solid rgb(33, 150, 243);
-	border-radius: 10px;
+	border-radius: 20px;
 	box-shadow: 0 0 10px rgba(33, 150, 243, 0.6);
 }
 
@@ -111,24 +111,31 @@
 }
 
 .event-info #title {
-	margin: 0.1rem 0 10px 0;
+	margin: 0 0 10px 0;
 	padding: 0.5rem 0.75rem;
 	color: white;
 	font-size: 2.5vh;
 	font-size-adjust: inherit;
-	font-weight: bold;
-	border-radius: 5px;
+	font-weight: normal;
+	color: white;
 	background-color: #21262d;
+	border-radius: 15px;
+	border: 2px solid rgb(33, 150, 243);
+	box-shadow: 0 0 10px rgba(33, 150, 243, 0.6);
 }
 
-.event-info #important {
-	display: inline-block;
-	margin: 5px 20px 5px 0;
-	padding: 5px 10px;
-	font-size: 18px;
+.timeplace {
+	display: flex;
+	min-height: 36px;
+}
+
+.timeplace p {
+	margin: 5px;
+	padding: 4px 10px;
 	color: white;
-	border-radius: 5px;
 	background-color: #21262d;
+	border-radius: 10px;
+	vertical-align: middle;
 }
 
 /* Expand button */
@@ -221,13 +228,87 @@
 	background-color: white;
 }
 
-/* Responsive feature*/
-@media only screen and (max-width: 700px) {
-	.event-info {
-		margin-left: 0px;
-		margin-right: 20px;
+/* Responsive features*/
+@media only screen and (max-width: 800px) {
+	.events-header {
+		max-width: 360px;
 	}
+	.events-header h1 {
+		margin: 10px auto;
+		font-size: 24px;
+		border: 3px solid #ffa611;
+	}
+	.event {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.event-date {
+		display: flex;
+		margin: 10px auto;
+		max-width: 480px;
+		width: 100%;
+		height: 30px;
+		border: 0;
+		box-shadow: none;
+	}
+
+	.event-date #month {
+		padding: 0px;
+		font-size: 16px;
+	}
+
+	.event-date #day {
+		font-size: 16px;
+	}
+
+	.event-info {
+		display: flex;
+		flex-direction: column;
+		margin: 10px auto;
+		max-width: 480px;
+		width: 100%;
+		padding: 0;
+	}
+
 	.event-info #title {
+		margin: 5px auto;
+		max-width: 480px;
+		text-align: center;
+		padding: 10px 0;
+		width: 100%;
+		font-size: 18px;
+		font-weight: normal;
+		color: white;
 		background-color: #21262d;
+	}
+
+	.timeplace {
+		justify-content: center;
+	}
+
+	.expand-button {
+		display: flex;
+		margin: auto;
+		max-width: 40px;
+		width: 100%;
+		height: 40px;
+	}
+
+	.expand-button button {
+		margin: auto;
+		width: 100%;
+		height: inherit;
+		border-radius: 50%;
+	}
+
+	.event-expand {
+		font-size: 14px;
+	}
+
+	.poster-img {
+		margin: 5px;
+		width: 48px;
+		height: 48px;
 	}
 }
