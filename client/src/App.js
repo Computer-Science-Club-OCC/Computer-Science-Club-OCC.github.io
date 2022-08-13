@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import Homepage from "./home/Homepage";
-import Activity from "./activity/Activity";
-import Events from "./activity/Events";
-import Projects from "./activity/Projects";
-import Resources from "./resources/Resources";
-import NavigationBar from "./navbar/NavigationBar";
+import Homepage from "./pages/home/Homepage";
+import Activity from "./pages/activity/Activity";
+import Events from "./pages/activity/Events";
+import Projects from "./pages/activity/Projects";
+import Resources from "./pages/resources/Resources";
+import NavigationBar from "./components/navbar/NavigationBar";
 
 function App() {
 	return (
