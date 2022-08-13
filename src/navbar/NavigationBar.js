@@ -91,7 +91,7 @@ function NavigationBar() {
 									className={
 										isMobile ? "navbar-link nav-responsive-link" : "navbar-link"
 									}
-									to="/activity"
+									to=""
 								>
 									Activity
 								</Link>
