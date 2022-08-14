@@ -15,8 +15,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build_test:
-
+  client:
     runs-on: ${{ matrix.os }}
     env:
       CI: false

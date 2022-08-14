@@ -3,7 +3,7 @@ import { useState } from "react";
 import { IconButton, Tooltip } from "@mui/material";
 import { KeyboardArrowDown } from "@mui/icons-material";
 import { Gallery, Item } from "react-photoswipe-gallery";
-import { eventsMap as eventsList } from "../fakeData";
+import { eventsMap as eventsList } from "./fakeDataEvent";
 import "./events.css";
 import "photoswipe/dist/photoswipe.css";
 
