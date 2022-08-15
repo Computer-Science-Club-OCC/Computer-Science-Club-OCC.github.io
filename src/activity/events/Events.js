@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import EventsList from "./EventsList";
+import EventPagination from "./pagination";
 import "./events.css";
 
 function Events() {
@@ -7,6 +8,7 @@ function Events() {
 		<div className="events-container">
 			<EventsHeader />
 			<EventsList />
+			<EventPagination />
 		</div>
 	);
 }

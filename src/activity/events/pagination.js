@@ -4,7 +4,7 @@ import { eventsMap } from "../fakeData";
 
 function EventPagination() {
 	const eventsList = eventsMap;
-	const defaultPageSize = 10;
+	const defaultPageSize = 5;
 	const [pagination, setPagination] = useState({
 		count: 0,
 		from: 0,
@@ -25,11 +25,13 @@ function EventPagination() {
 
 	return (
 		<Pagination
-			size="medium"
+			size="large"
 			count={Math.ceil(pagination.count / defaultPageSize)}
 			onChange={handlePageChange}
 			showFirstButton
 			showLastButton
+			color="primary"
+			variant="outlined"
 		/>
 	);
 }
