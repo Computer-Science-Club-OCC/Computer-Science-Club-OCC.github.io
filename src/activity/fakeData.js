@@ -2,7 +2,7 @@ import { faker } from "@faker-js/faker";
 
 const eventsMap = [];
 
-for (let i = 1; i <= 20; i += 1) {
+for (let i = 1; i <= 50; i += 1) {
 	const title = faker.company.catchPhrase();
 	const description = faker.lorem.paragraph(2);
 	const dateTime = faker.date.future(60);

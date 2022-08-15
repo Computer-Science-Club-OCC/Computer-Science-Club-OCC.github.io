@@ -7,6 +7,7 @@ function Events() {
 	return (
 		<div className="events-container">
 			<EventsHeader />
+			<EventPagination />
 			<EventsList />
 			<EventPagination />
 		</div>
