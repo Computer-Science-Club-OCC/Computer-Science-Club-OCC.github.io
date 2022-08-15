@@ -1,10 +1,10 @@
 import React from "react";
 import "./resources.css";
 
-function Tutorials() {
+function Readings() {
 	return (
 		<div>
-			<h2>Tutorials</h2>
+			<h2>Readings</h2>
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -15,4 +15,4 @@ function Tutorials() {
 	);
 }
 
-export default Tutorials;
+export default Readings;

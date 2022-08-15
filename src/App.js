@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Homepage from "./home/Homepage";
 import Activity from "./activity/Activity";
-import Events from "./activity/Events";
+import Events from "./activity/events/Events";
 import Projects from "./activity/Projects";
 import Resources from "./resources/Resources";
 import NavigationBar from "./navbar/NavigationBar";
