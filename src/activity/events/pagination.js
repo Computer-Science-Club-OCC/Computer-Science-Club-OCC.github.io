@@ -11,7 +11,7 @@ function EventPagination() {
 		to: defaultPageSize,
 	});
 
-	//TODO: call api services to get sliced eventsList & pagination attributes
+	// TODO: call api services to get sliced eventsList & pagination attributes
 
 	const handlePageChange = (event, page) => {
 		const from = (page - 1) * defaultPageSize;

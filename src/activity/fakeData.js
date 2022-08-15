@@ -6,7 +6,7 @@ for (let i = 1; i <= 50; i += 1) {
 	const title = faker.company.catchPhrase();
 	const description = faker.lorem.paragraph(2);
 	const dateTime = faker.date.future(60);
-	const day =
+	const date =
 		dateTime.getDate() < 10
 			? `0${dateTime.getDate().toLocaleString()}`
 			: dateTime.getDate().toLocaleString();
@@ -24,7 +24,7 @@ for (let i = 1; i <= 50; i += 1) {
 		id: i,
 		title,
 		description,
-		day,
+		date,
 		month,
 		time,
 		location,
