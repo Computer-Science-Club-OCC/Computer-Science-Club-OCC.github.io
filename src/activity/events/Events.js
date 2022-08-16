@@ -5,9 +5,8 @@ import EventShort from "./components/EventShort";
 import EventDetails from "./components/EventDetails";
 import EventPosters from "./components/EventPosters";
 import ExpandButton from "./components/ExpandButton";
-import { eventsMap as eventsList } from "../fakeData";
-import "./events.css";
 import EventPagination from "./components/Pagination";
+import "./events.css";
 
 const DEFAULT_PAGE = 1;
 
@@ -24,30 +23,30 @@ function Events() {
 		}));
 	}
 
-	const renderEvents = currentEvents.map(singleEvent => {
+	const renderEvents = currentEvents.map(event => {
 		return (
-			<div tabIndex={singleEvent.id} role="button" className="event">
+			<div tabIndex={event.id} role="button" className="event">
 				<div className="event-header">
-					<EventDate month={singleEvent.month} date={singleEvent.date} />
+					<EventDate month={event.month} date={event.date} />
 					<EventShort
-						title={singleEvent.title}
-						time={singleEvent.time}
-						location={singleEvent.location}
+						title={event.title}
+						time={event.time}
+						location={event.location}
 					/>
 					<ExpandButton
-						handleClick={() => handleExpansion(singleEvent.id)}
-						isExpanded={isExpanded[singleEvent.id]}
+						handleClick={() => handleExpansion(event.id)}
+						isExpanded={isExpanded[event.id]}
 					/>
 				</div>
 				<div
 					className="event-expand"
-					id={isExpanded[singleEvent.id] ? "expanded" : "collapsed"}
+					id={isExpanded[event.id] ? "expanded" : "collapsed"}
 				>
 					<EventDetails
-						description={singleEvent.description}
-						meetingUrl={singleEvent.meetingUrl}
+						description={event.description}
+						meetingUrl={event.meetingUrl}
 					/>
-					<EventPosters posterImages={singleEvent.images} />
+					<EventPosters posterImages={event.images} />
 				</div>
 			</div>
 		);

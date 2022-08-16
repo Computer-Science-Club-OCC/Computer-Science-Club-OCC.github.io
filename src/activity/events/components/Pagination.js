@@ -42,6 +42,11 @@ function EventPagination({ setEvents, setPage, page }) {
 				showLastButton
 				color="primary"
 				shape="rounded"
+				sx={{
+					".MuiPaginationItem-root": {
+						color: "#fff",
+					},
+				}}
 			/>
 		</Box>
 	);
