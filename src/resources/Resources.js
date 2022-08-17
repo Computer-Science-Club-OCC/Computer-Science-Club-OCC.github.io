@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./resources.css";
 import Tutorials from "./Tutorials";
 import Readings from "./Readings";

@@ -1,8 +1,7 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+import { organizationsMap } from "./fakeData";
 import "./resources.css";
-
-const fakeData = require("./fakeData");
 
 // tags is currently unused
 function ToggleItem({ id, title, description, url, tags }) {
@@ -45,7 +44,7 @@ ToggleItem.propTypes = {
 function Organizations() {
 	return (
 		<ul className="resource-list">
-			{fakeData.organizationsMap.map(org => (
+			{organizationsMap.map(org => (
 				<ToggleItem
 					key={org.id}
 					id={org.id}

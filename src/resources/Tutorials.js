@@ -1,9 +1,8 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import Youtube from "react-youtube";
+import { tutorialsMap } from "./fakeData";
 import "./resources.css";
-
-const fakeData = require("./fakeData");
 
 // tags is currently unused
 function ToggleItem({ id, title, description, url, tags }) {
@@ -46,7 +45,7 @@ ToggleItem.propTypes = {
 function Tutorials() {
 	return (
 		<ul className="resource-list">
-			{fakeData.tutorialsMap.map(tutorial => (
+			{tutorialsMap.map(tutorial => (
 				<ToggleItem
 					key={tutorial.id}
 					id={tutorial.id}

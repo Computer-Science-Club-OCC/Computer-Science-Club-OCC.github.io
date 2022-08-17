@@ -1,8 +1,7 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+import { readingsMap } from "./fakeData";
 import "./resources.css";
-
-const fakeData = require("./fakeData");
 
 // tags is currently unused
 function ToggleItem({ id, title, publicationDate, description, url, tags }) {
@@ -50,7 +49,7 @@ ToggleItem.propTypes = {
 function Readings() {
 	return (
 		<div>
-			{fakeData.readingsMap.map(reading => {
+			{readingsMap.map(reading => {
 				return (
 					<ToggleItem
 						key={reading.id}
