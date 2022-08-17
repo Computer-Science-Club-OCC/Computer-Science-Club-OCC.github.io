@@ -1,0 +1,88 @@
+.home-container {
+	background: #dfdfdf;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 100px;
+	padding: 32px 0;
+	max-width: 100%;
+}
+
+.home-club_logo {
+	width: 200px;
+	height: 200px;
+	margin: 0.2rem;
+	border-radius: 50%;
+	-moz-border-radius: 50%;
+	-o-border-image-radius: 50%;
+}
+
+.home-button {
+	display: flex;
+	align-items: center;
+	padding: 16px 32px;
+	height: 32px;
+	max-width: 100px;
+	background: rgb(40, 40, 40);
+	color: white;
+	border: 2px solid rgb(40, 40, 40);
+	border-radius: 10px;
+}
+
+.home-button:hover {
+	background: white;
+	color: rgb(40, 40, 40);
+}
+
+.home-right_side {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	letter-spacing: 0.2rem;
+}
+
+.home-left_side {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+}
+
+.home-right_side h1 {
+	font-size: 52px;
+	margin-bottom: 0;
+}
+
+.home-right_side h3 {
+	font-size: 24px;
+	margin-top: 0;
+}
+
+.home-hero_text {
+	color: rgb(55, 113, 155);
+}
+
+.home-occ_text {
+	color: #ff9617;
+}
+
+@media screen and (max-width: 400px) {
+	.home-container {
+		gap: 20px;
+		padding: 24px 0px;
+	}
+
+	.home-club_logo {
+		width: 100px;
+		height: 100px;
+	}
+
+	.home-right_side h1 {
+		font-size: 32px;
+	}
+
+	.home-right_side h3 {
+		font-size: 16px;
+	}
+}
