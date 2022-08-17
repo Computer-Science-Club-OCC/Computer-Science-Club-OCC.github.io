@@ -101,7 +101,7 @@
 .resource-list-title {
 	position: relative;
 	text-align: left;
-	padding: 1rem 0.75rem 1rem 0.75rem;
+	padding: 1rem 0.75rem;
 	color: white;
 	background-color: transparent;
 	font-size: min(4vw, 1.3rem);
@@ -134,7 +134,7 @@
 .resource-list-description.active {
 	max-height: 50rem; /* Large number that the height should never reach */
 	opacity: 1;
-	padding: 1rem 0.75rem 1rem 0.75rem;
+	padding: 1rem 0.75rem;
 	animation: growDown 300ms ease-in-out forwards;
 }
 
