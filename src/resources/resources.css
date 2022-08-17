@@ -16,9 +16,9 @@
 	display: flex;
 	flex-direction: column;
 	margin: auto;
-	margin-top: 6rem;
+	margin-top: 5.5%;
 	width: 80%;
-	min-height: 75rem;
+	max-width: 75rem; /* Prevent too much stretching */
 	height: auto;
 	z-index: 3;
 }
@@ -40,7 +40,7 @@
 	flex-grow: 1;
 	background: transparent;
 	color: #fff;
-	font-size: 22px;
+	font-size: min(4vw, 22px);
 	font-weight: bold;
 	cursor: pointer;
 	text-decoration: none;
@@ -69,10 +69,9 @@
 
 .resources-content {
 	color: white;
-	padding: 2rem 3rem 2rem 3rem;
+	padding: 5% 5% 10% 5%;
 	display: none;
 	justify-content: center;
-	border-radius: 20px;
 	position: relative;
 	animation-name: arrivedContent;
 	animation-duration: 0.8s;
@@ -91,19 +90,22 @@
 .resource-list-item {
 	display: flex;
 	flex-direction: column;
-	padding-left: 0rem;
+	border-bottom: 2px solid #ccc;
+}
+
+.resource-list-item button {
+	padding-left: 0.5rem;
+	border: 0;
 }
 
 .resource-list-title {
 	position: relative;
 	text-align: left;
-	display: block;
-	padding: 2rem 0.75rem 2rem 0.75rem;
+	padding: 1rem 0.75rem 1rem 0.75rem;
 	color: white;
 	background-color: transparent;
-	border: 0;
-	border-bottom: 2px solid #ccc;
-	font: 1.3rem serif;
+	font-size: min(4vw, 1.3rem);
+	font-family: serif;
 	transition: all 300ms;
 }
 
@@ -113,9 +115,8 @@
 	text-decoration: none;
 }
 
-.resource-list-title-active {
+.resource-list-title.active {
 	background-color: #535353;
-	border-bottom: 0px;
 	transition: all 300ms;
 }
 
@@ -125,18 +126,20 @@
 	max-height: 0;
 	opacity: 0;
 	padding-left: 0.75rem;
-	white-space: pre-line; /* Enables newline characters in JSX */
+	font-size: min(4vw, 1.2rem);
 	transition: all 300ms ease; /* controls fade out */
 	transform-origin: top center; /* Content expands downward from top */
 }
 
-.resource-list-description-active {
+.resource-list-description.active {
 	max-height: 50rem; /* Large number that the height should never reach */
 	opacity: 1;
-	padding: 2rem 0.75rem 2rem 0.75rem;
+	padding: 1rem 0.75rem 1rem 0.75rem;
 	animation: growDown 300ms ease-in-out forwards;
-	border: 0;
-	border-bottom: 2px solid #ccc;
+}
+
+.resource-list-description p {
+	color: white; /* description text color */
 }
 
 @keyframes growDown {
