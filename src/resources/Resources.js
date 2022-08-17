@@ -14,7 +14,7 @@ function Resources() {
 export default Resources;
 
 // List of buttons
-const buttonsList = ["Tutorials", "Readings", "Organization"];
+const buttonsList = ["Tutorials", "Readings", "Organizations"];
 
 function renderButtons(toggleTab, tabState) {
 	return buttonsList.map(tabButton => {
