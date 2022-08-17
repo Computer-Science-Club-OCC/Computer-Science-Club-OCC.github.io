@@ -20,7 +20,7 @@ function ToggleItem({ id, title, description, url, tags }) {
 				{title}
 			</button>
 
-			<li
+			<div
 				className={`resource-list-description ${
 					showButton && "resource-list-description-active"
 				}`}
@@ -37,7 +37,7 @@ function ToggleItem({ id, title, description, url, tags }) {
 				</a>
 				{"\n\n"}
 				Tags: {tags.join(", ")}
-			</li>
+			</div>
 		</li>
 	);
 }

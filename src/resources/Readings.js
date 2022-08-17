@@ -20,7 +20,7 @@ function ToggleItem({ id, title, publicationDate, description, url, tags }) {
 				{title}
 			</button>
 
-			<li
+			<div
 				className={`resource-list-description ${
 					showButton && "resource-list-description-active"
 				}`}
@@ -39,7 +39,7 @@ function ToggleItem({ id, title, publicationDate, description, url, tags }) {
 				Publication date: {publicationDate}
 				{"\n"}
 				Tags: {tags.join(", ")}
-			</li>
+			</div>
 		</li>
 	);
 }
@@ -59,6 +59,7 @@ function Readings() {
 			{fakeData.readingsMap.map(reading => {
 				return (
 					<ToggleItem
+						key={reading.id}
 						id={reading.id}
 						title={reading.title}
 						publicationDate={reading.publicationDate}
