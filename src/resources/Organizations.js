@@ -12,21 +12,14 @@ function ToggleItem({ id, title, description, url, tags }) {
 		<li className="resource-list-item" key={id}>
 			<button
 				type="button"
-				className={`resource-list-title ${
-					showButton && "resource-list-title-active"
-				}`}
+				className={`resource-list-title ${showButton && "active"}`}
 				onClick={() => setShowButton(prevState => !prevState)}
 			>
 				{title}
 			</button>
 
-			<div
-				className={`resource-list-description ${
-					showButton && "resource-list-description-active"
-				}`}
-			>
-				{description}
-				{"\n\n"}
+			<div className={`resource-list-description ${showButton && "active"}`}>
+				<p>{description}</p>
 				<a
 					className="resource-link"
 					href={url}
@@ -35,8 +28,7 @@ function ToggleItem({ id, title, description, url, tags }) {
 				>
 					Learn more here. {/* Open link in new tab*/}
 				</a>
-				{"\n\n"}
-				Tags: {tags.join(", ")}
+				<p>Tags: {tags.join(", ")}</p>
 			</div>
 		</li>
 	);
