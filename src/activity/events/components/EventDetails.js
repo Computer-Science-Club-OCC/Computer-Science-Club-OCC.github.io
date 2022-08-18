@@ -3,10 +3,10 @@ import "../events.css";
 
 function EventDetails({ description, meetingUrl }) {
 	return (
-		<div className="details">
-			<p>👨‍🔬{description}</p>
-			<p>🔥{description}</p>
-			<p>☄️{description}</p>
+		<div className="event-details">
+			<p>👨‍🔬 {description}</p>
+			<p>🔥 {description}</p>
+			<p>☄️ {description}</p>
 			<p>
 				👉 Zoom link:
 				<a id="meeting-link" href={meetingUrl}>

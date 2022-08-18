@@ -11,8 +11,9 @@ function EventPosters({ posterImages }) {
 				{images.map(image => {
 					return (
 						<Item
-							original={image}
-							thumbnail={image}
+							key={image.id}
+							original={image.img}
+							thumbnail={image.img}
 							width="1068"
 							height="1068"
 							alt="poster-img"
@@ -23,7 +24,7 @@ function EventPosters({ posterImages }) {
 									type="image"
 									ref={ref}
 									onClick={open}
-									src={image}
+									src={image.img}
 									alt="poster"
 								/>
 							)}

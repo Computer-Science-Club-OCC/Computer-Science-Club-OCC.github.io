@@ -13,6 +13,6 @@ function EventDate({ month, date }) {
 export default EventDate;
 
 EventDate.propTypes = {
-	month: PropTypes.number.isRequired,
-	date: PropTypes.number.isRequired,
+	month: PropTypes.string.isRequired,
+	date: PropTypes.string.isRequired,
 };
