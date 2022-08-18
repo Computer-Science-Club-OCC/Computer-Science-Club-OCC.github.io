@@ -46,7 +46,6 @@
 }
 
 .event {
-	display: inline-flexbox;
 	max-width: 800px;
 	height: auto;
 	width: 90%;
@@ -74,8 +73,10 @@
 .event-date {
 	display: inline-block;
 	margin: 0.5rem;
+	padding: 0.2rem;
 	height: 80px;
-	width: 80px;
+	max-width: 80px;
+	width: 100%;
 	vertical-align: top;
 	text-align: center;
 	color: white;
@@ -141,6 +142,7 @@
 /* Expand button */
 .expand-button {
 	margin: 0.5rem;
+	padding: 0.2rem;
 	display: inline-flex;
 	height: 84px;
 	width: 84px;
@@ -228,19 +230,37 @@
 	background-color: white;
 }
 
-/* Responsive features*/
-@media only screen and (max-width: 800px) {
+/* Responsive on tablet*/
+@media only screen and (max-width: 960px) {
+	.event-header {
+		display: inline-flex;
+		width: 95%;
+	}
+
+	.expand-button {
+		max-width: 84px;
+		width: 100%;
+	}
+} 
+
+/* Responsive on mobile*/
+@media only screen and  (max-width: 680px) {
 	.events-header {
 		max-width: 360px;
 	}
 	.events-header h1 {
-		margin: 10px auto;
+		margin: 10px;
 		font-size: 24px;
 		border: 3px solid #ffa611;
 	}
 	.event {
 		display: flex;
 		flex-direction: column;
+	}
+
+	.event-header {
+		display: block;
+		width: 90%;
 	}
 
 	.event-date {
@@ -286,12 +306,11 @@
 	.timeplace {
 		justify-content: center;
 	}
-
+	
 	.expand-button {
 		display: flex;
-		margin: auto;
-		max-width: 40px;
-		width: 100%;
+		margin: 10px auto;
+		width: 40px;
 		height: 40px;
 	}
 
