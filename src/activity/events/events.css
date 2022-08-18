@@ -241,10 +241,10 @@
 		max-width: 84px;
 		width: 100%;
 	}
-} 
+}
 
 /* Responsive on mobile*/
-@media only screen and  (max-width: 680px) {
+@media only screen and (max-width: 680px) {
 	.events-header {
 		max-width: 360px;
 	}
@@ -306,7 +306,7 @@
 	.timeplace {
 		justify-content: center;
 	}
-	
+
 	.expand-button {
 		display: flex;
 		margin: 10px auto;
