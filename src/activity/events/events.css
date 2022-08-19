@@ -116,7 +116,6 @@
 	padding: 0.5rem 0.75rem;
 	color: white;
 	font-size: 2.5vh;
-	font-size-adjust: inherit;
 	font-weight: normal;
 	color: white;
 	background-color: #21262d;
@@ -207,14 +206,17 @@
 }
 
 .poster-list {
-	display: block;
+	display: grid;
+	grid-template-columns: min-content min-content min-content;
+	flex-wrap: wrap;
 	margin: auto 10px;
 }
 
 .poster-img {
 	max-width: 150px;
-	width: 100%;
-	height: auto;
+	max-height: 150px;
+	width: 10vw;
+	height: 10vw;
 	margin: 10px;
 	object-fit: cover;
 	border-radius: 10px;
@@ -228,6 +230,14 @@
 
 .poster-img:active {
 	background-color: white;
+}
+
+/* Pagination */
+.pagination-box {
+	display: flex;
+	margin: 10px 0;
+	justify-content: center;
+	align-items: center;
 }
 
 /* Responsive on tablet*/
@@ -323,11 +333,5 @@
 
 	.event-expand {
 		font-size: 16px;
-	}
-
-	.poster-img {
-		margin: 5px;
-		width: 48px;
-		height: 48px;
 	}
 }
