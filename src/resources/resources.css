@@ -16,9 +16,10 @@
 	display: flex;
 	flex-direction: column;
 	margin: auto;
-	margin-top: 6rem;
+	margin-top: 5.5%;
 	width: 80%;
-	height: 1000px;
+	max-width: 75rem; /* Prevent too much stretching */
+	height: auto;
 	z-index: 3;
 }
 
@@ -39,7 +40,7 @@
 	flex-grow: 1;
 	background: transparent;
 	color: #fff;
-	font-size: 22px;
+	font-size: min(4vw, 22px);
 	font-weight: bold;
 	cursor: pointer;
 	text-decoration: none;
@@ -68,10 +69,9 @@
 
 .resources-content {
 	color: white;
-	padding: 3rem 12% 2rem 12%;
+	padding: 5% 5% 10% 5%;
 	display: none;
 	justify-content: center;
-	border-radius: 20px;
 	position: relative;
 	animation-name: arrivedContent;
 	animation-duration: 0.8s;
@@ -81,9 +81,81 @@
 	display: block;
 }
 
+/* TODO: Add pagination css */
 .pagination-container {
 	margin: auto;
-	display: flex;
 }
 
-/* TODO: Add pagination css */
+/* List Buttons To Render Items from Database */
+.resource-list-item {
+	display: flex;
+	flex-direction: column;
+	border-bottom: 2px solid #ccc;
+}
+
+.resource-list-item button {
+	padding-left: 0.5rem;
+	border: 0;
+}
+
+.resource-list-title {
+	position: relative;
+	text-align: left;
+	padding: 1rem 0.75rem;
+	color: white;
+	background-color: transparent;
+	font-size: min(4vw, 1.3rem);
+	font-family: serif;
+	transition: all 300ms;
+}
+
+.resource-list-title:hover {
+	color: #ff9617;
+	z-index: 1;
+	text-decoration: none;
+}
+
+.resource-list-title.active {
+	background-color: #535353;
+	transition: all 300ms;
+}
+
+.resource-list-description {
+	list-style: none;
+	position: relative;
+	max-height: 0;
+	opacity: 0;
+	padding-left: 0.75rem;
+	font-size: min(4vw, 1.2rem);
+	transition: all 300ms ease; /* controls fade out */
+	transform-origin: top center; /* Content expands downward from top */
+}
+
+.resource-list-description.active {
+	max-height: 50rem; /* Large number that the height should never reach */
+	opacity: 1;
+	padding: 1rem 0.75rem;
+	animation: growDown 300ms ease-in-out forwards;
+}
+
+.resource-list-description p {
+	color: white; /* description text color */
+}
+
+@keyframes growDown {
+	0% {
+		transform: scaleY(0);
+	}
+	80% {
+		transform: scaleY(1.1); /* The bounce makes it look snappy */
+	}
+	100% {
+		transform: scaleY(1);
+	}
+}
+
+/* Formats links */
+a.resource-link {
+	color: #ff9617;
+	padding: 0em;
+}
