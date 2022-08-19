@@ -16,13 +16,11 @@ function EventPagination({ onPageChanged, page, pageSize, total }) {
 
 	useEffect(() => {
 		window.addEventListener("resize", setDimension);
-		if (screenSize.dynamicWidth >= 960) {
+		if (screenSize.dynamicWidth > 960) {
 			setPaginationSize("large");
-		}
-		if (screenSize.dynamicWidth < 960) {
+		} else if (screenSize.dynamicWidth > 640) {
 			setPaginationSize("medium");
-		}
-		if (screenSize.dynamicWidth < 640) {
+		} else {
 			setPaginationSize("small");
 		}
 		return () => {
