@@ -35,6 +35,7 @@ function EventPagination({ onPageChanged, page, pageSize, total }) {
 				count={Math.ceil(total / pageSize)}
 				page={page}
 				onChange={onPageChanged}
+				siblingCount={2}
 				showFirstButton
 				showLastButton
 				color="primary"
