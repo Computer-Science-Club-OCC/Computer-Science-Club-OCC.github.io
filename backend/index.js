@@ -1,26 +1,34 @@
 const express = require("express")
-const mongoose = require("mongoose")
-const bodyParser = require("body-parser")
 const app = express()
+const bodyParser = require("body-parser")
+const mongoose = require("mongoose")
+const multer = require("multer")
 const PORT = process.env.PORT || 8000
 require("dotenv/config")
 
-// Add your code here
+// Connect datbase and create collection
+mongoose
+    .connect(
+        process.env.DATABASE_URI,
+        { useNewUrlParser: true },
+        { useUnifyTopology: true },
+        () => console.log("Connected to datbase!")
+    )
+    .catch((error) => handleError(error))
+
+// User parsing middleware
+app.use(bodyParser.json())
+
 // Import Routes
-const eventsRoute = require("./routes/events")
-const projectsRoute = require("./routes/projects")
-const tutorialsRoute = require("./routes/tutorials")
-const readingsRoute = require("./routes/readings")
-const organizationsRoute = require("./routes/organizations")
+const eventsRoute = require("./routes/activity/events")
+const projectsRoute = require("./routes/activity/projects")
+const tutorialsRoute = require("./routes/resources/tutorials")
+const readingsRoute = require("./routes/resources/readings")
+const organizationsRoute = require("./routes/resources/organizations")
 
 // Use Routes
 
-// Test backend run
-app.get("/", (request, respond) => {
-    console.log(
-        `${request.protocol}://${request.get("host")}${request.originalUrl}`
-    )
-    respond.send("<h1>Backend is running!</h1>")
+// Run server
+app.listen(PORT, () => {
+    console.log(`Running backend server on: http://localhost:${PORT}`)
 })
-
-app.listen(PORT)
