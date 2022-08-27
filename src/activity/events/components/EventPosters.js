@@ -1,4 +1,4 @@
-import PropTypes, { string } from "prop-types";
+import PropTypes from "prop-types";
 import { Gallery, Item } from "react-photoswipe-gallery";
 import "photoswipe/dist/photoswipe.css";
 import "../events.css";
@@ -39,5 +39,10 @@ function EventPosters({ posterImages }) {
 export default EventPosters;
 
 EventPosters.propTypes = {
-	posterImages: PropTypes.arrayOf(PropTypes.instanceOf(Map)).isRequired,
+	posterImages: PropTypes.arrayOf(
+		PropTypes.shape({
+			id: PropTypes.string,
+			img: PropTypes.string,
+		}),
+	).isRequired,
 };
