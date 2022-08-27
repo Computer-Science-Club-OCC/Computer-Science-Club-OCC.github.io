@@ -1,9 +1,9 @@
 const mongoose = require("mongoose")
 const { Schema } = mongoose
-const ImageType = require("../image/Image")
+const ImageType = require("../../image/Image")
 
 // Add your code here
-const EventsSchema = new Schema({
+const EventSchema = new Schema({
     title: {
         type: String,
         required: true,
@@ -20,4 +20,4 @@ const EventsSchema = new Schema({
     image: [ImageType],
 })
 
-module.exports = mongoose.model("event_schema", EventsSchema)
+module.exports = mongoose.model("event_schema", EventSchema)
