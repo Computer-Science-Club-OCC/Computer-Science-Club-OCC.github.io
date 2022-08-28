@@ -56,7 +56,7 @@ function NavigationBar() {
 			</div>
 			{(isSwitch || !isMobile) && (
 				<div className={isMobile ? "navbar-nav nav-responsive" : "navbar-nav"}>
-					<ul className={isMobile && "nav-responsive-lists"}>
+					<ul className={isMobile ? "nav-responsive-lists" : ""}>
 						<li
 							className={
 								isMobile ? "navbar-item nav-responsive-nav-item" : "navbar-item"
