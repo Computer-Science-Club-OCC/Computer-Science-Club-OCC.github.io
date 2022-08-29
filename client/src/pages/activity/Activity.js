@@ -1,8 +1,5 @@
-import React, { useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import "./activity.css";
-import Events from "./events/Events";
-import Projects from "./Projects";
 
 function Activity() {
 	return (

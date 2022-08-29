@@ -1,7 +1,7 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { DensityMedium, Clear } from "@mui/icons-material";
-import ClubLogo from "../asset/images/club-logo.png";
+import ClubLogo from "../../asset/images/club-logo.png";
 import "./navbar.css";
 
 function NavigationBar() {
@@ -56,21 +56,16 @@ function NavigationBar() {
 			</div>
 			{(isSwitch || !isMobile) && (
 				<div className={isMobile ? "navbar-nav nav-responsive" : "navbar-nav"}>
-					<ul className={isMobile && "nav-responsive-lists"}>
+					<ul className={isMobile ? "nav-responsive-lists" : ""}>
 						<li
 							className={
 								isMobile ? "navbar-item nav-responsive-nav-item" : "navbar-item"
 							}
+							id={
+								isMobile ? "home nav-responsive-nav-item" : "home-navbar-item"
+							}
 						>
 							<div className="dropdown">
-								<Link
-									className={
-										isMobile ? "navbar-link nav-responsive-link" : "navbar-link"
-									}
-									to="/homepage"
-								>
-									Home
-								</Link>
 								<div className="dropdown-content">
 									<Link className="dropdown-link" to="/about">
 										&gt; About
@@ -79,22 +74,30 @@ function NavigationBar() {
 										&gt; Opportunity
 									</Link>
 								</div>
+								<Link
+									className={
+										isMobile ? "navbar-link nav-responsive-link" : "navbar-link"
+									}
+									id={
+										isMobile ? "home nav-responsive-link" : "home-navbar-link"
+									}
+									to="/homepage"
+								>
+									Home
+								</Link>
 							</div>
 						</li>
 						<li
 							className={
 								isMobile ? "navbar-item nav-responsive-nav-item" : "navbar-item"
 							}
+							id={
+								isMobile
+									? "activity nav-responsive-nav-item"
+									: "activity-navbar-item"
+							}
 						>
 							<div className="dropdown">
-								<Link
-									className={
-										isMobile ? "navbar-link nav-responsive-link" : "navbar-link"
-									}
-									to="/activity"
-								>
-									Activity
-								</Link>
 								<div className="dropdown-content">
 									<Link className="dropdown-link" to="/activity/events">
 										&gt; Events
@@ -103,23 +106,32 @@ function NavigationBar() {
 										&gt; Projects
 									</Link>
 								</div>
+								<Link
+									className={
+										isMobile ? "navbar-link nav-responsive-link" : "navbar-link"
+									}
+									id={
+										isMobile
+											? "activity nav-responsive-link"
+											: "activity-navbar-link"
+									}
+									to=""
+								>
+									Activity
+								</Link>
 							</div>
 						</li>
 						<li
 							className={
 								isMobile ? "navbar-item nav-responsive-nav-item" : "navbar-item"
 							}
+							id={
+								isMobile
+									? "resources nav-responsive-nav-item"
+									: "resources-navbar-item"
+							}
 						>
 							<div className="dropdown">
-								<Link
-									className={
-										isMobile ? "navbar-link nav-responsive-link" : "navbar-link"
-									}
-									to="/resources"
-									state={{ option: 1 }}
-								>
-									Resources
-								</Link>
 								<div className="dropdown-content">
 									<Link
 										className="dropdown-link"
@@ -143,6 +155,20 @@ function NavigationBar() {
 										&gt; Organizations
 									</Link>
 								</div>
+								<Link
+									className={
+										isMobile ? "navbar-link nav-responsive-link" : "navbar-link"
+									}
+									id={
+										isMobile
+											? "resources nav-responsive-link"
+											: "resources-navbar-link"
+									}
+									to="/resources"
+									state={{ option: 1 }}
+								>
+									Resources
+								</Link>
 							</div>
 						</li>
 					</ul>

@@ -1,9 +1,8 @@
-import React from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Homepage from "./pages/home/Homepage";
 import Activity from "./pages/activity/Activity";
-import Events from "./pages/activity/Events";
-import Projects from "./pages/activity/Projects";
+import Events from "./pages/events/Events";
+import Projects from "./pages/projects/Projects";
 import Resources from "./pages/resources/Resources";
 import NavigationBar from "./components/navbar/NavigationBar";
 

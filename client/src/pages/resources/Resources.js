@@ -1,10 +1,9 @@
-import { BookOnline } from "@mui/icons-material";
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import "./resources.css";
 import Tutorials from "./Tutorials";
 import Readings from "./Readings";
 import Organizations from "./Organizations";
+import "./resources.css";
 
 function Resources() {
 	return (
@@ -14,6 +13,26 @@ function Resources() {
 	);
 }
 export default Resources;
+
+// List of buttons
+const buttonsList = ["Tutorials", "Readings", "Organizations"];
+
+function renderButtons(toggleTab, tabState) {
+	return buttonsList.map(tabButton => {
+		return (
+			<button
+				key={buttonsList.indexOf(tabButton) + 1}
+				type="button"
+				onClick={() => toggleTab(buttonsList.indexOf(tabButton) + 1)}
+				className={
+					tabState === buttonsList.indexOf(tabButton) + 1 ? "active" : ""
+				}
+			>
+				{tabButton}
+			</button>
+		);
+	});
+}
 
 function Tab() {
 	const [tabState, setTab] = useState(1);
@@ -29,30 +48,7 @@ function Tab() {
 
 	return (
 		<>
-			<div className="resources-tabs">
-				<button
-					type="button"
-					onClick={() => toggleTab(1)}
-					className={tabState === 1 ? "active" : ""}
-				>
-					Tutorials
-				</button>
-				<button
-					type="button"
-					onClick={() => toggleTab(2)}
-					className={tabState === 2 ? "active" : ""}
-				>
-					Readings
-				</button>
-				<button
-					type="button"
-					onClick={() => toggleTab(3)}
-					className={tabState === 3 ? "active" : ""}
-				>
-					Organizations
-				</button>
-			</div>
-
+			<div className="resources-tabs">{renderButtons(toggleTab, tabState)}</div>
 			<div className="resources-contents">
 				<div
 					className={
