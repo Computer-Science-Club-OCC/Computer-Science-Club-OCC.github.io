@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 const UserSchema = require("./User")
-const db = require("../../db")
+const db = require("../db")
 
 // Define test instances here
 

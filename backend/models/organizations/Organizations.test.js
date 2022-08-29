@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
-const ReadingSchema = require("./Readings")
-const db = require("../../db")
+const OrgSchema = require("./Organizations")
+const db = require("../db")
 
 // Define test instances here
 

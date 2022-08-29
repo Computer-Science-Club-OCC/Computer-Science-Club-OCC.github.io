@@ -20,11 +20,11 @@ mongoose
 app.use(bodyParser.json())
 
 // Import Routes
-const eventsRoute = require("./routes/activity/events")
-const projectsRoute = require("./routes/activity/projects")
-const tutorialsRoute = require("./routes/resources/tutorials")
-const readingsRoute = require("./routes/resources/readings")
-const organizationsRoute = require("./routes/resources/organizations")
+const eventsRoute = require("./routes/events/events")
+const projectsRoute = require("./routes/projects/projects")
+const tutorialsRoute = require("./routes/tutorials/tutorials")
+const readingsRoute = require("./routes/readings/readings")
+const organizationsRoute = require("./routes/organizations/organizations")
 
 // Use Routes
 

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
-const TutorialSchema = require("./Tutorials")
-const db = require("../../db")
+const ProjectSchema = require("./Projects")
+const db = require("../db")
 
 // Define test instances here
 
