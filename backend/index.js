@@ -11,7 +11,7 @@ mongoose
     .connect(
         process.env.DATABASE_URI,
         { useNewUrlParser: true },
-        { useUnifyTopology: true },
+        { useUnifiedTopology: true },
         () => console.log("Connected to datbase!")
     )
     .catch((error) => handleError(error))
@@ -20,11 +20,11 @@ mongoose
 app.use(bodyParser.json())
 
 // Import Routes
-const eventsRoute = require("./routes/events/events")
-const projectsRoute = require("./routes/projects/projects")
-const tutorialsRoute = require("./routes/tutorials/tutorials")
-const readingsRoute = require("./routes/readings/readings")
-const organizationsRoute = require("./routes/organizations/organizations")
+const eventsRoute = require("./routes/events/events-route")
+const projectsRoute = require("./routes/projects/projects-route")
+const tutorialsRoute = require("./routes/tutorials/tutorials-route")
+const readingsRoute = require("./routes/readings/readings-route")
+const organizationsRoute = require("./routes/organizations/ors-route")
 
 // Use Routes
 

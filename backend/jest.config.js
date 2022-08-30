@@ -19,7 +19,7 @@ module.exports = {
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
 
-    // An array of glob patterns indicating a set of files for which coverage information should be collected
+    // An array of glob patterns indicating a set of files for which coverage information shoul d be collected
     // collectCoverageFrom: undefined,
 
     // The directory where Jest should output its coverage files
@@ -94,7 +94,7 @@ module.exports = {
     // modulePathIgnorePatterns: [],
 
     // Activates notifications for test results
-    // notify: false,
+    // notify: true,
 
     // An enum that specifies notification mode. Requires { notify: true }
     // notifyMode: "failure-change",
@@ -144,7 +144,7 @@ module.exports = {
     // snapshotSerializers: [],
 
     // The test environment that will be used for testing
-    // testEnvironment: "jest-environment-node",
+    testEnvironment: "jest-environment-node",
 
     // Options that will be passed to the testEnvironment
     // testEnvironmentOptions: {},

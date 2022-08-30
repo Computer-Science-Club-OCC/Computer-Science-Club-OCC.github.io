@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
-const ReadingSchema = require("./Readings")
-const db = require("../db")
+const orgsModel = require("./orgs-model")
+const db = require("../db-test-setup")
 
 // Define test instances here
 
@@ -10,3 +10,8 @@ afterEach(async () => await db.clearDatabase())
 afterAll(async () => await db.closeDatabase())
 
 // Add your test here
+describe("Organizations Model Tests", () => {
+    it("Dummy test", () => {
+        expect(true).toBe(true)
+    })
+})
