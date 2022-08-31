@@ -1,6 +1,7 @@
 const mongoose = require("mongoose")
 const { Schema } = mongoose
-const imageModel = require("../image/image-model")
+const image = require("../image/image-model")
+const imageSchema = mongoose.model("image").schema
 
 // Add your code here
 const eventSchema = new Schema({
@@ -8,7 +9,7 @@ const eventSchema = new Schema({
         type: String,
         required: true,
     },
-    description: {
+    detail: {
         type: String,
         required: true,
     },
@@ -17,6 +18,7 @@ const eventSchema = new Schema({
         type: Date,
         default: Date.now,
     },
+    images: [imageSchema],
 })
 
 module.exports = mongoose.model("events", eventSchema)
