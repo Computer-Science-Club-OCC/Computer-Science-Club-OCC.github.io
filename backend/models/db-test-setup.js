@@ -29,8 +29,7 @@ module.exports.clearDatabase = async () => {
     if (mongod) {
         const collections = mongoose.connection.collections
         for (const key in collections) {
-            const collection = collections[key]
-            collection.deleteMany()
+            collections[key].deleteMany()
         }
     }
 }
