@@ -14,7 +14,9 @@ mongoose
         { useUnifiedTopology: true },
         () => console.log("Connected to datbase!")
     )
-    .catch((error) => handleError(error))
+    .catch((error) => {
+        console.log(error)
+    })
 
 // User parsing middleware
 app.use(bodyParser.json())
