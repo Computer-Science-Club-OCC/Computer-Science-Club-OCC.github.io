@@ -65,10 +65,7 @@ function Events() {
 					className="event-expand"
 					id={isExpanded[event.id] ? "expanded" : "collapsed"}
 				>
-					<EventDetails
-						description={event.description}
-						meetingUrl={event.meetingUrl}
-					/>
+					<EventDetails detail={event.detail} meetingUrl={event.meetingUrl} />
 					<EventPosters posterImages={event.images} />
 				</div>
 			</div>

@@ -1,12 +1,12 @@
 import PropTypes from "prop-types";
 import "../events.css";
 
-function EventDetails({ description, meetingUrl }) {
+function EventDetails({ detail, meetingUrl }) {
 	return (
 		<div className="event-details">
-			<p>👨‍🔬 {description}</p>
-			<p>🔥 {description}</p>
-			<p>☄️ {description}</p>
+			<p>👨‍🔬 {detail}</p>
+			<p>🔥 {detail}</p>
+			<p>☄️ {detail}</p>
 			<p>
 				👉 Zoom link:
 				<a id="meeting-link" href={meetingUrl}>
@@ -21,6 +21,6 @@ function EventDetails({ description, meetingUrl }) {
 export default EventDetails;
 
 EventDetails.propTypes = {
-	description: PropTypes.string.isRequired,
+	detail: PropTypes.string.isRequired,
 	meetingUrl: PropTypes.string.isRequired,
 };

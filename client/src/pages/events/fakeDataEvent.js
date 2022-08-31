@@ -4,7 +4,7 @@ const eventsMap = [];
 
 for (let i = 1; i <= 50; i += 1) {
 	const title = faker.company.catchPhrase();
-	const description = faker.lorem.paragraph(2);
+	const detail = faker.lorem.paragraph(2);
 	const dateTime = faker.date.future(60);
 	const date =
 		dateTime.getDate() < 10
@@ -25,7 +25,7 @@ for (let i = 1; i <= 50; i += 1) {
 	eventsMap.push({
 		id: i,
 		title,
-		description,
+		detail,
 		date,
 		month,
 		time,
