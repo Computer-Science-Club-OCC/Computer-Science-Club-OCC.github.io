@@ -24,7 +24,7 @@ const eventsRoute = require("./routes/events/events-route")
 const projectsRoute = require("./routes/projects/projects-route")
 const tutorialsRoute = require("./routes/tutorials/tutorials-route")
 const readingsRoute = require("./routes/readings/readings-route")
-const organizationsRoute = require("./routes/organizations/ors-route")
+const organizationsRoute = require("./routes/organizations/orgs-route")
 
 // Use Routes
 
