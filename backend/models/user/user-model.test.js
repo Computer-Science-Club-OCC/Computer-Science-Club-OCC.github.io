@@ -11,7 +11,7 @@ afterAll(async () => await db.closeDatabase())
 
 // Add your test here
 describe("Dummy test", () => {
-    it("Dummy test", () => {
+    test("Dummy test", () => {
         expect(true).toBe(true)
     })
 })
