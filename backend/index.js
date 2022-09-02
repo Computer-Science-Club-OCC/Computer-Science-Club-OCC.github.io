@@ -1,6 +1,5 @@
 const express = require("express")
 const app = express()
-const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
 const multer = require("multer")
 const PORT = process.env.PORT || 8000
@@ -19,7 +18,6 @@ mongoose
     })
 
 // User parsing middleware
-app.use(bodyParser.json())
 
 // Import Routes
 const eventsRoute = require("./routes/events/events-route")
