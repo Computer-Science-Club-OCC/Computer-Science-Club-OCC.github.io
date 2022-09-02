@@ -17,7 +17,9 @@ mongoose
         console.log(error)
     })
 
-// User parsing middleware
+// Parsing
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 
 // Import Routes
 const eventsRoute = require("./routes/events/events-route")
