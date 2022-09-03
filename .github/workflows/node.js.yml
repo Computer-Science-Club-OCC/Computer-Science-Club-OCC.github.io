@@ -18,12 +18,15 @@ jobs:
   client:
     runs-on: ${{ matrix.os }}
     env:
-      CI: false
+      CI: false # Do not treat warnings as errors
     strategy:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, macOS-latest, windows-latest]
         node-version: [14.x]
+    defaults:
+      run:
+        working-directory: ./client # For subdir 
 
     steps:
     - uses: actions/checkout@v3
@@ -33,7 +36,43 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        cache-dependency-path: './client/package-lock.json' # For subdir 
     
+    - name: Install packages
+      run: npm ci
+    
+    - name: Prettier
+      run: npm run format:diff
+    
+    - name: Lint
+      run: npm run lint
+    
+    - run: npm run build --if-present
+
+
+  backend:
+    runs-on: ${{ matrix.os }}
+    env:
+      CI: false # Do not treat warnings as errors
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macOS-latest, windows-latest]
+        node-version: [14.x]
+    defaults:
+      run:
+        working-directory: ./backend # For subdir 
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: './backend/package-lock.json' # For subdir 
+
     - name: Install packages
       run: npm ci
     
