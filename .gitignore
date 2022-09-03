@@ -1,3 +1,22 @@
+# Ignoring packages
+*.zip
+*.tar.gz
+*.rar
+
+# Ignore vscode
+.vscode/
+
+# Ignore JetBrain IDE 
+.idea/
+
+# Ignore sublime files
+*.sublime-workspace
+
+# Ignore package-lock.json
+package-lock.json
+package.json
+
+# Ignore dependencies generated in root
 # dependencies
 /node_modules
 /.pnp
