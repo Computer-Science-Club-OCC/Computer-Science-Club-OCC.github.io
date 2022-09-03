@@ -1,5 +1,5 @@
-const supertest = require("supertest")
-const readingsRoute = require("./readings-route")
+// const supertest = require("supertest")
+// const readingsRoute = require("./readings-route")
 
 // Add your test here
 describe("Dummy test", () => {

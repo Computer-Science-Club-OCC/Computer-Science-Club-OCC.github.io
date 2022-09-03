@@ -1,1 +1,1 @@
-const tutorials = require("../../models/tutorials/tutorials-model")
+// const tutorials = require("../../models/tutorials/tutorials-model")

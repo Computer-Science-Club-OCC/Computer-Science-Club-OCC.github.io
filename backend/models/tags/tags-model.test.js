@@ -1,5 +1,5 @@
-const mongoose = require("mongoose")
-const eventsModel = require("./tags-model")
+// const mongoose = require("mongoose")
+// const eventsModel = require("./tags-model")
 const db = require("../db-test-setup")
 
 // Define test instances here

@@ -1,6 +1,5 @@
 const mongoose = require("mongoose")
 const { Schema } = mongoose
-const image = require("../image/image-model")
 const imageSchema = mongoose.model("image").schema
 
 // Add your code here

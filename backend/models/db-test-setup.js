@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 const { MongoMemoryServer } = require("mongodb-memory-server")
 
-let mongod = undefined
+let mongod
 
 // Setup database actions for testing schemas
 // Connect to database

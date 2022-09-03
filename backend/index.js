@@ -1,7 +1,7 @@
 const express = require("express")
 const app = express()
 const mongoose = require("mongoose")
-const multer = require("multer")
+// const multer = require("multer")
 const PORT = process.env.PORT || 8000
 require("dotenv/config")
 
@@ -22,11 +22,11 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 // Import Routes
-const eventsRoute = require("./routes/events/events-route")
-const projectsRoute = require("./routes/projects/projects-route")
-const tutorialsRoute = require("./routes/tutorials/tutorials-route")
-const readingsRoute = require("./routes/readings/readings-route")
-const organizationsRoute = require("./routes/organizations/orgs-route")
+// const eventsRoute = require("./routes/events/events-route")
+// const projectsRoute = require("./routes/projects/projects-route")
+// const tutorialsRoute = require("./routes/tutorials/tutorials-route")
+// const readingsRoute = require("./routes/readings/readings-route")
+// const organizationsRoute = require("./routes/organizations/orgs-route")
 
 // Use Routes
 

@@ -1,5 +1,5 @@
-const mongoose = require("mongoose")
-const readingsModel = require("./readings-model")
+// const mongoose = require("mongoose")
+// const readingsModel = require("./readings-model")
 const db = require("../db-test-setup")
 
 // Define test instances here

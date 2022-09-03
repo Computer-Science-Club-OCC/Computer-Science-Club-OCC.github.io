@@ -1,1 +1,1 @@
-const organizations = require("../../models/organizations/orgs-model")
+// const organizations = require("../../models/organizations/orgs-model")

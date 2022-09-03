@@ -1,5 +1,5 @@
-const supertest = require("supertest")
-const projectsRoute = require("./projects-route")
+// const supertest = require("supertest")
+// const projectsRoute = require("./projects-route")
 
 // Add your test here
 describe("Dummy test", () => {
