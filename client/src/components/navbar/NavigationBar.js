@@ -67,11 +67,14 @@ function NavigationBar() {
 						>
 							<div className="dropdown">
 								<div className="dropdown-content">
-									<Link className="dropdown-link" to="/about">
+									<Link className="dropdown-link" to="/homepage" state={{ option: 1}}>
 										&gt; About
 									</Link>
-									<Link className="dropdown-link" to="/opportunity">
-										&gt; Opportunity
+									<Link className="dropdown-link" to="/homepage" state={{ option: 2}}>
+										&gt; News
+									</Link>
+									<Link className="dropdown-link" to="/homepage" state={{ option: 3}}>
+										&gt; Contact Us
 									</Link>
 								</div>
 								<Link
