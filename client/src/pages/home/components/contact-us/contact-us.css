@@ -1,0 +1,115 @@
+.contact-container {
+	max-width: 960px;
+	width: 80%;
+	margin: 2rem auto;
+	font-size: 16px;
+	color: white;
+}
+
+.contact-container p {
+	display: block;
+	margin: 1.2rem 0;
+}
+
+.contact-header {
+	display: flex;
+}
+
+.contact-header h1 {
+	white-space: nowrap;
+	margin: 1rem auto;
+	max-width: 200px;
+	width: 100%;
+	padding: 5px 10px;
+	font-size: 40px;
+	font-weight: bold;
+	color: #000;
+	background-color: #ff9e3d;
+	position: relative;
+	transition: all 0.2s ease-in-out;
+}
+
+.contact-header::after {
+	content: "";
+	position: relative;
+	margin: auto 0 auto 20px;
+	width: 100%;
+	height: 5px;
+	background-color: #ff9e3d;
+}
+
+.icon-list {
+	display: block;
+	margin: 10px 0;
+	height: 36px;
+}
+
+.icon-list .link {
+	overflow: hidden;
+	float: left;
+	margin: 0 1rem 0 0;
+	width: 40px;
+	height: 40px;
+	text-decoration: none;
+	box-sizing: border-box;
+	border-radius: 50px;
+	cursor: pointer;
+	background-color: #2196f399;
+	transition: all 0.3s ease-in-out;
+}
+
+.icon-list .link:hover {
+	width: 150px;
+}
+
+.icon-list .link .circle {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	border-radius: inherit;
+	box-sizing: border-box;
+	text-align: center;
+	line-height: 42px;
+	transition: all 0.3s ease-in-out;
+}
+
+.icon-list .link:hover .circle {
+	background-color: #fff;
+}
+
+.icon-list .link .circle .icon {
+	font-size: 18px;
+	color: #fff;
+}
+
+.icon-list .link:hover .circle .icon {
+	color: #000;
+}
+
+.icon-list .link span {
+	margin-left: 1rem;
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+}
+
+a#form {
+	color: #ff9e3d;
+	padding: 5px;
+	transition: all 0.2s ease-in-out;
+}
+
+a#form:hover {
+	color: #2196f3;
+}
+
+@media only screen and (max-width: 548px) {
+	.contact-header {
+		margin: 0.5rem auto;
+	}
+	.contact-header h1 {
+		font-size: 30px;
+		text-align: center;
+		margin: auto;
+	}
+}
