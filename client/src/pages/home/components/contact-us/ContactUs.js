@@ -13,7 +13,7 @@ function ContactUs() {
 			<div className="contact-header">
 				<h1>Contact Us</h1>
 			</div>
-			<div>
+			<div className="contact-content">
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 					eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -53,7 +53,7 @@ function ContactUs() {
 					</a>
 				</p>
 				<p>
-					We care about your oppinion!
+					We care about your opinion!
 					<a id="form" href="#feedback">
 						Feedback form
 					</a>

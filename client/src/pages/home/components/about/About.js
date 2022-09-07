@@ -13,7 +13,7 @@ function About() {
 		<div className="about-container">
 			<h1>About Us</h1>
 			<div className="about-grid">
-				<div className="about-item" id="right">
+				<div className="about-item right">
 					<div className="about-image">
 						<img src={imageList[0]} alt="text" />
 					</div>
@@ -47,7 +47,7 @@ function About() {
 				</div>
 			</div>
 			<div className="about-grid">
-				<div className="about-item" id="right">
+				<div className="about-item right">
 					<div className="about-image">
 						<img src={imageList[2]} alt="text" />
 					</div>
