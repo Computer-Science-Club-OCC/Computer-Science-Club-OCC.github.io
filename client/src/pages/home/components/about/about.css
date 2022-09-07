@@ -29,17 +29,19 @@
 	order: 1;
 }
 
-.about-item#right {
+.about-item.right {
+	margin-left: 3.5rem;
+	margin-right: auto;
 	order: 2;
 }
 
 .about-image {
+	margin: auto 0;
 	position: relative;
 	max-width: 320px;
 	max-height: 320px;
 	width: 30vw;
 	height: 30vw;
-	object-fit: cover;
 }
 
 .about-image img {
@@ -111,7 +113,7 @@
 }
 
 .about-text p {
-	font-size: 18px;
+	font-size: 16px;
 }
 
 @media only screen and (max-width: 960px) {
@@ -150,7 +152,9 @@
 		margin: auto 0;
 	}
 
-	.about-item#right {
+	.about-item.right {
+		margin-right: 0;
+		margin-left: 0;
 		order: 1;
 	}
 
