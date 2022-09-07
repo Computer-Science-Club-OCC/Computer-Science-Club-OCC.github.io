@@ -30,6 +30,8 @@
 }
 
 .about-item.right {
+	margin-left: 3.5rem;
+	margin-right: auto;
 	order: 2;
 }
 
@@ -150,7 +152,9 @@
 		margin: auto 0;
 	}
 
-	.about-item#right {
+	.about-item.right {
+		margin-right: 0;
+		margin-left: 0;
 		order: 1;
 	}
 

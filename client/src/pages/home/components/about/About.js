@@ -35,7 +35,7 @@ function About() {
 						<img src={imageList[1]} alt="text" />
 					</div>
 				</div>
-				<div className="about-item">
+				<div className="about-item right">
 					<div className="about-text">
 						<h1>What we do</h1>
 						<p>
