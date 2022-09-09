@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Computer-Science-Club-OCC.github.io/static/css/main.f537547b.css",
+    "main.js": "/Computer-Science-Club-OCC.github.io/static/js/main.5a88c36d.js",
+    "static/media/club-logo.png": "/Computer-Science-Club-OCC.github.io/static/media/club-logo.e7fbdaef2bad1f34f1ed.png",
+    "index.html": "/Computer-Science-Club-OCC.github.io/index.html",
+    "main.f537547b.css.map": "/Computer-Science-Club-OCC.github.io/static/css/main.f537547b.css.map",
+    "main.5a88c36d.js.map": "/Computer-Science-Club-OCC.github.io/static/js/main.5a88c36d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f537547b.css",
+    "static/js/main.5a88c36d.js"
+  ]
+}
