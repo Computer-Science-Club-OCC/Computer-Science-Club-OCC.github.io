@@ -11,12 +11,18 @@ mongoose
     .connect(
         process.env.DATABASE_URI,
         { useNewUrlParser: true },
-        { useUnifiedTopology: true },
-        checkMongoStatus.getStatus()
+        { useUnifiedTopology: true }
     )
+    .then(() => checkMongoStatus.getStatus())
     .catch((error) => {
         console.log(error)
     })
+
+// Import models
+// Notes: remove model imports won't add schemas to cs_club database on Linux
+// Will remove model imports once importing routes
+require("../backend/models/image/image-model")
+require("../backend/models/events/events-model")
 
 // Parsing
 app.use(express.urlencoded({ extended: true }))
