@@ -15,7 +15,7 @@ const eventSchema = new Schema({
     location: String,
     date: {
         type: Date,
-        default: Date.now,
+        default: Date,
     },
     createdDate: {
         type: Date,
@@ -25,7 +25,10 @@ const eventSchema = new Schema({
         type: Date,
         default: Date.now,
     },
-    images: [imageSchema.schema],
+    images: {
+        required: false,
+        type: [imageSchema.schema],
+    },
 })
 
 module.exports = mongoose.model("events", eventSchema)
