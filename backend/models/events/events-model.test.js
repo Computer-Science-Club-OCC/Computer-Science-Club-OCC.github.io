@@ -1,4 +1,4 @@
-const eventsModel = require("./events-model")
+const EventsModel = require("./events-model")
 const db = require("../db-test-setup")
 
 // Define test instances here
@@ -23,14 +23,14 @@ afterAll(async () => await db.closeDatabase())
 // Add your test here
 describe("Events Model Tests", () => {
     test("Database Has Events Model", () => {
-        expect(eventsModel).toBeDefined()
+        expect(EventsModel).toBeDefined()
     })
 
     describe("Event Test Series", () => {
         test("Get Event Instance from Database", async () => {
-            const event = new eventsModel(testEvent1)
+            const event = new EventsModel(testEvent1)
             await event.save()
-            const retrievedEvent = await eventsModel.findOne({
+            const retrievedEvent = await EventsModel.findOne({
                 title: "Hackathon",
             })
 
@@ -52,7 +52,7 @@ describe("Events Model Tests", () => {
         })
 
         test("Add an Event to Database", async () => {
-            const event = new eventsModel(testEvent1)
+            const event = new EventsModel(testEvent1)
             const retrievedEvent = await event.save()
 
             // Expected value set
@@ -73,7 +73,7 @@ describe("Events Model Tests", () => {
         })
 
         test("Update the Event Instance", async () => {
-            const event = new eventsModel(testEvent1)
+            const event = new EventsModel(testEvent1)
             await event.save()
 
             event.title = "Hackathon Hyperdrive"
@@ -102,10 +102,10 @@ describe("Events Model Tests", () => {
         })
 
         test("Delete an Event Instance", async () => {
-            const event = new eventsModel(testEvent1)
+            const event = new EventsModel(testEvent1)
             await event.save()
-            await eventsModel.deleteOne({ name: "Hackathon" })
-            const retrievedEvent = await eventsModel.findOne({
+            await EventsModel.deleteOne({ name: "Hackathon" })
+            const retrievedEvent = await EventsModel.findOne({
                 name: "Hackathon",
             })
 
