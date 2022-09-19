@@ -98,14 +98,7 @@
 	text-decoration: none;
 	padding: 1.1rem;
 	margin: 10px;
-}
-
-/* <Link> */
-.navbar-link:hover {
-	color: #fff;
-	background-color: rgb(190, 114, 0);
-	transition: 0.3s background-color ease-out;
-	border-radius: 4px;
+	transition: all 0.2s ease-in-out;
 }
 
 /* <div> dropdown box */
@@ -131,13 +124,13 @@
 	padding: 0.5rem 0.5rem;
 	text-decoration: none;
 	display: block;
+	transition: all 0.2s ease-in-out;
 }
 
 /* <Link> */
 .dropdown-link:hover {
 	color: #fff;
 	background-color: #535353;
-	transition: all 0.3s ease-out;
 }
 
 .dropdown:hover .dropdown-content {
@@ -156,7 +149,6 @@
 .navbar-link:hover {
 	color: #fff;
 	background-color: rgb(190, 114, 0);
-	transition: 0.3s background-color ease-out;
 	border-radius: 4px;
 }
 
