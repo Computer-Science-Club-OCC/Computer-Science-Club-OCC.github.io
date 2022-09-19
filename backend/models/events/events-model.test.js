@@ -1,4 +1,3 @@
-const mongoose = require("mongoose")
 const eventsModel = require("./events-model")
 const db = require("../db-test-setup")
 
