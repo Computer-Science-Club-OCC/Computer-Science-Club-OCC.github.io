@@ -15,10 +15,11 @@ const eventSchema = new Schema({
     location: String,
     date: {
         type: Date,
-        default: Date,
+        required: true,
     },
     createdDate: {
         type: Date,
+        immutable: true,
         default: Date.now,
     },
     updatedDate: {
