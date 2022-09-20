@@ -15,17 +15,21 @@ const eventSchema = new Schema({
     location: String,
     date: {
         type: Date,
-        default: Date.now,
+        required: true,
     },
     createdDate: {
         type: Date,
+        immutable: true,
         default: Date.now,
     },
     updatedDate: {
         type: Date,
         default: Date.now,
     },
-    images: [imageSchema.schema],
+    images: {
+        required: false,
+        type: [imageSchema.schema],
+    },
 })
 
 module.exports = mongoose.model("events", eventSchema)
