@@ -53,7 +53,8 @@ describe("Events Model Tests", () => {
 
         test("Add an Event to Database", async () => {
             const event = new EventsModel(testEvent1)
-            const retrievedEvent = await event.save()
+            // Assign the document was created successfully in mongodb
+            const createdEvent = await event.save()
 
             // Expected value set
             const expectedTitle = testEvent1.title
@@ -64,12 +65,13 @@ describe("Events Model Tests", () => {
             const expectedUpdatedDate = testEvent1.updatedDate
 
             // Tests
-            expect(expectedTitle).toEqual(retrievedEvent.title)
-            expect(expectedDetail).toEqual(retrievedEvent.detail)
-            expect(expectedLocation).toEqual(retrievedEvent.location)
-            expect(expectedDate).toEqual(retrievedEvent.date)
-            expect(expectedCreatedDate).toEqual(retrievedEvent.createdDate)
-            expect(expectedUpdatedDate).toEqual(retrievedEvent.updatedDate)
+            expect(createdEvent._id).toBeDefined() // Check if event object exist after creating
+            expect(expectedTitle).toEqual(createdEvent.title)
+            expect(expectedDetail).toEqual(createdEvent.detail)
+            expect(expectedLocation).toEqual(createdEvent.location)
+            expect(expectedDate).toEqual(createdEvent.date)
+            expect(expectedCreatedDate).toEqual(createdEvent.createdDate)
+            expect(expectedUpdatedDate).toEqual(createdEvent.updatedDate)
         })
 
         test("Update the Event Instance", async () => {
@@ -93,6 +95,7 @@ describe("Events Model Tests", () => {
             const expectedUpdatedDate = new Date("10-22-2022") // was 09-30-2022
 
             // Tests
+            expect(event._id).toBeDefined() // Check if event object exists to update
             expect(expectedTitle).toEqual(updatedEvent.title)
             expect(expectedDetail).toEqual(updatedEvent.detail)
             expect(expectedLocation).toEqual(updatedEvent.location)
