@@ -20,23 +20,6 @@ const testProject1 = {
     updated_at: new Date("09-30-2022"),
 }
 
-const testProject2 = {
-    title: "Project 2",
-    status: "In Progress",
-    description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
-        "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
-        "Ut enim ad minim veniam, quis nostrud exercitation ullamco " +
-        "laboris nisi ut aliquip ex ea commodo consequat. ",
-    start_date: new Date("12-24-2022"),
-    end_date: new Date("12-24-2023"),
-    discord_url: "https://discord.gg/12345",
-    github_url: "github.com/12345",
-    demo_url: "https://demo.com/12345",
-    created_at: new Date("09-27-2022"),
-    updated_at: new Date("09-30-2022"),
-}
-
 // Database for testing
 beforeAll(async () => await db.connect())
 afterEach(async () => await db.clearDatabase())
