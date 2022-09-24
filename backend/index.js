@@ -23,6 +23,7 @@ mongoose
 // Will remove model imports once importing routes
 require("../backend/models/image/image-model")
 require("../backend/models/events/events-model")
+require("../backend/models/organizations/orgs-model")
 
 // Parsing
 app.use(express.urlencoded({ extended: true }))
