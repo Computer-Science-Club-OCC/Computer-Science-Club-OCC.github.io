@@ -12,8 +12,15 @@ const orgSchema = new Schema({
     },
     url: String,
     tags: [String],
-    created_at: Date,
-    updated_at: Date,
+    created_at: {
+        type: Date,
+        immutable: true,
+        default: Date.now,
+    },
+    updated_at: {
+        type: Date,
+        default: Date.now,
+    },
 })
 
 module.exports = mongoose.model("organizations", orgSchema)
