@@ -97,47 +97,50 @@ describe("Projects Model Tests", () => {
         test("Update a Project in Database", async () => {
             const project = new ProjectsModel(testProject1)
             await project.save()
-            const retrievedProject = await ProjectsModel.findOne({
-                title: "Project 1",
-            })
+
+            const updatedValues = {
+                title: "Project 1 Updated",
+                status: "Completed",
+                description: "Updated Description",
+                start_date: new Date("12-24-2022"),
+                end_date: new Date("12-24-2023"),
+                discord_url: "https://discord.gg/12345",
+                github_url: "https://github.com/12345",
+                demo_url: "https://demo.com/12345",
+                created_at: new Date("09-27-2022"),
+                updated_at: new Date("09-30-2022"),
+            }
 
             // Update values
-            retrievedProject.title = "Project 1 Updated"
-            retrievedProject.status = "Completed"
-            retrievedProject.description = "Updated Description"
-            retrievedProject.start_date = new Date("12-24-2022")
-            retrievedProject.end_date = new Date("12-24-2023")
-            retrievedProject.discord_url = "https://discord.gg/12345"
-            retrievedProject.github_url = "github.com/12345"
-            retrievedProject.demo_url = "https://demo.com/12345"
-            retrievedProject.created_at = new Date("09-27-2022")
-            retrievedProject.updated_at = new Date("09-30-2022")
+            project.title = updatedValues.title
+            project.status = updatedValues.status
+            project.description = updatedValues.description
+            project.start_date = updatedValues.start_date
+            project.end_date = updatedValues.end_date
+            project.discord_url = updatedValues.discord_url
+            project.github_url = updatedValues.github_url
+            project.demo_url = updatedValues.demo_url
+            project.created_at = updatedValues.created_at
+            project.updated_at = updatedValues.updated_at
 
-            const updatedProject = await retrievedProject.save()
-
-            // Expected value set
-            const expectedTitle = retrievedProject.title
-            const expectedStatus = retrievedProject.status
-            const expectedDescription = retrievedProject.description
-            const expectedStartDate = retrievedProject.start_date
-            const expectedEndDate = retrievedProject.end_date
-            const expectedDiscordUrl = retrievedProject.discord_url
-            const expectedGithubUrl = retrievedProject.github_url
-            const expectedDemoUrl = retrievedProject.demo_url
-            const expectedCreatedAt = retrievedProject.created_at
-            const expectedUpdatedAt = retrievedProject.updated_at
+            const updatedProject = await project.save()
 
             // Tests
-            expect(updatedProject.title).toEqual(expectedTitle)
-            expect(updatedProject.status).toEqual(expectedStatus)
-            expect(updatedProject.description).toEqual(expectedDescription)
-            expect(updatedProject.start_date).toEqual(expectedStartDate)
-            expect(updatedProject.end_date).toEqual(expectedEndDate)
-            expect(updatedProject.discord_url).toEqual(expectedDiscordUrl)
-            expect(updatedProject.github_url).toEqual(expectedGithubUrl)
-            expect(updatedProject.demo_url).toEqual(expectedDemoUrl)
-            expect(updatedProject.created_at).toEqual(expectedCreatedAt)
-            expect(updatedProject.updated_at).toEqual(expectedUpdatedAt)
+            expect(updatedProject._id).toBeDefined()
+            expect(updatedProject.title).toEqual(updatedValues.title)
+            expect(updatedProject.status).toEqual(updatedValues.status)
+            expect(updatedProject.description).toEqual(
+                updatedValues.description
+            )
+            expect(updatedProject.start_date).toEqual(updatedValues.start_date)
+            expect(updatedProject.end_date).toEqual(updatedValues.end_date)
+            expect(updatedProject.discord_url).toEqual(
+                updatedValues.discord_url
+            )
+            expect(updatedProject.github_url).toEqual(updatedValues.github_url)
+            expect(updatedProject.demo_url).toEqual(updatedValues.demo_url)
+            expect(updatedProject.created_at).toEqual(updatedValues.created_at)
+            expect(updatedProject.updated_at).toEqual(updatedValues.updated_at)
         })
 
         test("Delete a Project from Database", async () => {
