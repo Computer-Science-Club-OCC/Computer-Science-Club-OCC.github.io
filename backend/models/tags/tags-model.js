@@ -6,7 +6,10 @@ const tagSchema = new Schema({
         type: String,
         required: true,
     },
-    created_at: Date,
+    created_at: {
+        type: Date,
+        require: true,
+    },
 })
 
 module.exports = mongoose.model("tags", tagSchema)
