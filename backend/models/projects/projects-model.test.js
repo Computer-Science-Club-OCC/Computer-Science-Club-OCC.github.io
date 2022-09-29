@@ -107,7 +107,7 @@ describe("Projects Model Tests", () => {
                 discord_url: "https://discord.gg/54321",
                 github_url: "https://github.com/54321",
                 demo_url: "https://demo.com/54322",
-                created_at: new Date("09-27-2022"),
+                created_at: new Date("09-25-2022"),
                 updated_at: new Date("09-2-2022"),
             }
 
@@ -139,7 +139,9 @@ describe("Projects Model Tests", () => {
             )
             expect(updatedProject.github_url).toEqual(updatedValues.github_url)
             expect(updatedProject.demo_url).toEqual(updatedValues.demo_url)
-            expect(updatedProject.created_at).toEqual(updatedValues.created_at)
+            expect(updatedProject.created_at).not.toEqual(
+                updatedValues.created_at
+            )
             expect(updatedProject.updated_at).toEqual(updatedValues.updated_at)
         })
 
