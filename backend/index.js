@@ -1,7 +1,6 @@
 const express = require("express")
 const app = express()
 const mongoose = require("mongoose")
-// const multer = require("multer")
 const checkMongoStatus = require("./utils/check-mongo-status")
 const PORT = process.env.PORT || 8000
 require("dotenv/config")
