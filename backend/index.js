@@ -26,7 +26,6 @@ require("../backend/models/events/events-model")
 require("../backend/models/tags/tags-model")
 require("../backend/models/projects/projects-model")
 
-
 // Parsing
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
