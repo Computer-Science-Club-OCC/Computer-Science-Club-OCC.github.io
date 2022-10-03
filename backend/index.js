@@ -10,9 +10,7 @@ require("dotenv/config")
 
 // Connect datbase and create collection
 mongoose
-    .connect(
-        MONGO_URL
-    )
+    .connect(MONGO_URL)
     .then(() => checkMongoStatus.getStatus())
     .catch((error) => {
         console.log(error)
@@ -37,8 +35,8 @@ app.use(express.json())
 // const organizationsRoute = require("./routes/organizations/orgs-route")
 
 // Use Routes
-app.get('/', (req, res) => {
-  res.send('GET request to the homepage')
+app.get("/", (req, res) => {
+    res.send("GET request to the homepage")
 })
 // Run server
 app.listen(PORT, () => {
