@@ -1,0 +1,15 @@
+# Pull the Node image from Docker Hub
+FROM node:18-alpine
+
+# Setting Working Directory
+WORKDIR /usr/app
+
+COPY . .
+
+# Install Dependencies
+RUN npm install && npm run build
+
+EXPOSE 3000
+
+# Run the API on Nodemon
+CMD ["npm", "start"]
