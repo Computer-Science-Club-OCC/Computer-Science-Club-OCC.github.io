@@ -1,0 +1,46 @@
+version: "3"
+services:
+
+  client:
+   build:
+      context: ./client
+      dockerfile: Dockerfile.dev
+   ports:
+    -  3000:3000
+   container_name: occ-client
+   networks:
+    -  occ-net
+   depends_on:
+    - backend
+
+  backend:
+   build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
+   ports:
+     - 8000:8000
+   environment:
+     - MONGO_URL=mongodb://mongo:27017/occ-csc
+   container_name: occ-backend
+   networks:
+     - occ-net
+   depends_on:
+     - mongo
+
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+    container_name: mongo-db
+    networks:
+      - occ-net
+    volumes:
+      - mongo-data:/data/db
+
+networks:
+  occ-net:
+    driver: bridge
+
+volumes:
+  mongo-data:
+    driver: local
