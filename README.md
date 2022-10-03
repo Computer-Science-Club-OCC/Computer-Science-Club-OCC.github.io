@@ -19,6 +19,10 @@ Stopping the environment:
 
 `docker-compose down`
 
+Rebuild All Containers:
+
+`docker-compose build`
+
 ### Cleaning Docker Env
 **Deleting the mongo container will delete all data in the database**
 1. Stop the container(s) using the following command:
