@@ -3,7 +3,7 @@ const path = require("path")
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, path.join(__basedir, "/public/uploads"))
+        cb(null, path.join(path.resolve("./"), "public", "uploads"))
     },
     fileFilter: (req, file, cb) => {
         const fileTypes = ["image/jpeg", "image/jpg", "image/png"]

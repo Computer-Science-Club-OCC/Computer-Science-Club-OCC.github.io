@@ -4,7 +4,9 @@ const path = require("path")
 
 // image services
 router.get("/:pk", (req, res) => {
-    res.sendFile(path.join(__basedir, `/public/uploads/${req.params.pk}`))
+    res.sendFile(
+        path.join(path.resolve("./"), "public", "uploads", `${req.params.pk}`)
+    )
 })
 
 module.exports = router

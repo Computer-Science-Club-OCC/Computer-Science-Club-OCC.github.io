@@ -2,13 +2,9 @@ const express = require("express")
 const app = express()
 const mongoose = require("mongoose")
 const path = require("path")
-const upload = require("./middlewares/upload-static")
 const checkMongoStatus = require("./utils/check-mongo-status")
 const PORT = process.env.PORT || 8000
 require("dotenv/config")
-
-// Base directory
-global.__basedir = __dirname
 
 // Connect datbase and create collection
 mongoose
@@ -31,7 +27,7 @@ require("../backend/models/projects/projects-model")
 // Parsing
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
-app.use(express.static(path.join(__basedir + "public")))
+app.use(express.static(path.join(path.resolve("./"), "public")))
 
 // Import Routes
 const imagesRoute = require("./routes/images/images-route")
