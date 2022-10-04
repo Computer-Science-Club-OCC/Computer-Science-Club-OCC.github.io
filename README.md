@@ -29,7 +29,3 @@ Rebuild All Containers:
 `docker-compose down --volumes`
 2. Delete all images using the following command:
 `docker image prune -a`
-3. Delete all volumes using the following command:
-`docker volume rm $(docker volume ls -q)`
-4. Restart the containers using the following command:
-`docker-compose up -d`
