@@ -29,8 +29,8 @@ services:
 
   mongo:
     image: mongo
-    ports:
-      - 27017:27017
+    expose:
+      - 27017
     container_name: mongo-db
     networks:
       - occ-net
