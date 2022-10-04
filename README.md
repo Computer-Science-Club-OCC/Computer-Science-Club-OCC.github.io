@@ -27,8 +27,8 @@ Rebuild All Containers:
 **Deleting the mongo container will delete all data in the database**
 1. Stop the container(s) using the following command:
 `docker-compose down`
-2. Delete all containers using the following command:
-`docker rm -f $(docker ps -a -q)`
+2. Delete all images using the following command:
+`docker image prune -a`
 3. Delete all volumes using the following command:
 `docker volume rm $(docker volume ls -q)`
 4. Restart the containers using the following command:
