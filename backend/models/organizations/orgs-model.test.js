@@ -68,7 +68,7 @@ describe("Organizations Model Tests", () => {
 
         test("Add an Organization to Database", async () => {
             const tag = new TagsModel(testTags[0])
-            const orgModel = await tag.save().then(async (tag) => {
+            const orgInstance = await tag.save().then(async (tag) => {
                 return new OrgsModel({
                     ...testOrg1,
                     tags: [tag],
