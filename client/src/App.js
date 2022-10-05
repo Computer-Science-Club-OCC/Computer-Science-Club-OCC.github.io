@@ -10,6 +10,7 @@ function App() {
 	return (
 		<BrowserRouter>
 			<NavigationBar />
+			<h1 className="text-occ_color font-bold text-2xl">CS Club</h1>
 			<Routes>
 				<Route path="/homepage" element={<Homepage />} />
 				<Route path="/activity" element={<Activity />} />
