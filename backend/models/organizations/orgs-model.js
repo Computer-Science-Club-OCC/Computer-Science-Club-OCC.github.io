@@ -1,6 +1,8 @@
 const mongoose = require("mongoose")
 const { Schema } = mongoose
 
+const { tagSchema } = require("../tags/tags-model.js")
+
 const orgSchema = new Schema({
     name: {
         type: String,
@@ -11,7 +13,9 @@ const orgSchema = new Schema({
         required: true,
     },
     url: String,
-    tags: [String],
+    tags: {
+        type: [tagSchema],
+    },
     created_at: {
         type: Date,
         immutable: true,

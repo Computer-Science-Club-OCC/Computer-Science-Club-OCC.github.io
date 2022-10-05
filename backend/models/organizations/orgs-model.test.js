@@ -1,7 +1,18 @@
 const OrgsModel = require("./orgs-model")
+const { TagsModel } = require("../tags/tags-model")
 const db = require("../db-test-setup")
 
 // Define test instances here
+const testTags = [
+    {
+        title: "hackathon",
+        created_at: new Date("01-01-2022"),
+    },
+    {
+        title: "coding",
+        created_at: new Date("01-02-2022"),
+    },
+]
 const testOrg1 = {
     name: "Hackathon",
     description:
@@ -10,9 +21,18 @@ const testOrg1 = {
         "Ut enim ad minim veniam, quis nostrud exercitation ullamco " +
         "laboris nisi ut aliquip ex ea commodo consequat. ",
     url: "https://www.hackathon.com",
-    tags: ["hackathon", "coding", "software"],
     created_at: new Date("09-27-2022"),
     updated_at: new Date("09-30-2022"),
+}
+
+const testOrg2 = {
+    name: "Coding Club",
+    description:
+        "Updated description for Coding Club. " +
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, ",
+    url: "https://www.codingclub.com",
+    created_at: new Date("09-22-2022"),
+    updated_at: new Date("09-10-2022"),
 }
 
 // Database for testing
@@ -23,6 +43,7 @@ afterAll(async () => await db.closeDatabase())
 // Add your test here
 describe("Organizations Model Tests", () => {
     test("Database Has Organizations Model", () => {
+        expect(TagsModel).toBeDefined()
         expect(OrgsModel).toBeDefined()
     })
 
@@ -34,88 +55,80 @@ describe("Organizations Model Tests", () => {
                 name: "Hackathon",
             })
 
-            // Expected value set
-            const expectedName = testOrg1.name
-            const expectedDescription = testOrg1.description
-            const expectedUrl = testOrg1.url
-            const expectedTags = testOrg1.tags
-            const expectedCreatedDate = testOrg1.created_at
-            const expectedUpdatedDate = testOrg1.updated_at
-
             // Tests
             expect(retrievedOrg).toBeDefined()
-            expect(retrievedOrg.name).toEqual(expectedName)
-            expect(retrievedOrg.description).toEqual(expectedDescription)
-            expect(retrievedOrg.url).toEqual(expectedUrl)
-            expect(retrievedOrg.tags).toEqual(expectedTags)
-            expect(retrievedOrg.created_at).toEqual(expectedCreatedDate)
-            expect(retrievedOrg.updated_at).toEqual(expectedUpdatedDate)
+            expect(retrievedOrg._id).toBeDefined()
+            expect(retrievedOrg.name).toEqual(testOrg1.name)
+            expect(retrievedOrg.description).toEqual(testOrg1.description)
+            expect(retrievedOrg.url).toEqual(testOrg1.url)
+            expect(retrievedOrg.tags).toBeDefined()
+            expect(retrievedOrg.created_at).toEqual(testOrg1.created_at)
+            expect(retrievedOrg.updated_at).toEqual(testOrg1.updated_at)
         })
 
         test("Add an Organization to Database", async () => {
-            const org = new OrgsModel(testOrg1)
-
-            const createdOrg = await org.save()
-
-            // Expected value set
-            const expectedName = testOrg1.name
-            const expectedDescription = testOrg1.description
-            const expectedUrl = testOrg1.url
-            const expectedTags = testOrg1.tags
-            const expectedCreatedDate = testOrg1.created_at
-            const expectedUpdatedDate = testOrg1.updated_at
+            const tag = new TagsModel(testTags[0])
+            const orgModel = await tag.save().then(async (tag) => {
+                return new OrgsModel({
+                    ...testOrg1,
+                    tags: [tag],
+                })
+            })
+            const createdOrg = await orgModel.save()
 
             // Tests
+            expect(createdOrg).toBeDefined()
             expect(createdOrg._id).toBeDefined()
-            expect(createdOrg.name).toEqual(expectedName)
-            expect(createdOrg.description).toEqual(expectedDescription)
-            expect(createdOrg.url).toEqual(expectedUrl)
-            expect(createdOrg.tags).toEqual(expectedTags)
-            expect(createdOrg.created_at).toEqual(expectedCreatedDate)
-            expect(createdOrg.updated_at).toEqual(expectedUpdatedDate)
+            expect(createdOrg.name).toEqual(testOrg1.name)
+            expect(createdOrg.description).toEqual(testOrg1.description)
+            expect(createdOrg.url).toEqual(testOrg1.url)
+            expect(createdOrg.tags).toBeDefined()
+            expect(createdOrg.tags).toHaveLength(1)
+            expect(createdOrg.tags[0].title).toEqual(testTags[0].title)
+            expect(createdOrg.created_at).toEqual(testOrg1.created_at)
+            expect(createdOrg.updated_at).toEqual(testOrg1.updated_at)
         })
 
         test("Update an Organization in Database", async () => {
-            const org = new OrgsModel(testOrg1)
-            await org.save()
+            const tag = new TagsModel(testTags[0])
+            const orgModel = await tag.save().then(async (tag) => {
+                return new OrgsModel({
+                    ...testOrg1,
+                    tags: [tag],
+                })
+            })
+            await orgModel.save()
 
-            // Expected value set
-            const updatedName = "Hackathon Hyperdrive"
-            const updatedDescription = "Hackathon Hyperdrive is a hackathon"
-            const updatedUrl = "https://www.hackathonhyperdrive.com"
-            const updatedTags = [
-                "hackathon",
-                "coding",
-                "software",
-                "hyperdrive",
-            ]
-            const updatedUpdatedDate = new Date("09-30-2022")
-
+            // Update the organization
             const updatedOrg = await OrgsModel.findOneAndUpdate(
                 { name: "Hackathon" },
-                {
-                    name: updatedName,
-                    description: updatedDescription,
-                    url: updatedUrl,
-                    tags: updatedTags,
-                    updated_at: updatedUpdatedDate,
-                },
+                { ...testOrg2 },
                 { new: true }
             )
 
             // Tests
-            expect(updatedOrg.name).toEqual(updatedName)
-            expect(updatedOrg.description).toEqual(updatedDescription)
-            expect(updatedOrg.url).toEqual(updatedUrl)
-            expect(updatedOrg.tags).toEqual(updatedTags)
-            expect(updatedOrg.created_at).toEqual(testOrg1.created_at)
-            expect(updatedOrg.updated_at).toEqual(updatedUpdatedDate)
+            expect(updatedOrg).toBeDefined()
+            expect(updatedOrg._id).toBeDefined()
+            expect(updatedOrg.name).toEqual(testOrg2.name)
+            expect(updatedOrg.description).toEqual(testOrg2.description)
+            expect(updatedOrg.url).toEqual(testOrg2.url)
+            expect(updatedOrg.tags).toBeDefined()
+            expect(updatedOrg.tags).toHaveLength(1)
+            expect(updatedOrg.tags[0].title).toEqual(testTags[0].title)
+            expect(updatedOrg.created_at).not.toEqual(testOrg2.created_at)
+            expect(updatedOrg.updated_at).toEqual(testOrg2.updated_at)
         })
 
         test("Delete an Organization from Database", async () => {
-            const org = new OrgsModel(testOrg1)
-            await org.save()
-            await org.delete()
+            const tag = new TagsModel(testTags[0])
+            const orgModel = await tag.save().then(async (tag) => {
+                return new OrgsModel({
+                    ...testOrg1,
+                    tags: [tag],
+                })
+            })
+            await orgModel.save()
+            await OrgsModel.findOneAndDelete({ name: "Hackathon" })
 
             const retrievedOrg = await OrgsModel.findOne({
                 name: "Hackathon",
