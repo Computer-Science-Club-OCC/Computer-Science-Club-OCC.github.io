@@ -1,4 +1,4 @@
-const TagsModel = require("./tags-model")
+const { TagsModel } = require("./tags-model")
 const db = require("../db-test-setup")
 
 // Define test instances here
