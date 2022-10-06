@@ -49,8 +49,8 @@ describe("Organizations Model Tests", () => {
 
     describe("Organization Test Series", () => {
         test("Get Organization Instance from Database", async () => {
-            const org = new OrgsModel(testOrg1)
-            await org.save()
+            const orgInstance = new OrgsModel(testOrg1)
+            await orgInstance.save()
             const retrievedOrg = await OrgsModel.findOne({
                 name: "Hackathon",
             })
@@ -67,14 +67,14 @@ describe("Organizations Model Tests", () => {
         })
 
         test("Add an Organization to Database", async () => {
-            const tag = new TagsModel(testTags[0])
-            const orgInstance = await tag.save().then(async (tag) => {
+            const tagInstance = new TagsModel(testTags[0])
+            const orgInstance = await tagInstance.save().then(async (tag) => {
                 return new OrgsModel({
                     ...testOrg1,
                     tags: [tag],
                 })
             })
-            const createdOrg = await orgModel.save()
+            const createdOrg = await orgInstance.save()
 
             // Tests
             expect(createdOrg).toBeDefined()
@@ -90,14 +90,14 @@ describe("Organizations Model Tests", () => {
         })
 
         test("Update an Organization in Database", async () => {
-            const tag = new TagsModel(testTags[0])
-            const orgModel = await tag.save().then(async (tag) => {
+            const tagInstance = new TagsModel(testTags[0])
+            const orgInstance = await tagInstance.save().then(async (tag) => {
                 return new OrgsModel({
                     ...testOrg1,
                     tags: [tag],
                 })
             })
-            await orgModel.save()
+            await orgInstance.save()
 
             // Update the organization
             const updatedOrg = await OrgsModel.findOneAndUpdate(
@@ -120,14 +120,14 @@ describe("Organizations Model Tests", () => {
         })
 
         test("Delete an Organization from Database", async () => {
-            const tag = new TagsModel(testTags[0])
-            const orgModel = await tag.save().then(async (tag) => {
+            const tagInstance = new TagsModel(testTags[0])
+            const orgInstance = await tagInstance.save().then(async (tag) => {
                 return new OrgsModel({
                     ...testOrg1,
                     tags: [tag],
                 })
             })
-            await orgModel.save()
+            await orgInstance.save()
             await OrgsModel.findOneAndDelete({ name: "Hackathon" })
 
             const retrievedOrg = await OrgsModel.findOne({
