@@ -19,7 +19,6 @@ mongoose
 // Import models
 // Notes: remove model imports won't add schemas to cs_club database on Linux
 // Will remove model imports once importing routes
-require("./models/image/image-model")
 require("./models/events/events-model")
 require("./models/tags/tags-model")
 require("./models/projects/projects-model")
