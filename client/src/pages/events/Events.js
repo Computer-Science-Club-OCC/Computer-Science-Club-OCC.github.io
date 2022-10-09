@@ -1,11 +1,13 @@
 import { useState, useCallback, useEffect } from "react";
-import EventsHeader from "./components/EventsHeader";
-import EventDate from "./components/EventDate";
-import EventBrief from "./components/EventBrief";
-import EventDetails from "./components/EventDetails";
-import EventPosters from "./components/EventPosters";
-import ExpandButton from "./components/ExpandButton";
-import EventPagination from "./components/EventPagination";
+import {
+	EventBrief,
+	EventDate,
+	EventDetails,
+	EventPagination,
+	EventPosters,
+	EventsHeader,
+	ExpandButton,
+} from "../../components/events/events";
 import eventsMap from "./fakeDataEvent"; // Todo: Replace with api service
 import "./events.css";
 
@@ -75,21 +77,7 @@ function Events() {
 	return (
 		<div className="event-container">
 			<EventsHeader />
-			<div className="events-list">
-				<EventPagination
-					onPageChanged={onPageChanged}
-					page={page}
-					pageSize={DEFAULT_PAGE_SIZE}
-					total={eventsMap.length}
-				/>
-				{renderEvents}
-				<EventPagination
-					onPageChanged={onPageChanged}
-					page={page}
-					pageSize={DEFAULT_PAGE_SIZE}
-					total={eventsMap.length}
-				/>
-			</div>
+			<div className="events-list">{renderEvents}</div>
 		</div>
 	);
 }
