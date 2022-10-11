@@ -9,7 +9,7 @@ import {
 	ExpandButton,
 } from "../../components/events/events";
 import eventsMap from "./fakeDataEvent"; // Todo: Replace with api service
-import "./events.css";
+import "./events-page.css";
 
 const DEFAULT_PAGE = 1; // Todo: Move to config file
 const DEFAULT_PAGE_SIZE = 5; // Todo: Move to config file
@@ -77,7 +77,21 @@ function Events() {
 	return (
 		<div className="event-container">
 			<EventsHeader />
-			<div className="events-list">{renderEvents}</div>
+			<div className="events-list">
+				<EventPagination
+					onPageChanged={onPageChanged}
+					page={page}
+					pageSize={DEFAULT_PAGE_SIZE}
+					total={eventsMap.length}
+				/>
+				{renderEvents}
+				<EventPagination
+					onPageChanged={onPageChanged}
+					page={page}
+					pageSize={DEFAULT_PAGE_SIZE}
+					total={eventsMap.length}
+				/>
+			</div>
 		</div>
 	);
 }

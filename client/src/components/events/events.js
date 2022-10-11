@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { Box, Pagination } from "@mui/material"; // replace with tailwind
-import { IconButton, Tooltip } from "@mui/material"; // replace with tailwind
+import { Box, Pagination, IconButton, Tooltip } from "@mui/material"; // replace with tailwind
 import { KeyboardArrowDown } from "@mui/icons-material"; // replace with tailwind
 import { Gallery, Item } from "react-photoswipe-gallery";
 import "photoswipe/dist/photoswipe.css";
-import "../events.css";
+import "./events.css";
 
 function EventBrief({ title, time, location }) {
 	return (
@@ -39,6 +38,7 @@ EventDate.propTypes = {
 	date: PropTypes.string.isRequired,
 };
 
+// TODO: Remove meeting urls for not existing in events model
 function EventDetails({ detail, meetingUrl }) {
 	return (
 		<div className="event-details">
@@ -61,7 +61,85 @@ EventDetails.propTypes = {
 	meetingUrl: PropTypes.string.isRequired,
 };
 
-// TODO: Implement pagination with tailwind
+function EventPosters({ posterImages }) {
+	const images = posterImages;
+	return (
+		<Gallery>
+			<div className="poster-list">
+				{images.map(image => {
+					return (
+						<Item
+							key={image.id}
+							original={image.img}
+							thumbnail={image.img}
+							width="1068"
+							height="1068"
+							alt="poster-img"
+						>
+							{({ ref, open }) => (
+								<input
+									className="poster-img"
+									type="image"
+									ref={ref}
+									onClick={open}
+									src={image.img}
+									alt="poster"
+								/>
+							)}
+						</Item>
+					);
+				})}
+			</div>
+		</Gallery>
+	);
+}
+
+EventPosters.propTypes = {
+	posterImages: PropTypes.arrayOf(
+		PropTypes.shape({
+			id: PropTypes.string,
+			img: PropTypes.string,
+		}),
+	).isRequired,
+};
+
+function EventsHeader() {
+	return (
+		<div className="events-header">
+			<h1>Events</h1>
+		</div>
+	);
+}
+
+// TODO: Replace mui tooltip with tailwind
+function ExpandButton({ handleClick, isExpanded }) {
+	return (
+		<div className="expand-button">
+			<Tooltip
+				title={!isExpanded ? "expand" : "collapse"}
+				fontSize="large"
+				placement="top"
+				sx={{ fontSize: "16px" }}
+				arrow
+			>
+				<IconButton type="button" onClick={handleClick}>
+					<KeyboardArrowDown
+						className="expand-icon"
+						fontSize="large"
+						id={isExpanded ? "open" : "closed"}
+					/>
+				</IconButton>
+			</Tooltip>
+		</div>
+	);
+}
+
+ExpandButton.propTypes = {
+	handleClick: PropTypes.func.isRequired,
+	isExpanded: PropTypes.bool.isRequired,
+};
+
+// TODO: Once finish restyling, remove Event pagination
 function EventPagination({ onPageChanged, page, pageSize, total }) {
 	const [paginationSize, setPaginationSize] = useState("large");
 	const [screenSize, getDimension] = useState({
@@ -117,88 +195,11 @@ EventPagination.propTypes = {
 	total: PropTypes.number.isRequired,
 };
 
-function EventPosters({ posterImages }) {
-	const images = posterImages;
-	return (
-		<Gallery>
-			<div className="poster-list">
-				{images.map(image => {
-					return (
-						<Item
-							key={image.id}
-							original={image.img}
-							thumbnail={image.img}
-							width="1068"
-							height="1068"
-							alt="poster-img"
-						>
-							{({ ref, open }) => (
-								<input
-									className="poster-img"
-									type="image"
-									ref={ref}
-									onClick={open}
-									src={image.img}
-									alt="poster"
-								/>
-							)}
-						</Item>
-					);
-				})}
-			</div>
-		</Gallery>
-	);
-}
-
-EventPosters.propTypes = {
-	posterImages: PropTypes.arrayOf(
-		PropTypes.shape({
-			id: PropTypes.string,
-			img: PropTypes.string,
-		}),
-	).isRequired,
-};
-
-function EventsHeader() {
-	return (
-		<div className="events-header">
-			<h1>Events</h1>
-		</div>
-	);
-}
-
-// TODO: Implement tooltip with tailwind
-function ExpandButton({ handleClick, isExpanded }) {
-	return (
-		<div className="expand-button">
-			<Tooltip
-				title={!isExpanded ? "expand" : "collapse"}
-				fontSize="large"
-				placement="top"
-				sx={{ fontSize: "16px" }}
-				arrow
-			>
-				<IconButton type="button" onClick={handleClick}>
-					<KeyboardArrowDown
-						className="expand-icon"
-						fontSize="large"
-						id={isExpanded ? "open" : "closed"}
-					/>
-				</IconButton>
-			</Tooltip>
-		</div>
-	);
-}
-
-ExpandButton.propTypes = {
-	handleClick: PropTypes.func.isRequired,
-	isExpanded: PropTypes.bool.isRequired,
-};
-
 export {
 	EventBrief,
 	EventDate,
 	EventDetails,
+	EventPosters,
 	EventPagination,
 	EventsHeader,
 	ExpandButton,
