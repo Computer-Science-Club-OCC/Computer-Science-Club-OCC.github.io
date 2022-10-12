@@ -1,24 +1,33 @@
+/* eslint-disable react/prop-types */
+import { lazy, Suspense } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import Homepage from "./pages/home/Homepage";
-import Activity from "./pages/activity/Activity";
-import Events from "./pages/events/Events";
-import Projects from "./pages/projects/Projects";
-import Resources from "./pages/resources/Resources";
+import { ErrorBoundary } from "react-error-boundary";
 import NavigationBar from "./components/navbar/NavigationBar";
+
+import { ErrorState, LoadingState } from "./components/states";
+
+const Homepage = lazy(() => import("./pages/home/Homepage"));
+const Activity = lazy(() => import("./pages/activity/Activity"));
+const Events = lazy(() => import("./pages/events/Events"));
+const Projects = lazy(() => import("./pages/projects/Projects"));
+const Resources = lazy(() => import("./pages/resources/Resources"));
 
 function App() {
 	return (
 		<BrowserRouter>
 			<NavigationBar />
-			<h1 className="text-occ_color font-bold text-2xl">CS Club</h1>
-			<Routes>
-				<Route path="/homepage" element={<Homepage />} />
-				<Route path="/activity" element={<Activity />} />
-				<Route path="/activity/events" element={<Events />} />
-				<Route path="/activity/projects" element={<Projects />} />
-				<Route path="/resources" element={<Resources />} />
-				<Route path="*" element={<Navigate to="/homepage" replace />} />
-			</Routes>
+			<ErrorBoundary FallbackComponent={ErrorState}>
+				<Suspense fallback={<LoadingState />}>
+					<Routes>
+						<Route path="/homepage" element={<Homepage />} />
+						<Route path="/activity" element={<Activity />} />
+						<Route path="/activity/events" element={<Events />} />
+						<Route path="/activity/projects" element={<Projects />} />
+						<Route path="/resources" element={<Resources />} />
+						<Route path="*" element={<Navigate to="/homepage" replace />} />
+					</Routes>
+				</Suspense>
+			</ErrorBoundary>
 			{/* Add Footer */}
 		</BrowserRouter>
 	);
