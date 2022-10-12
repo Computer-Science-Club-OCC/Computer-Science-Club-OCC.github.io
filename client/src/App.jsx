@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { ErrorBoundary } from "react-error-boundary";
