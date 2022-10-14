@@ -38,7 +38,6 @@ EventDate.propTypes = {
 	date: PropTypes.string.isRequired,
 };
 
-// TODO: Remove meeting urls for not existing in events model
 function EventDetails({ detail, meetingUrl }) {
 	return (
 		<div className="event-details">
