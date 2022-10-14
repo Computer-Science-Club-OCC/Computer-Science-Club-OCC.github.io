@@ -9,7 +9,7 @@ function ErrorState({ error, resetErrorBoundary }) {
 				</p>
 				<pre className="text-slate-50 text-md mb-2">{error.message}</pre>
 				<button
-					className="bg-occ_color text-white font-semibold rounded-md px-4 py-2 mt-4"
+					className="bg-occ_color text-white font-semibold rounded-md px-4 py-2 mt-4i hover:bg-amber-600 active:bg-amber-700 focus:outline-none focus:ring focus:ring-amber-600"
 					type="button"
 					onClick={resetErrorBoundary}
 				>
