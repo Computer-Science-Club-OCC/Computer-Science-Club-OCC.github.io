@@ -23,6 +23,6 @@ function ErrorState({ error, resetErrorBoundary }) {
 export default ErrorState;
 
 ErrorState.propTypes = {
-	error: PropTypes.string.isRequired,
+	error: PropTypes.shape({ message: PropTypes.string.isRequired }).isRequired,
 	resetErrorBoundary: PropTypes.func.isRequired,
 };
