@@ -28,6 +28,9 @@ const projectSchema = new Schema({
         type: Date,
         default: Date.now,
     },
+    images: {
+        type: [{ type: String }],
+    },
 })
 
 module.exports = mongoose.model("projects", projectSchema)

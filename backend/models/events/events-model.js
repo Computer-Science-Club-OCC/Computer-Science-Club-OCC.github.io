@@ -1,6 +1,5 @@
 const mongoose = require("mongoose")
 const { Schema } = mongoose
-const imageSchema = require("../image/image-model")
 
 // Add your code here
 const eventSchema = new Schema({
@@ -27,8 +26,7 @@ const eventSchema = new Schema({
         default: Date.now,
     },
     images: {
-        required: false,
-        type: [imageSchema.schema],
+        type: [{ type: String }],
     },
 })
 
