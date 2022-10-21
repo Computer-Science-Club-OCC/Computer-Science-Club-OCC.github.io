@@ -92,12 +92,13 @@
 }
 
 .event-date #month {
-	padding: 5px;
 	font-size: 20px;
 }
 
 .event-date #day {
 	font-size: 36px;
+	position: relative;
+	top: -10px;
 }
 
 /* Important info */
