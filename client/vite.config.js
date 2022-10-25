@@ -4,9 +4,6 @@ import react from "@vitejs/plugin-react";
 import { visualizer } from "rollup-plugin-visualizer";
 
 export default defineConfig({
-	esbuild: {
-		jsxInject: `import React from 'react'`,
-	},
 	build: {
 		outDir: "build",
 		assetsDir: "assets",
