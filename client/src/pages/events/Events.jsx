@@ -1,13 +1,15 @@
 import { useState, useCallback, useEffect } from "react";
-import EventsHeader from "./components/EventsHeader";
-import EventDate from "./components/EventDate";
-import EventBrief from "./components/EventBrief";
-import EventDetails from "./components/EventDetails";
-import EventPosters from "./components/EventPosters";
-import ExpandButton from "./components/ExpandButton";
-import EventPagination from "./components/EventPagination";
+import {
+	EventBrief,
+	EventDate,
+	EventDetails,
+	EventPagination,
+	EventPosters,
+	EventsHeader,
+	ExpandButton,
+} from "../../components/events/events";
 import eventsMap from "./fakeDataEvent"; // Todo: Replace with api service
-import "./events.css";
+import "./events-page.css";
 
 const DEFAULT_PAGE = 1; // Todo: Move to config file
 const DEFAULT_PAGE_SIZE = 5; // Todo: Move to config file
