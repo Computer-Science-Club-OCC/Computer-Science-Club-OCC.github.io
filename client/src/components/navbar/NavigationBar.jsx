@@ -32,7 +32,7 @@ function NavigationBar() {
 	return (
 		<nav className="navbar">
 			<div className="navbrand">
-				<Link className="nav-imd-link" to="/homepage">
+				<Link className="nav-img-link" to="/homepage">
 					<img className="navbar-brand-img" src={ClubLogo} alt="club-logo" />
 				</Link>
 				<div className="navbar-title">
