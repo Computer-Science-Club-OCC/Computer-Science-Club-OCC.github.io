@@ -4,7 +4,7 @@ import ClubLogo from "../../asset/images/club-logo.png";
 function Footer() {
     return (
         <footer className="text-white bg-orange-400">
-            <div className="flex">
+            <div className="flex items-center m-auto">
 				<div className="logo-space">
 					<div className="logo-box">
 						<img
@@ -12,13 +12,13 @@ function Footer() {
 							src={ClubLogo}
 							alt="OCC Club Logo"
 						/>
-						<p className="club-mission">
+						<p className="text-sm">
 							<strong>Building community and knowledge through coding. </strong>
 						</p>
 					</div>
 				</div>
-				<div className="center-box">
-					<ul className="footer-ulist">
+				<div className="flex">
+					<ul className="flex flex-col">
 						<li className="footer-link-container-header">
 							<Link to="/homepage" className="footer-link">
 								<span>
@@ -35,7 +35,7 @@ function Footer() {
 							</Link>
 						</li>
 					</ul>
-					<ul className="footer-ulist">
+					<ul className="flex flex-col">
 						<li className="footer-link-container-header">
 							<Link to="" className="footer-link">
 								<span>
@@ -57,7 +57,7 @@ function Footer() {
 							</Link>
 						</li>
 					</ul>
-					<ul className="footer-ulist" id="resources-links">
+					<ul className="flex flex-col" id="resources-links">
 						<li className="footer-link-container-header">
 							<Link
 								to="/resources"
@@ -100,7 +100,7 @@ function Footer() {
 							</Link>
 						</li>
 					</ul>
-					<ul className="footer-ulist" id="about-box">
+					<ul className="flex flex-col" id="about-box">
 						<li className="footer-link-container-header">
 							<Link
 								to="/homepage"
@@ -120,18 +120,18 @@ function Footer() {
 				<div className="contact-button">
 					<Link
 						to="/homepage"
-						className="border-2 border-yellow-300 text-sm"
+						className="border-2 border-yellow-300 text-[20px]"
 						state={{ section: 3 }}
 					>
 						CONTACT US
 					</Link>
 				</div>
 			</div>
-			<div className="footer-bottom-content">
-				<p>
+			<div className="bg-amber-400">
+				<p className="text-center w-1/4">
 					<strong>&copy; 2022 OCC CS Club</strong>
 				</p>
-				<p id="map-policy-text">Site Map | Privacy Policy</p>
+				<p className="text-end w-1/4">Site Map | Privacy Policy</p>
 			</div>
 		</footer>
        
