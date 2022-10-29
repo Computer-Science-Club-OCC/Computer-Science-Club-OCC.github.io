@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { ErrorBoundary } from "react-error-boundary";
 import NavigationBar from "./components/navbar/NavigationBar";
+import Footer from "./components/footer/Footer";
 
 import { ErrorState, LoadingState } from "./components/states";
 
@@ -27,7 +28,7 @@ function App() {
 					</Routes>
 				</Suspense>
 			</ErrorBoundary>
-			{/* Add Footer */}
+			<Footer/ >
 		</BrowserRouter>
 	);
 }
