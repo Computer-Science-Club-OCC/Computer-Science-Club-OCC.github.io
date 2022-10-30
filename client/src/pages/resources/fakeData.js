@@ -5,7 +5,7 @@
 /**
  * TODO: Delete this map once configured with mongodb
  */
-const tutorialsMap = [
+export const tutorialsMap = [
 	{
 		id: 1,
 		title: "React in 100 Seconds",
@@ -98,7 +98,7 @@ const tutorialsMap = [
 	},
 ];
 
-const readingsMap = [
+export const readingsMap = [
 	{
 		id: 1,
 		title: "10 articles every ReactJS developer should read",
@@ -207,7 +207,7 @@ const readingsMap = [
 	},
 ];
 
-const organizationsMap = [
+export const organizationsMap = [
 	{
 		id: 1,
 		title: "The Odin Project",
@@ -297,5 +297,3 @@ const organizationsMap = [
 		tags: ["hackathon"],
 	},
 ];
-
-module.exports = { tutorialsMap, readingsMap, organizationsMap };
