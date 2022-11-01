@@ -1,12 +1,16 @@
 const express = require("express")
 const app = express()
 const mongoose = require("mongoose")
+const passport = require("passport")
 const path = require("path")
 const checkMongoStatus = require("./utils/check-mongo-status")
 const PORT = process.env.PORT || 8000
 const MONGO_URL = process.env.MONGO_URL || "mongodb://localhost/occ-csc"
-
+const magicLogin = require("passport-magic-login")
 require("dotenv/config")
+
+// Email login using passport magic authentication
+passport.use(magicLogin)
 
 // Connect datbase and create collection
 mongoose
