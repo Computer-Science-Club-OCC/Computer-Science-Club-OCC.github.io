@@ -25,7 +25,7 @@ function Login() {
               placeholder="example@gmail.com" />
             <button type="submit" className="login-button" onSubmit={handleSubmit()}>Login</button>
         </form>
-        <h3 className="login-text">Forgot Password ? <a className="login-link" href="#">Click here</a></h3>
+        <h3 className="login-text">Cannot login your account? <a className="login-link" href="#">Click here</a></h3>
       </div>
     </div>
   )
