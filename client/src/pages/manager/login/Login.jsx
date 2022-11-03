@@ -1,5 +1,5 @@
 import { useState, useRef } from "react"
-import {LoginService} from "../login/index"
+import LoginService from "../../../services/auth/index"
 import './login.css'
 
 // TODO: implement magic login logic 
