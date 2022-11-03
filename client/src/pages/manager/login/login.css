@@ -1,0 +1,31 @@
+.login-container {
+	@apply flex items-center justify-center w-full h-screen;
+}
+
+.login-box {
+	@apply flex flex-col justify-center items-center w-[420px] h-[360px] m-auto rounded-xl drop-shadow-2xl bg-[#161b22];
+}
+
+.login-title {
+	@apply my-2 text-3xl text-center text-white font-bold;
+}
+
+.login-form {
+	@apply flex flex-col justify-center items-center w-full h-auto my-2;
+}
+
+.login-input {
+	@apply w-[300px] my-4 py-2 px-4 rounded-2xl border-2 text-white duration-300 border-orange-400 bg-[#161b22];
+}
+
+.login-button {
+	@apply w-40 h-10 my-4 text-lg font-semibold rounded-2xl border-2 duration-300 border-orange-400 text-white bg-[#161b22] hover:text-black hover:bg-orange-400;
+}
+
+.login-link {
+	@apply text-orange-400 hover:underline;
+}
+
+.login-text {
+	@apply text-gray-400;
+}
