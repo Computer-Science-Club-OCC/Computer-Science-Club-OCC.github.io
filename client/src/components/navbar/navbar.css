@@ -47,7 +47,7 @@
 }
 
 .navbar-item {
-	@apply flex w-40 lg:w-40 md:w-32 py-3.5 lg:py-3 justify-center items-center font-bold hover:bg-[#be7200] hover:cursor-pointer;
+	@apply flex w-40 lg:w-40 md:w-28 py-3.5 lg:py-3 justify-center items-center font-bold hover:bg-[#be7200] hover:cursor-pointer;
 }
 
 .navbar-link {
