@@ -11,31 +11,29 @@ const Projects = lazy(() => import("./pages/projects/Projects"));
 const Resources = lazy(() => import("./pages/resources/Resources"));
 const Login = lazy(() => import("./pages/manager/login/Login"));
 
-
 function Client() {
-  return (
+	return (
 		<>
-		<NavigationBar />
-    <Routes>
-			<Route path="/homepage" element={<Homepage />} />
-			<Route path="/activity" element={<Activity />} />
-			<Route path="/activity/events" element={<Events />} />
-			<Route path="/activity/projects" element={<Projects />} />
-			<Route path="/resources" element={<Resources />} />
-			<Route path="*" element={<Navigate to="/homepage" replace />} />
-		</Routes>
+			<NavigationBar />
+			<Routes>
+				<Route path="/homepage" element={<Homepage />} />
+				<Route path="/activity" element={<Activity />} />
+				<Route path="/activity/events" element={<Events />} />
+				<Route path="/activity/projects" element={<Projects />} />
+				<Route path="/resources" element={<Resources />} />
+				<Route path="*" element={<Navigate to="/homepage" replace />} />
+			</Routes>
 		</>
-
-  )
+	);
 }
 
 function Admin() {
 	return (
-	<Routes>
-		<Route path='/login' element={<Login />}  />
-		<Route path="/dashboard" />
-	</Routes>
-	)
+		<Routes>
+			<Route path="/login" element={<Login />} />
+			<Route path="/dashboard" />
+		</Routes>
+	);
 }
 
 function App() {
@@ -43,10 +41,10 @@ function App() {
 		<BrowserRouter>
 			<ErrorBoundary FallbackComponent={ErrorState}>
 				<Suspense fallback={<LoadingState />}>
-				<Routes>
-        	<Route path='/admin/*' element={<Admin />} />
-        	<Route path='/*' element={<Client />} />
-      	</Routes>
+					<Routes>
+						<Route path="/admin/*" element={<Admin />} />
+						<Route path="/*" element={<Client />} />
+					</Routes>
 				</Suspense>
 			</ErrorBoundary>
 			{/* Add Footer */}

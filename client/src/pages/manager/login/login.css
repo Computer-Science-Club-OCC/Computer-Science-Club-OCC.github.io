@@ -15,7 +15,7 @@
 }
 
 .login-input {
-	@apply w-[300px] my-4 py-2 px-4 rounded-2xl border-2 text-white duration-300 border-orange-400 bg-[#161b22];
+	@apply w-[300px] my-4 py-2 px-4 rounded-2xl border-2 outline-none text-white duration-300 border-orange-400 bg-[#161b22] focus:border-white focus:outline-none;
 }
 
 .login-button {
