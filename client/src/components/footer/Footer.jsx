@@ -1,18 +1,19 @@
 import { Link } from "react-router-dom";
 import ClubLogo from "../../asset/images/club-logo.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Footer() {
     return (
         <footer className="text-white bg-orange-400">
             <div className="flex items-center m-auto">
-				<div className="logo-space">
-					<div className="logo-box">
+				<div className="logo-space  w-fit">
+					<div className="logo-box w-fit">
 						<img
 							className="w-7 h-7 rounded-full"
 							src={ClubLogo}
 							alt="OCC Club Logo"
 						/>
-						<p className="text-sm">
+						<p className="text-sm  w-1/2">
 							<strong>Building community and knowledge through coding. </strong>
 						</p>
 					</div>
@@ -22,7 +23,7 @@ function Footer() {
 						<li className="footer-link-container-header">
 							<Link to="/homepage" className="footer-link">
 								<span>
-									HomeIcon
+									<FontAwesomeIcon icon="fa-brands fa-google" />
 								</span>
 								<span className="footer-title">
 									<strong>Home</strong>
@@ -120,18 +121,18 @@ function Footer() {
 				<div className="contact-button">
 					<Link
 						to="/homepage"
-						className="border-2 border-yellow-300 text-[20px]"
+						className="border-2 border-yellow-300 text-[20px] min-w-fit text-yellow-300 p-2.5 hover:text-black hover:bg-yellow-300"
 						state={{ section: 3 }}
 					>
 						CONTACT US
 					</Link>
 				</div>
 			</div>
-			<div className="bg-amber-400">
-				<p className="text-center w-1/4">
+			<div className="bg-amber-400 py-1.5 flex items-center">
+				<span className="w-fit border-2 border-green-500">
 					<strong>&copy; 2022 OCC CS Club</strong>
-				</p>
-				<p className="text-end w-1/4">Site Map | Privacy Policy</p>
+				</span>
+				{/*<span className="absolute right-0 w-fit border-2 border-green-500">Site Map | Privacy Policy</span>*/}
 			</div>
 		</footer>
        
