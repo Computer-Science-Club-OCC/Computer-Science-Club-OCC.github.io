@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 import ClubLogo from "../../asset/images/club-logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCalendar, faHouse } from "@fortawesome/free-solid-svg-icons";
+
 
 function Footer() {
     return (
         <footer className="text-white bg-orange-400">
-            <div className="flex items-center m-auto">
-				<div className="logo-space  w-fit">
+            <div className="flex items-center justify-between border-2 border-green-500 w-3/4 m-auto">
+				<div className="logo-space  w-[80px]">
 					<div className="logo-box w-fit">
 						<img
 							className="w-7 h-7 rounded-full"
@@ -18,12 +20,12 @@ function Footer() {
 						</p>
 					</div>
 				</div>
-				<div className="flex">
-					<ul className="flex flex-col">
+				<div className="flex items-center content-baseline justify-between border-blue-500 w-2/3">
+					<ul className="flex flex-col border-2 border-green-500">
 						<li className="footer-link-container-header">
 							<Link to="/homepage" className="footer-link">
 								<span>
-									<FontAwesomeIcon icon="fa-brands fa-google" />
+									<FontAwesomeIcon icon={faHouse} />
 								</span>
 								<span className="footer-title">
 									<strong>Home</strong>
@@ -35,12 +37,17 @@ function Footer() {
 								<span className="sublink-name">News</span>
 							</Link>
 						</li>
+						<li>
+							<Link to="/homepage">
+								<span>About</span>
+							</Link>
+						</li>
 					</ul>
-					<ul className="flex flex-col">
+					<ul className="flex flex-col border-2 border-green-500">
 						<li className="footer-link-container-header">
 							<Link to="" className="footer-link">
 								<span>
-									CalendarIcon
+								<FontAwesomeIcon icon={faCalendar} />
 								</span>
 								<span className="footer-title">
 									<strong>Activity</strong>
@@ -58,7 +65,7 @@ function Footer() {
 							</Link>
 						</li>
 					</ul>
-					<ul className="flex flex-col" id="resources-links">
+					<ul className="flex flex-col border-2 border-green-500" id="resources-links">
 						<li className="footer-link-container-header">
 							<Link
 								to="/resources"
@@ -101,24 +108,9 @@ function Footer() {
 							</Link>
 						</li>
 					</ul>
-					<ul className="flex flex-col" id="about-box">
-						<li className="footer-link-container-header">
-							<Link
-								to="/homepage"
-								className="footer-link"
-								state={{ section: 1 }}
-							>
-								<span>
-									AboutIcon
-								</span>
-								<span className="footer-title">
-									<strong>About</strong>
-								</span>
-							</Link>
-						</li>
-					</ul>
+					
 				</div>
-				<div className="contact-button">
+				<div className="contact-button border-2 border-green-500 w-fit h-fit">
 					<Link
 						to="/homepage"
 						className="border-2 border-yellow-300 text-[20px] min-w-fit text-yellow-300 p-2.5 hover:text-black hover:bg-yellow-300"
