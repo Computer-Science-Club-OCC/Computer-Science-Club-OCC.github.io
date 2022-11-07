@@ -8,7 +8,7 @@ import {
 	EventsHeader,
 	ExpandButton,
 } from "../../components/events/events";
-import eventsMap from "./fakeDataEvent"; // Todo: Replace with api service
+import { eventsMap } from "./fake-data-events"; // Todo: Replace with api service
 import "./events-page.css";
 
 const DEFAULT_PAGE = 1; // Todo: Move to config file

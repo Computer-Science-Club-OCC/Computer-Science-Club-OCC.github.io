@@ -1,10 +1,9 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-	faInstagram,
-	faDiscord,
-	faFacebookF,
-} from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+	Facebook,
+	Instagram,
+	Discord,
+	Mail,
+} from "../../../../asset/icons/icons";
 import "./contact-us.css";
 
 function ContactUs() {
@@ -22,25 +21,25 @@ function ContactUs() {
 				<div className="icon-list">
 					<a href="#facebook" className="link">
 						<div className="circle">
-							<FontAwesomeIcon icon={faFacebookF} className="icon" />
+							<Facebook className="icon" />
 						</div>
 						<span>Facebook</span>
 					</a>
 					<a href="#Instagram" className="link">
 						<div className="circle">
-							<FontAwesomeIcon icon={faInstagram} className="icon" />
+							<Instagram className="icon" />
 						</div>
 						<span>Instagram</span>
 					</a>
 					<a href="#Discord" className="link">
 						<div className="circle">
-							<FontAwesomeIcon icon={faDiscord} className="icon" />
+							<Discord className="icon" />
 						</div>
 						<span>Discord</span>
 					</a>
 					<a href="#Gmail" className="link">
 						<div className="circle">
-							<FontAwesomeIcon icon={faEnvelope} className="icon" />
+							<Mail className="icon" />
 						</div>
 						<span>Gmail</span>
 					</a>

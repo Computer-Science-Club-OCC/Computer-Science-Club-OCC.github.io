@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { DensityMedium, Clear } from "@mui/icons-material";
+import { Bars } from "../../asset/icons/icons";
 import ClubLogo from "../../asset/images/club-logo.png";
 import "./navbar.css";
 
@@ -46,11 +46,7 @@ function NavigationBar() {
 						role="button"
 						tabIndex={0}
 					>
-						{isSwitch ? (
-							<Clear className="nav-toggle-icon" fontSize="large" />
-						) : (
-							<DensityMedium className="nav-toggle-icon" fontSize="large" />
-						)}
+						{isSwitch ? null : <Bars className="nav-toggle-icon" />}
 					</div>
 				)}
 			</div>
