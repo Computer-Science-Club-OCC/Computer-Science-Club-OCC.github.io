@@ -11,6 +11,10 @@ module.exports = {
 				bounce400: "bounce 1s infinite 400ms",
 			},
 		},
+		screens: {
+			'md': {'max': '933px'},
+			'sm': {'max': '619px'}
+		}
 	},
 	plugins: [],
 };
