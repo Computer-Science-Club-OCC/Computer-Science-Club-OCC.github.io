@@ -10,6 +10,9 @@ module.exports = {
 				bounce200: "bounce 1s infinite 200ms",
 				bounce400: "bounce 1s infinite 400ms",
 			},
+			transitionProperty: {
+				'width' : 'width'
+			}
 		},
 		screens: {
 			'md': {'max': '933px'},

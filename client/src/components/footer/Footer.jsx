@@ -25,21 +25,21 @@ function Footer() {
 						<li className="footer-link-container-header m-auto">
 							<Link to="/homepage" className="footer-link">
 								<span className="mr-0.5">
-									<FontAwesomeIcon icon={faHouse} />
+									<FontAwesomeIcon className="scale-110 mb-[3px]" icon={faHouse} />
 								</span>
-								<span className="footer-title text-lg after:absolute after:w-full after:bg-blue-500 after:origin-bottom-right after:scale-x-0 after:h-[3px] after:bottom-0 after:right-0 after:transition-transform hover:after:scale-x-1 after:mb-[-2px] hover:after:origin-bottom-left">
+								<span className="footer-title relative inline-block no-underline text-lg after:absolute after:w-0 after:h-[2px] after:block after:bg-yellow-300 after:right-0 after:transition-[width] after:ease-in-out after:duration-[.5s] hover:after:w-full hover:after:left-0 hover:after:bg-yellow-300">
 									<strong>Home</strong>
 								</span>
 							</Link>
 						</li>
 						<li className="footer-link-container mx-auto my-0.5 text-stone-600">
-							<Link to="/homepage" className="footer-sublink after:absolute after:w-full after:bg-yellow-500 after:origin-bottom-right after:scale-x-0 after:h-[10px] after:bottom-0 after:right-0 after:transition after:transform after:duration-[1s] after:ease-[cubic-bezier(0, 0, 0.44, 1.1)] hover:after:scale-x-1 hover:after:origin-bottom-left">
-								<span className="sublink-name text-base">News</span>
+							<Link to="/homepage" className="footer-sublink relative inline-block no-underline text-lg after:absolute after:w-0 after:h-[2px] after:block after:bg-yellow-300 after:right-0 after:transition-[width] after:ease-in-out after:duration-[.5s] hover:after:w-full hover:after:left-0 hover:after:bg-yellow-300">
+								<span className="sublink-name text-base">About</span>
 							</Link>
 						</li>
 						<li className="footer-link-container mx-auto my-0.5 text-stone-600">
-							<Link to="/homepage">
-								<span className="sublink-name text-base">About</span>
+							<Link to="/homepage" className="footer-sublink relative inline-block no-underline text-lg after:absolute after:w-0 after:h-[2px] after:block after:bg-yellow-300 after:right-0 after:transition-[width] after:ease-in-out after:duration-[.5s] hover:after:w-full hover:after:left-0 hover:after:bg-yellow-300">
+								<span className="sublink-name text-base">News</span>
 							</Link>
 						</li>
 					</ul>
@@ -47,20 +47,20 @@ function Footer() {
 						<li className="footer-link-container-header m-auto">
 							<Link to="" className="footer-link">
 								<span className="mr-0.5">
-								<FontAwesomeIcon icon={faCalendar} />
+								<FontAwesomeIcon className="scale-110 mb-[3px]" icon={faCalendar} />
 								</span>
-								<span className="footer-title text-lg">
+								<span className="footer-title text-lg relative inline-block no-underline text-lg after:absolute after:w-0 after:h-[2px] after:block after:bg-yellow-300 after:right-0 after:transition-[width] after:ease-in-out after:duration-[.5s] hover:after:w-full hover:after:left-0 hover:after:bg-yellow-300">
 									<strong>Activity</strong>
 								</span>
 							</Link>
 						</li>
 						<li className="footer-link-container mx-auto my-0.5 text-stone-600">
-							<Link to="/activity/events" className="footer-sublink">
+							<Link to="/activity/events" className="footer-sublink relative inline-block no-underline text-lg after:absolute after:w-0 after:h-[2px] after:block after:bg-yellow-300 after:right-0 after:transition-[width] after:ease-in-out after:duration-[.5s] hover:after:w-full hover:after:left-0 hover:after:bg-yellow-300">
 								<span className="sublink-name text-base">Events</span>
 							</Link>
 						</li>
 						<li className="footer-link-container mx-auto my-0.5 text-stone-600">
-							<Link to="/activity/projects" className="footer-sublink">
+							<Link to="/activity/projects" className="footer-sublink relative inline-block no-underline text-lg after:absolute after:w-0 after:h-[2px] after:block after:bg-yellow-300 after:right-0 after:transition-[width] after:ease-in-out after:duration-[.5s] hover:after:w-full hover:after:left-0 hover:after:bg-yellow-300">
 								<span className="sublink-name text-base">Projects</span>
 							</Link>
 						</li>
@@ -73,9 +73,9 @@ function Footer() {
 								state={{ option: 1 }}
 							>
 								<span className="mr-0.5">
-								<FontAwesomeIcon icon={faNoteSticky} />
+								<FontAwesomeIcon className="scale-110 mb-[2px]" icon={faNoteSticky} />
 								</span>
-								<span className="footer-title text-lg">
+								<span className="footer-title text-lg relative inline-block no-underline text-lg after:absolute after:w-0 after:h-[2px] after:block after:bg-yellow-300 after:right-0 after:transition-[width] after:ease-in-out after:duration-[.5s] hover:after:w-full hover:after:left-0 hover:after:bg-yellow-300">
 									<strong>Resources</strong>
 								</span>
 							</Link>
@@ -83,7 +83,7 @@ function Footer() {
 						<li className="footer-link-container mx-auto my-0.5 text-stone-600">
 							<Link
 								to="/resources"
-								className="footer-sublink"
+								className="footer-sublink relative inline-block no-underline text-lg after:absolute after:w-0 after:h-[2px] after:block after:bg-yellow-300 after:right-0 after:transition-[width] after:ease-in-out after:duration-[.5s] hover:after:w-full hover:after:left-0 hover:after:bg-yellow-300"
 								state={{ option: 1 }}
 							>
 								<span className="sublink-name text-base">Tutorials</span>
@@ -92,7 +92,7 @@ function Footer() {
 						<li className="footer-link-container mx-auto my-0.5 text-stone-600">
 							<Link
 								to="/resources"
-								className="footer-sublink"
+								className="footer-sublink relative inline-block no-underline text-lg after:absolute after:w-0 after:h-[2px] after:block after:bg-yellow-300 after:right-0 after:transition-[width] after:ease-in-out after:duration-[.5s] hover:after:w-full hover:after:left-0 hover:after:bg-yellow-300"
 								state={{ option: 2 }}
 							>
 								<span className="sublink-name text-base">Readings</span>
@@ -101,7 +101,7 @@ function Footer() {
 						<li className="footer-link-container mx-auto my-0.5 text-stone-600">
 							<Link
 								to="/resources"
-								className="footer-sublink"
+								className="footer-sublink relative inline-block no-underline text-lg after:absolute after:w-0 after:h-[2px] after:block after:bg-yellow-300 after:right-0 after:transition-[width] after:ease-in-out after:duration-[.5s] hover:after:w-full hover:after:left-0 hover:after:bg-yellow-300"
 								state={{ option: 3 }}
 							>
 								<span className="sublink-name text-base">Organizations</span>
@@ -124,7 +124,7 @@ function Footer() {
 				<span className="m-auto w-fit border-2 border-green-500 text-sm">
 					<strong>&copy; 2022 OCC CS Club</strong>
 				</span>
-				<span className="m-auto absolute right-0 w-fit border-2 border-green-500 text-sm">Site Map | Privacy Policy</span>
+				<span className="m-auto absolute right-[5px] w-fit border-2 border-green-500 text-sm">Site Map | Privacy Policy</span>
 			</div>
 		</footer>
        
