@@ -1,4 +1,5 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import {
 	EventBrief,
 	EventDate,
@@ -19,6 +20,21 @@ function Events() {
 	const [isExpanded, setExpand] = useState({});
 	const [eventsList, setEventsList] = useState([]);
 	const [page, setPage] = useState(DEFAULT_PAGE);
+
+    const topRef = useRef(null);
+	const scrollToSection = elementRef => {
+		window.scrollTo({
+			top: elementRef.current.offsetTop,
+			behavior: "smooth",
+		});
+	};
+
+	const location = useLocation();
+	useEffect(() => {
+		if (location.state) {
+			scrollToSection(topRef)
+		}
+	}, [location]);
 
 	function handleExpansion(id) {
 		setExpand(prevExpanded => ({
@@ -75,7 +91,7 @@ function Events() {
 	});
 
 	return (
-		<div className="event-container">
+		<div className="event-container" ref={topRef}>
 			<EventsHeader />
 			<div className="events-list">
 				<EventPagination

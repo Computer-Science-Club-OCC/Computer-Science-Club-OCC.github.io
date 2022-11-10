@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import Tutorials from "./Tutorials";
 import Readings from "./Readings";
@@ -6,8 +6,23 @@ import Organizations from "./Organizations";
 import "./resources.css";
 
 function Resources() {
+	const topRef = useRef(null);
+
+	const scrollToSection = elementRef => {
+		window.scrollTo({
+			top: elementRef.current.offsetTop,
+			behavior: "smooth",
+		});
+	};
+
+	const location = useLocation();
+	useEffect(() => {
+		if (location.state) {
+			scrollToSection(topRef)
+		}
+	}, [location]);
 	return (
-		<div className="resources-container">
+		<div className="resources-container" ref={topRef}>
 			<Tab />
 		</div>
 	);

@@ -23,7 +23,11 @@ function Footer() {
 				<div className="flex items-start justify-between w-3/5 footer-md:min-w-[258px] footer-sm:w-full footer-sm:my-2 footer-sm:py-2.5 footer-tiny:flex-col">
 					<ul className="flex flex-col w-full">
 						<li className="footer-link-container-header m-auto">
-							<Link to="/homepage" className="footer-link">
+							<Link 
+							    to="/homepage" 
+								className="footer-link"
+								state={{ section: 1 }}
+							>
 								<span className="mr-0.5">
 									<FontAwesomeIcon className="scale-110 mb-[3px]" icon={faHouse} />
 								</span>
@@ -33,7 +37,11 @@ function Footer() {
 							</Link>
 						</li>
 						<li className="footer-link-container mx-auto my-0.5 text-stone-600">
-							<Link to="/homepage" className="footer-sublink relative inline-block no-underline text-lg after:absolute after:w-0 after:h-[2px] after:block after:bg-yellow-300 after:right-0 after:transition-[width] after:ease-in-out after:duration-[.5s] hover:after:w-full hover:after:left-0 hover:after:bg-yellow-300">
+							<Link 
+							    to="/homepage" 
+								className="footer-sublink relative inline-block no-underline text-lg after:absolute after:w-0 after:h-[2px] after:block after:bg-yellow-300 after:right-0 after:transition-[width] after:ease-in-out after:duration-[.5s] hover:after:w-full hover:after:left-0 hover:after:bg-yellow-300"
+								state={{ section: 1 }}
+							>
 								<span className="sublink-name text-base">About</span>
 							</Link>
 						</li>
@@ -55,7 +63,11 @@ function Footer() {
 							</Link>
 						</li>
 						<li className="footer-link-container mx-auto my-0.5 text-stone-600">
-							<Link to="/activity/events" className="footer-sublink relative inline-block no-underline text-lg after:absolute after:w-0 after:h-[2px] after:block after:bg-yellow-300 after:right-0 after:transition-[width] after:ease-in-out after:duration-[.5s] hover:after:w-full hover:after:left-0 hover:after:bg-yellow-300">
+							<Link 
+							    to="/activity/events" 
+								className="footer-sublink relative inline-block no-underline text-lg after:absolute after:w-0 after:h-[2px] after:block after:bg-yellow-300 after:right-0 after:transition-[width] after:ease-in-out after:duration-[.5s] hover:after:w-full hover:after:left-0 hover:after:bg-yellow-300"
+								state={{ top: 1 }}
+							>
 								<span className="sublink-name text-base">Events</span>
 							</Link>
 						</li>
