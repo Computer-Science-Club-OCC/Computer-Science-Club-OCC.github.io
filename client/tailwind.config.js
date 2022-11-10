@@ -11,15 +11,15 @@ module.exports = {
 				bounce400: "bounce 1s infinite 400ms",
 			},
 			transitionProperty: {
-				'width' : 'width'
-			}
+				width: "width",
+			},
 		},
 		screens: {
-			'footer-md': {'max': '1000px'},
-			'footer-sm': {'max': '671px'},
-			'footer-tiny': {'max': '304px'},
-			'footer-b-sm': {'max': '480px'}
-		}
+			"footer-md": { max: "1000px" },
+			"footer-sm": { max: "671px" },
+			"footer-tiny": { max: "304px" },
+			"footer-b-sm": { max: "480px" },
+		},
 	},
 	plugins: [],
 };
