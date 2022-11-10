@@ -7,21 +7,21 @@ import { faCalendar, faHouse, faNoteSticky } from "@fortawesome/free-solid-svg-i
 function Footer() {
     return (
         <footer className="bg-[#ff9617]">
-            <div className="flex items-center justify-between border-2 border-green-500 w-2/3 m-auto py-0.5 md:w-full sm:flex-col">
-				<div className="logo-space border-2 border-green-500 w-1/3 h-full mb-auto sm:w-full">
-					<div className="logo-box w-fit border-2 border-blue m-auto ">
+            <div className="flex items-center justify-between w-[910px] m-auto py-2 footer-md:w-full footer-sm:flex-col">
+				<div className="logo-space w-3/12 h-full mb-auto footer-sm:w-full ">
+					<div className="logo-box w-fit m-auto">
 						<img
 							className="w-7 h-7 rounded-full m-auto"
 							src={ClubLogo}
 							alt="OCC Club Logo"
 						/>
-						<p className="text-sm  w-[200px] border-2 border-green-500 pl-5 pr-0 font-[cursive]">
+						<p className="text-sm  w-[200px] pl-5 pr-0 pt-1.5 font-[cursive]">
 							<strong>Building community and knowledge through coding. </strong>
 						</p>
 					</div>
 				</div>
-				<div className="flex items-start justify-between border-2 border-blue-500 w-2/3 md:min-w-[258px] sm:w-full sm:my-2">
-					<ul className="flex flex-col border-2 border-green-500 w-full">
+				<div className="flex items-start justify-between w-3/5 footer-md:min-w-[258px] footer-sm:w-full footer-sm:my-2 footer-sm:py-2.5 footer-tiny:flex-col">
+					<ul className="flex flex-col w-full">
 						<li className="footer-link-container-header m-auto">
 							<Link to="/homepage" className="footer-link">
 								<span className="mr-0.5">
@@ -43,9 +43,9 @@ function Footer() {
 							</Link>
 						</li>
 					</ul>
-					<ul className="flex flex-col border-2 border-green-500 w-full">
+					<ul className="flex flex-col w-full">
 						<li className="footer-link-container-header m-auto">
-							<Link to="" className="footer-link">
+							<Link to="/activity" className="footer-link">
 								<span className="mr-0.5">
 								<FontAwesomeIcon className="scale-110 mb-[3px]" icon={faCalendar} />
 								</span>
@@ -65,7 +65,7 @@ function Footer() {
 							</Link>
 						</li>
 					</ul>
-					<ul className="flex flex-col border-2 border-green-500 w-full" id="resources-links">
+					<ul className="flex flex-col w-full min-w-[125px]" id="resources-links">
 						<li className="footer-link-container-header m-auto">
 							<Link
 								to="/resources"
@@ -75,7 +75,7 @@ function Footer() {
 								<span className="mr-0.5">
 								<FontAwesomeIcon className="scale-110 mb-[2px]" icon={faNoteSticky} />
 								</span>
-								<span className="footer-title text-lg relative inline-block no-underline text-lg after:absolute after:w-0 after:h-[2px] after:block after:bg-yellow-300 after:right-0 after:transition-[width] after:ease-in-out after:duration-[.5s] hover:after:w-full hover:after:left-0 hover:after:bg-yellow-300">
+								<span className="footer-title text-lg no-underline text-lg relative after:absolute after:w-0 after:h-[2px] after:block after:bg-yellow-300 after:right-0 after:transition-[width] after:ease-in-out after:duration-[.5s] hover:after:w-full hover:after:left-0 hover:after:bg-yellow-300">
 									<strong>Resources</strong>
 								</span>
 							</Link>
@@ -110,7 +110,7 @@ function Footer() {
 					</ul>
 					
 				</div>
-				<div className="flex justify-center contact-button border-2 border-green-500 w-1/3 h-fit">
+				<div className="flex justify-center contact-button w-3/12 h-fit">
 					<Link
 						to="/homepage"
 						className="border-2 border-yellow-300 whitespace-nowrap text-[20px] w-fit text-yellow-300 p-2.5 tracking-wide hover:text-black hover:bg-yellow-300"
@@ -120,11 +120,11 @@ function Footer() {
 					</Link>
 				</div>
 			</div>
-			<div className="bg-[#ff8d00] py-1.5 text-center md:flex md:flex-col md:items-center">
-				<span className="m-auto w-fit border-2 border-green-500 text-sm">
+			<div className="bg-[#ff8d00] py-1.5 text-center footer-md:flex footer-md:flex-col footer-md:items-center footer-b-sm:flex footer-b-sm:flex-col">
+				<span className="m-auto w-fit text-sm footer-b-sm:relative">
 					<strong>&copy; 2022 OCC CS Club</strong>
 				</span>
-				<span className="m-auto absolute right-[5px] w-fit border-2 border-green-500 text-sm">Site Map | Privacy Policy</span>
+				<span className="m-auto absolute right-[5px] w-fit text-sm footer-b-sm:relative">Site Map | Privacy Policy</span>
 			</div>
 		</footer>
        

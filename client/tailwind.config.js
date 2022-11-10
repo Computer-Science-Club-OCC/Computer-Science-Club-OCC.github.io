@@ -15,8 +15,10 @@ module.exports = {
 			}
 		},
 		screens: {
-			'md': {'max': '933px'},
-			'sm': {'max': '619px'}
+			'footer-md': {'max': '1000px'},
+			'footer-sm': {'max': '671px'},
+			'footer-tiny': {'max': '304px'},
+			'footer-b-sm': {'max': '480px'}
 		}
 	},
 	plugins: [],
