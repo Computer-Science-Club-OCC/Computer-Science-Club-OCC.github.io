@@ -1,0 +1,153 @@
+.element {
+	height: 260px;
+	min-width: 270px;
+	max-width: 270px;
+	background-color: grey;
+	color: #fff;
+	padding: 10px;
+	margin: 12px;
+	text-align: left;
+	border-radius: 5px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: last baseline;
+	box-shadow: 2.5px 5px 4px 5px black;
+	z-index: 0;
+}
+
+.element-right {
+	height: 260px;
+	min-width: 270px;
+	max-width: 270px;
+	background-color: grey;
+	color: #fff;
+	padding: 10px;
+	margin: 12px;
+	text-align: left;
+	border-radius: 5px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: last baseline;
+	box-shadow: 2.5px 5px 4px 5px black;
+	animation-name: sliding-left;
+	animation-duration: 1s;
+	animation-fill-mode: both;
+	position: relative;
+	z-index: 0;
+}
+
+.element-left {
+	height: 260px;
+	min-width: 270px;
+	max-width: 270px;
+	background-color: grey;
+	color: #fff;
+	padding: 10px;
+	margin: 12px;
+	text-align: left;
+	border-radius: 5px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: last baseline;
+	box-shadow: 2.5px 5px 4px 5px black;
+	animation-name: sliding-right;
+	animation-duration: 1s;
+	animation-fill-mode: both;
+	position: relative;
+	z-index: 0;
+}
+
+@keyframes sliding-right {
+	0% {
+		background-color: red;
+		left: 0px;
+	}
+	100% {
+		background-color: red;
+		left: 290px;
+	}
+}
+
+@keyframes sliding-left {
+	0% {
+		background-color: green;
+		right: 0px;
+	}
+	100% {
+		background-color: green;
+		right: 296px;
+	}
+}
+
+.element:hover {
+	box-shadow: 5px 10px 8px 10px black;
+}
+
+.element-right:hover {
+	box-shadow: 5px 10px 8px 10px black;
+}
+
+.element-left:hover {
+	box-shadow: 5px 10px 8px 10px black;
+}
+.learn-more-button {
+	padding: 10px 40px;
+	border: 3px solid orange;
+	border-radius: 2px;
+	background-color: transparent;
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	width: 75px;
+	font-size: 12px;
+}
+
+.learn-more-button:hover {
+	background-color: orange;
+	color: black;
+}
+
+.element-date {
+	width: 100%;
+	margin: 0;
+	height: auto;
+	font-size: 20px;
+}
+
+.element-title {
+	color: green;
+	font-size: 16px;
+}
+
+.element-description {
+	height: 80px;
+	width: 100%;
+	font-size: 16px;
+}
+
+@media only screen and (max-width: 660px) {
+	@keyframes sliding-right {
+		0% {
+			background-color: red;
+			left: 0px;
+		}
+		100% {
+			background-color: red;
+			left: 286px;
+		}
+	}
+
+	@keyframes sliding-left {
+		0% {
+			background-color: green;
+			right: 0px;
+		}
+		100% {
+			background-color: green;
+			right: 291px;
+		}
+	}
+}
