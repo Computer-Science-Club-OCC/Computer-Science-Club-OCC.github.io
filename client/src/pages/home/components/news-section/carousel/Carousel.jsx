@@ -30,7 +30,7 @@ function Carousel({ data }) {
 	return (
 		<>
 			{windowDimension.windowWidth >= 1139 && data.length > 3 && (
-				<div className="slider">
+				<div className="slider w-full h-[340px]">
 					<InnerCarousel
 						data={data}
 						cards={3}
@@ -40,7 +40,7 @@ function Carousel({ data }) {
 				</div>
 			)}
 			{windowDimension.windowWidth >= 1139 && data.length <= 3 && (
-				<div className="card-container">
+				<div className="card-container w-full h-[340px] flex items-center justify-center bg-[#21262d]">
 					{data.map((element, index) => (
 						<Card
 							key={index}
@@ -58,7 +58,7 @@ function Carousel({ data }) {
 			{ windowDimension.windowWidth < 1139 &&
 				windowDimension.windowWidth >= 660 &&
 				data.length > 2 && (
-					<div className="slider">
+					<div className="slider w-full h-[340px]">
 						<InnerCarousel
 							data={data}
 							cards={2}
@@ -70,7 +70,7 @@ function Carousel({ data }) {
 			{ windowDimension.windowWidth < 1139 &&
 				windowDimension.windowWidth >= 660 &&
 				data.length <= 2 && (
-					<div className="card-container">
+					<div className="card-container w-full h-[340px] flex items-center justify-center bg-[#21262d]">
 						{data.map((element, index) => (
 							<Card
 								key={index}
@@ -86,7 +86,7 @@ function Carousel({ data }) {
 					</div>
 						)}
 			{windowDimension.windowWidth < 660 && data.length > 1 && (
-				<div className="slider">
+				<div className="slider w-full h-[340px]">
 					<InnerCarousel
 						data={data}
 						cards={1}
@@ -96,7 +96,7 @@ function Carousel({ data }) {
 				</div>
 			)}
 			{windowDimension.windowWidth < 660 && data.length === 1 && (
-				<div className="card-container">
+				<div className="card-container w-full h-[340px] flex items-center justify-center bg-[#21262d]">
 					{data.map((element, index) => (
 						<Card
 							key={index}

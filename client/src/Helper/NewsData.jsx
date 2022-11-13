@@ -27,5 +27,29 @@ export const data = [
 			"Learn from an expert in the field. He will guide you through the basics of creating an image and adding things like shading.",
 		links: [],
 	},
+	{
+		title: "AI(XI)",
+		month: "July",
+		day: 9,
+		year: 2021,
+		description: "This is another example",
+		links: [],
+	},
+	{
+		title: "AI(XII)",
+		month: "July",
+		day: 9,
+		year: 2021,
+		description: "This is another example",
+		links: [],
+	},
+	{
+		title: "AI(X)",
+		month: "July",
+		day: "17",
+		year: 2021,
+		description: "This is another example",
+		links: [],
+	},
 ];
 export default data;
