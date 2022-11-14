@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 const uuid = require("uuid")
-const { userActivitySchema } = require("../user-activity/user-activity-model")
+const { userActivitySchema } = require("../user-action/user-action-model")
 const { isEmail } = require("validator")
 const { Schema } = mongoose
 
@@ -42,7 +42,7 @@ const userSchema = new Schema({
         type: Date,
         default: Date.now,
     },
-    activity_log: {
+    action_log: {
         type: [userActivitySchema],
     },
 })

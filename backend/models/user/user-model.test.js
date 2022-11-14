@@ -1,4 +1,3 @@
-const mongoose = require("mongoose")
 const { UserModel } = require("./user-model")
 const db = require("../db-test-setup")
 
