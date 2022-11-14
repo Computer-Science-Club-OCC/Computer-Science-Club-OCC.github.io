@@ -14,32 +14,27 @@
 //      5. Add a member function that is suitable for an API method (GET, PUT, PATCH,.. etc)
 //          of the routing function
 
-const express = require("express")
-const app = express()
-const mongoose = require("mongoose")
-
 class Controller {
     constructor(model) {
-        this.model = model
+        this.Model = model
     }
 
     // GET - Respond with limited mutiple instances
     async getAll(req, res) {
-        await this.model
-            .find()
+        await this.Model.find()
             .limit(50)
             .toArray((err, instances) => {
                 if (err) {
                     res.status(400).send("Error fetching listing")
                 } else {
-                    res.send(result)
+                    res.send(instances)
                 }
             })
     }
 
     // GET - Respond with specific instances
     async getOne(req, res) {
-        await this.model.findById(req.params.id, (err, instance) => {
+        await this.Model.findById(req.params.id, (err, instance) => {
             if (err) {
                 res.status(400).send("Error retrieving instance")
             } else {
@@ -51,7 +46,7 @@ class Controller {
     // POST - Add a new model instance
     async create(req, res) {
         const reqData = JSON.parse(req.body)
-        const newInsatnce = await new this.model(reqData)
+        const newInsatnce = await new this.Model(reqData)
         newInsatnce.save((err) => {
             if (err) {
                 res.status(400).send("Error inserting document")
@@ -62,10 +57,14 @@ class Controller {
     }
 
     // PATCH - Update information for a model instance
-    async update(req, res) {}
+    async update(req, res) {
+        console.log(req)
+    }
 
     // DELETE - Remove a model instance
-    async delete(req, res) {}
+    async delete(req, res) {
+        console.log(req)
+    }
 }
 
 module.exports = Controller

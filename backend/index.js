@@ -6,7 +6,7 @@ const path = require("path")
 const checkMongoStatus = require("./utils/check-mongo-status")
 const PORT = process.env.PORT || 8000
 const MONGO_URL = process.env.MONGO_URL || "mongodb://localhost/occ-csc"
-const magicLogin = require("passport-magic-login")
+// const magicLogin = require("passport-magic-login")
 require("dotenv/config")
 
 // Connect datbase and create collection
