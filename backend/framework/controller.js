@@ -1,32 +1,30 @@
 // --------------------------------------------------------------------------//
-//                           Controller Framwork                            //
+//                           Controller Framwork                             //
 // --------------------------------------------------------------------------//
 // Descriptions:
-//      ControllerFramework reduces redundancy same logics among models
+//      - Controller Framework reduces redundancy same logics among data models
 //      when implementing Express js REST API
+//      - This framework won't support user and user-related models at the moment
+//
 //  Usage:
-//      Create a class instance by assigning mongoose model  in controller file
-//      Import it in route file and call the function that corresponding REST API methods
+//      1. In controller file of a data model, import Controller class
+//      2. Create an instance of the class by assign the data model
+//      3. Export the class
+//      4. Import the controller instance to the route file
+//      5. Add a member function that is suitable for an API method (GET, PUT, PATCH,.. etc)
+//          of the routing function
 
 const express = require("express")
 const app = express()
 const mongoose = require("mongoose")
 
-// TODO:
-//      - Add permission feature to POST, PATCH, DELETE methods
-//      - Match specific fields to update in PATCH method
 class Controller {
     constructor(model) {
         this.model = model
     }
 
-    printModel() {
-        console.log(this.model)
-        console.log(Object.keys(this.model.schema.paths))
-    }
-
     // GET - Respond with limited mutiple instances
-    async list(req, res) {
+    async getAll(req, res) {
         await this.model
             .find()
             .limit(50)
@@ -40,7 +38,7 @@ class Controller {
     }
 
     // GET - Respond with specific instances
-    async retrieve(req, res) {
+    async getOne(req, res) {
         await this.model.findById(req.params.id, (err, instance) => {
             if (err) {
                 res.status(400).send("Error retrieving instance")

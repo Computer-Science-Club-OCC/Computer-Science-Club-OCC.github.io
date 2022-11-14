@@ -18,6 +18,9 @@ const magicLogin = new MagicLoginStrategy({
                 callback(err)
             })
     },
+    jwtOptions: {
+        expiresIn: "15 minutes",
+    },
 })
 
 module.exports = magicLogin
