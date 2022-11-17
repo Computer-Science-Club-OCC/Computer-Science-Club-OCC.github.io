@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faChevronLeft,
@@ -48,19 +49,19 @@ function InnerCarousel(props) {
 					<FontAwesomeIcon
 						icon={faChevronLeft}
 						style={{ fontSize: 40 }}
-						className="back-arrow-inactive mr-[.5vw] text-[rgba(255, 255, 255, 0.1)] z-1"
+						className="back-arrow-inactive mr-[.5vw] text-[#ffffff]/[0.1] z-1"
 					/>
 				)}
 			</div>
 			{transition < 0 && (
-				<div className="transition-right-center-slider flex-[40%] h-full flex flex-row-reverse items-center box-border bg-[#21262d] min-w-[890px] max-w-[890px] carousel-sm:min-w-[307px] carousel-sm:max-w-[307px] carousel-lg:min-w-[596px] carousel-lg:max-w-[596px]">
+				<div className="transition-right-center-slider flex-[40%] h-full flex flex-row-reverse items-center box-border bg-[#21262d] min-w-[890px] max-w-[890px] carousel-sm:min-w-[301px] carousel-sm:max-w-[301px] carousel-lg:min-w-[596px] carousel-lg:max-w-[596px]">
 					{index >= 1 &&
 						data
 							.slice(index - 1, index + cards + 1)
 							.reverse()
-							.map((element, num = 0) => (
+							.map((element, i) => (
 								<Card
-									key={num++}
+									key={i}
 									title={element.title}
 									month={element.month}
 									day={element.day}
@@ -74,9 +75,9 @@ function InnerCarousel(props) {
 						data
 							.slice(index, index + cards + 1)
 							.reverse()
-							.map((element, num = 0) => (
+							.map((element, i) => (
 								<Card
-									key={num++}
+									key={i}
 									title={element.title}
 									month={element.month}
 									day={element.day}
@@ -89,10 +90,10 @@ function InnerCarousel(props) {
 				</div>
 			)}
 			{transition === 0 && (
-				<div className="center-slider flex-[40%] h-full max-w-[890px] min-w-[890px] flex relative justify-center items-center bg-[#21262d] box-border carousel-sm:min-w-[307px] carousel-sm:max-w-[307px] carousel-lg:min-w-[596px] carousel-lg:max-w-[596px]">
-					{data.slice(index, index + cards).map((element, num = 0) => (
+				<div className="center-slider flex-[40%] h-full max-w-[890px] min-w-[890px] flex relative justify-center items-center bg-[#21262d] box-border carousel-sm:min-w-[301px] carousel-sm:max-w-[301px] carousel-lg:min-w-[596px] carousel-lg:max-w-[596px]">
+					{data.slice(index, index + cards).map((element, i) => (
 						<Card
-							key={num++}
+							key={i}
 							title={element.title}
 							month={element.month}
 							day={element.day}
@@ -105,10 +106,10 @@ function InnerCarousel(props) {
 				</div>
 			)}
 			{transition > 0 && (
-				<div className="transition-center-slider flex[40%] h-full flex items-center box-border bg-[#21262d] min-w-[890px] max-w-[890px] carousel-sm:min-w-[307px] carousel-sm:max-w-[307px] carousel-lg:min-w-[596px] carousel-lg:max-w-[596px]">
-					{data.slice(index - 1, index + cards + 1).map((element, num = 0) => (
+				<div className="transition-center-slider flex[40%] h-full flex items-center box-border bg-[#21262d] min-w-[890px] max-w-[890px] carousel-sm:min-w-[301px] carousel-sm:max-w-[301px] carousel-lg:min-w-[596px] carousel-lg:max-w-[596px]">
+					{data.slice(index - 1, index + cards + 1).map((element, i) => (
 						<Card
-							key={num++}
+							key={i}
 							title={element.title}
 							month={element.month}
 							day={element.day}
@@ -133,7 +134,7 @@ function InnerCarousel(props) {
 					<FontAwesomeIcon
 						icon={faChevronRight}
 						style={{ fontSize: 40 }}
-						className="forward-arrow-inactive ml-[.5vw] text-[rgba(255, 255, 255, 0.1)] z-1"
+						className="forward-arrow-inactive ml-[.5vw] text-[#ffffff]/[0.1] z-1"
 					/>
 				)}
 			</div>
@@ -142,3 +143,11 @@ function InnerCarousel(props) {
 }
 
 export default InnerCarousel;
+
+
+InnerCarousel.propTypes = {
+	data: PropTypes.arrayOf(Object).isRequired,
+	cards: PropTypes.number.isRequired,
+	index: PropTypes.number.isRequired,
+	handleIndex: PropTypes.func.isRequired,
+}

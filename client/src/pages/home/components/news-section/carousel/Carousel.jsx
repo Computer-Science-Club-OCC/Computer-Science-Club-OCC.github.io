@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import "./carousel.css";
 import InnerCarousel from "./InnerCarousel";
 import Card from "./Card";
@@ -116,3 +117,8 @@ function Carousel({ data }) {
 }
 
 export default Carousel;
+
+
+Carousel.propTypes = {
+	data: PropTypes.arrayOf(Object).isRequired,
+}

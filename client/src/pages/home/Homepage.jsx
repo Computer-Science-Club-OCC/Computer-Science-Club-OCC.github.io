@@ -1,6 +1,7 @@
 import About from "./components/about/About";
 import ContactUs from "./components/contact-us/ContactUs";
 import NewsSection from "./components/news-section/NewsSection";
+import PropTypes from "prop-types";
 
 function Home({ data }) {
 	return (
@@ -14,3 +15,12 @@ function Home({ data }) {
 }
 
 export default Home;
+
+
+Home.propTypes = {
+	data: PropTypes.arrayOf(Object).isRequired,
+}
+
+Home.defaultProps = {
+	data: [],
+}
