@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import Carousel from "./carousel/Carousel";
-import "./newssection.css";
+
 
 
 function NewsSection({ data }) {

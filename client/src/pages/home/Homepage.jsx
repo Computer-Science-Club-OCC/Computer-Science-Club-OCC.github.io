@@ -22,5 +22,13 @@ Home.propTypes = {
 }
 
 Home.defaultProps = {
-	data: [],
+	data: [{title: "Lorem Ipsum",
+	month: "January",
+	day: 1,
+	year: 2022,
+	description: "Lorem Ipsum",
+	links: [
+		"https://en.wikipedia.org/wiki/Computer_science",
+	],},
+	],
 }

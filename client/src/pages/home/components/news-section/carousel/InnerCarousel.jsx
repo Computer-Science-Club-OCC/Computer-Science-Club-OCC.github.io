@@ -6,7 +6,7 @@ import {
 	faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import Card from "./Card";
-import "./innercarousel.css";
+
 
 function InnerCarousel(props) {
 	const { data, cards, index, handleIndex } = props;

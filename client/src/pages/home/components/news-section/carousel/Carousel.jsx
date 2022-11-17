@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import "./carousel.css";
 import InnerCarousel from "./InnerCarousel";
 import Card from "./Card";
 
