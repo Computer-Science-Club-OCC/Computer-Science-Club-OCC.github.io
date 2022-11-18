@@ -21,39 +21,35 @@ class Controller {
 
     // GET - Respond with limited mutiple instances
     async getAll(req, res) {
-        await this.Model.find()
-            .limit(50)
-            .toArray((err, instances) => {
-                if (err) {
-                    res.status(400).send("Error fetching listing")
-                } else {
-                    res.send(instances)
-                }
-            })
+        try {
+            const instances = await this.Model.find().limit(50)
+            res.status(200).send(instances)
+        } catch (err) {
+            console.log(err)
+            return res.send(err)
+        }
     }
 
-    // GET - Respond with specific instances
+    // GET - Respond with specific instance
     async getOne(req, res) {
-        await this.Model.findById(req.params.id, (err, instance) => {
-            if (err) {
-                res.status(400).send("Error retrieving instance")
-            } else {
-                res.send(instance)
-            }
-        })
+        try {
+            const instance = await this.Model.findById(req.params.id)
+            res.status(200).send(instance)
+        } catch (err) {
+            res.send(err)
+        }
     }
 
     // POST - Add a new model instance
     async create(req, res) {
-        const reqData = JSON.parse(req.body)
-        const newInsatnce = await new this.Model(reqData)
-        newInsatnce.save((err) => {
-            if (err) {
-                res.status(400).send("Error inserting document")
-            } else {
-                res.status(201).send()
-            }
-        })
+        const instance = this.Model(req.body)
+        try {
+            const newInstance = await instance.save()
+            res.status(201).send(newInstance)
+            console.log("a new instance was added to database")
+        } catch (err) {
+            res.send(err)
+        }
     }
 
     // PATCH - Update information for a model instance
