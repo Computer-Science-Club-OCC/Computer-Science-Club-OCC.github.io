@@ -1,11 +1,12 @@
 const express = require("express")
 const app = express()
 const mongoose = require("mongoose")
+// const passport = require("passport")
+// const magicLogin = require("passport-magic-login")
 const path = require("path")
 const checkMongoStatus = require("./utils/check-mongo-status")
 const PORT = process.env.PORT || 8000
 const MONGO_URL = process.env.MONGO_URL || "mongodb://localhost/occ-csc"
-
 require("dotenv/config")
 
 // Connect datbase and create collection
@@ -31,6 +32,7 @@ app.use(express.static(path.join(path.resolve("./"), "public")))
 
 // Import Routes
 const imagesRoute = require("./routes/images/images-route")
+const tagsRoute = require("./routes/tags/tags-route")
 // const eventsRoute = require("./routes/events/events-route")
 // const projectsRoute = require("./routes/projects/projects-route")
 // const tutorialsRoute = require("./routes/tutorials/tutorials-route")
@@ -39,6 +41,7 @@ const imagesRoute = require("./routes/images/images-route")
 
 // Use Routes
 app.use("/images", imagesRoute)
+app.use("/tags", tagsRoute)
 
 app.get("/", (req, res) => {
     res.send("GET request to the homepage")
