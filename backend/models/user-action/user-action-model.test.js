@@ -22,7 +22,7 @@ const testUser2 = {
     created_at: new Date("10-8-2022"),
     updated_at: new Date("02-02-2023"),
 }
-const user2 = new UserModel(testUser1)
+const user2 = new UserModel(testUser2)
 const createdUser2 = user2.save()
 
 const testAction1 = {
