@@ -21,6 +21,8 @@
         "nodemon": "^2.0.19",
         "uuid": "^9.0.0",
         "validator": "^13.7.0"
+        "passport": "^0.6.0",
+        "passport-magic-login": "^1.2.0"
     },
     "devDependencies": {
         "eslint": "^8.22.0",
