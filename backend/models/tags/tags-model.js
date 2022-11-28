@@ -9,6 +9,7 @@ const tagSchema = new Schema({
     created_at: {
         type: Date,
         require: true,
+        default: Date.now(),
     },
 })
 

@@ -20,10 +20,75 @@ class Controller {
     }
 
     // GET - Respond with limited mutiple instances
+    // Use cursor pagination for efficient query
+    // Retrieve descending order to show latest items on top
     async getAll(req, res) {
+        let prev = req.query.prev
+        let next = req.query.next
+        let size = parseInt(req.query.size) || 10
+        if (size < 1) {
+            size = 10
+        }
+        if (size > 50) {
+            size = 10
+        }
+
         try {
-            const instances = await this.Model.find().limit(50)
-            res.status(200).send(instances)
+            let instances = null
+
+            // Initial query
+            if (!prev && !next) {
+                instances = await this.Model.find()
+                    .sort({ _id: -1 })
+                    .limit(size + 1)
+                if (instances.length === size + 1) {
+                    instances.pop()
+                    prev = null
+                    next = instances[size - 1]._id
+                } else {
+                    next = prev = null
+                }
+            }
+            // Follow-up query
+            else {
+                // set 1 for ascending order to prevent mongoose from retrieving
+                // items from beginning if in descending order
+                const order = next ? -1 : 1
+                const queryCondition = next ? { $lt: next } : { $gt: prev }
+
+                instances = await this.Model.find({ _id: queryCondition })
+                    .sort({ _id: order })
+                    .limit(size + 1)
+
+                if (instances.length === size + 1) {
+                    instances.pop()
+                    if (next) {
+                        prev = instances[0]._id
+                        next = instances[size - 1]._id
+                    } else {
+                        prev = instances[size - 1]._id
+                        next = instances[0]._id
+                        instances.reverse()
+                    }
+                } else {
+                    if (next) {
+                        prev = instances[0]._id
+                        next = null
+                    } else {
+                        prev = null
+                        next = instances[size - 1]._id
+                        instances.reverse()
+                    }
+                }
+            }
+
+            return res.status(200).send({
+                data: instances,
+                cursors: {
+                    prev,
+                    next,
+                },
+            })
         } catch (err) {
             console.log(err)
             return res.send(err)
@@ -32,8 +97,9 @@ class Controller {
 
     // GET - Respond with specific instance
     async getOne(req, res) {
+        console.log(req.query.id)
         try {
-            const instance = await this.Model.findById(req.params.id)
+            const instance = await this.Model.findById(req.query.id)
             res.status(200).send(instance)
         } catch (err) {
             res.send(err)
