@@ -1,171 +1,67 @@
-/* <nav> */
 .navbar {
-	background-color: #ff9617;
-	color: white;
-	padding-left: 1rem;
-	height: 60px;
-	border-bottom: 1px solid #ff9617;
-	flex-direction: row;
-	display: flex;
-	justify-content: space-between;
-	position: relative;
+	@apply flex relative justify-between bg-[#ff9617] text-white h-14;
 }
 
-/* Navbar Brand */
-/* <div> */
-.navbar-brand {
-	float: left;
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	flex-direction: row;
-	max-width: 300px;
+.navbrand {
+	@apply pl-0 lg:pl-10 float-left flex flex-row justify-items-start items-center;
 }
 
-/* On debugging: increase size will increase padding top */
-.navbar-brand h1 {
-	color: #212121;
-	font-size: 24px;
+.navbrand h1 {
+	@apply pl-2 text-black text-2xl font-bold;
 }
 
-/* <Link> */
 .navbar-img-link {
-	margin: 0;
+	@apply mx-0;
 }
 
-/* <img> */
 .navbar-brand-img {
-	width: 40px;
-	height: 40px;
-	margin: 0.2rem;
-	border-radius: 50%;
-	-moz-border-radius: 50%;
-	-o-border-image-radius: 50%;
+	@apply w-10 h-10 ml-10 rounded-full;
 }
-/* End of Navbar Brand */
 
-/* Navbar Components */
-/* <ul> */
 .navbar-nav {
-	max-width: 100%;
-	height: 100%;
+	@apply flex max-w-full h-full mr-4 lg:mr-20;
 }
+
 .navbar-nav ul {
-	height: 100%;
-	width: 100%;
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
-	align-items: center;
-	list-style-type: none;
-	margin-right: 10%;
-	padding: 0px;
+	@apply w-full h-full flex justify-start items-center list-none mr-3 p-0;
 }
 
-/* responsive navbar */
-
-.nav-responsive {
-	background-color: black;
-	min-height: 100vh;
-	z-index: 10;
-	padding-top: 80px;
-}
-.nav-responsive-lists {
-	flex-direction: column !important;
-	justify-content: flex-start !important;
-	align-items: flex-start !important;
-}
-.nav-responsive-link {
-	color: white !important;
-}
-.nav-responsive-nav-item {
-	margin-bottom: 100px !important;
+.responsive {
+	@apply w-48 min-h-screen z-30 pt-20 mr-0 bg-black;
 }
 
-/* <li> */
+.responsive-lists {
+	@apply flex-col justify-start items-start;
+}
+
+.responsive-link {
+	@apply text-white;
+}
+
+.responsive-item {
+	@apply mb-12;
+}
+
+.responsive-btn {
+	@apply justify-center items-center right-4 absolute cursor-pointer z-40 rounded hover:bg-[#be7200] ease-in-out duration-300;
+}
+
 .navbar-item {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-weight: bold;
+	@apply flex w-40 lg:w-40 md:w-28 py-3.5 lg:py-3 justify-center items-center font-bold hover:bg-[#be7200] hover:cursor-pointer;
 }
 
-/* <Link> */
 .navbar-link {
-	color: #212121;
-	font-size: 24px;
-	text-align: center;
-	text-decoration: none;
-	padding: 1.1rem;
-	margin: 10px;
-	transition: all 0.2s ease-in-out;
+	@apply text-white md:text-[#212121] text-2xl md:text-xl lg:text-2xl text-center md:ease-in-out md:duration-300  group-hover:text-white;
 }
 
-/* <div> dropdown box */
+.dropdown {
+	@apply w-full flex justify-center;
+}
+
 .dropdown-content {
-	display: none;
-	position: absolute;
-	background-color: #fff;
-	margin: 10px;
-	margin-top: 16px;
-	width: 157px;
-	min-width: 8rem;
-	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-	z-index: 1;
-	border-top: 5px solid rgb(190, 114, 0);
-	transform: translateY(28px);
-	margin-left: 0;
+	@apply hidden absolute w-40 lg:w-40 md:w-32 shadow-lg bg-white shadow-black z-20 translate-y-11 md:top-14 md:translate-y-0 lg:top-14 group-hover:block;
 }
 
-/* <Link> */
 .dropdown-link {
-	color: #212121;
-	font-size: 18px;
-	padding: 0.5rem 0.5rem;
-	text-decoration: none;
-	display: block;
-	transition: all 0.2s ease-in-out;
-}
-
-/* <Link> */
-.dropdown-link:hover {
-	color: #fff;
-	background-color: #535353;
-}
-
-.dropdown:hover .dropdown-content {
-	display: block;
-}
-/* End of Navbar Component Section */
-
-.nav-toggle-icons {
-	cursor: pointer;
-	position: absolute;
-	right: 4%;
-	z-index: 20;
-}
-
-.dropdown:hover .dropdown-content + .navbar-link,
-.navbar-link:hover {
-	color: #fff;
-	background-color: rgb(190, 114, 0);
-	border-radius: 4px;
-}
-
-#home-navbar-link {
-	padding-left: 31px;
-	padding-right: 31px;
-	margin: 0;
-}
-
-#activity-navbar-link {
-	padding-left: 22px;
-	padding-right: 24px;
-	margin: 0;
-}
-
-#resources-navbar-link {
-	padding-left: 22px;
-	padding-right: 22px;
-	margin-left: 0;
+	@apply block text-[#212121] text-xl md:text-lg lg:text-xl py-2 text-center ease-in-out duration-300 hover:text-white hover:bg-[#535353];
 }
