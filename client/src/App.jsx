@@ -5,7 +5,6 @@ import NavigationBar from "./components/navbar/NavigationBar";
 import { ErrorState, LoadingState } from "./components/states";
 
 const Homepage = lazy(() => import("./pages/home/Homepage"));
-const Activity = lazy(() => import("./pages/activity/Activity"));
 const Events = lazy(() => import("./pages/events/Events"));
 const Projects = lazy(() => import("./pages/projects/Projects"));
 const Resources = lazy(() => import("./pages/resources/Resources"));
