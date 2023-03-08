@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Bars } from "../../asset/icons/icons";
 import ClubLogo from "../../asset/images/club-logo.png";
+import { CloseX, Menu } from "../../asset/icons/icons";
 import "./navbar.css";
 
 function NavigationBar() {
@@ -19,7 +19,7 @@ function NavigationBar() {
 
 	useEffect(() => {
 		window.addEventListener("resize", setDimension);
-		if (screenSize.dynamicWidth <= 630) {
+		if (screenSize.dynamicWidth <= 768) {
 			setIsMobile(true);
 		} else {
 			setIsMobile(false);
@@ -31,8 +31,8 @@ function NavigationBar() {
 
 	return (
 		<nav className="navbar">
-			<div className="navbar-brand">
-				<Link className="navbar-img-link" to="/homepage">
+			<div className="navbrand">
+				<Link className="nav-img-link" to="/homepage">
 					<img className="navbar-brand-img" src={ClubLogo} alt="club-logo" />
 				</Link>
 				<div className="navbar-title">
@@ -40,58 +40,62 @@ function NavigationBar() {
 				</div>
 
 				{isMobile && (
-					<div
-						className="nav-toggle-icons"
+					<button
+						className="responsive-btn"
 						onClick={() => setIsSwitch(prev => !prev)}
-						role="button"
+						type="button"
 						tabIndex={0}
 					>
-						{isSwitch ? null : <Bars className="nav-toggle-icon" />}
-					</div>
+						{isSwitch ? (
+							<svg className="w-12 h-12">{CloseX}</svg>
+						) : (
+							<svg className="w-12 h-12 text-black hover:text-white">
+								{Menu}
+							</svg>
+						)}
+					</button>
 				)}
 			</div>
 			{(isSwitch || !isMobile) && (
-				<div className={isMobile ? "navbar-nav nav-responsive" : "navbar-nav"}>
-					<ul className={isMobile ? "nav-responsive-lists" : ""}>
+				<div className={isMobile ? "navbar-nav responsive" : "navbar-nav"}>
+					<ul className={isMobile ? "responsive-lists" : ""}>
 						<li
 							className={
-								isMobile ? "navbar-item nav-responsive-nav-item" : "navbar-item"
+								isMobile
+									? "group navbar-item responsive-item"
+									: "group navbar-item"
 							}
-							id={
-								isMobile ? "home nav-responsive-nav-item" : "home-navbar-item"
-							}
+							id={isMobile ? "responsive-item" : ""}
 						>
-							<div className="dropdown">
+							<div className="group dropdown">
 								<div className="dropdown-content">
 									<Link
 										className="dropdown-link"
 										to="/homepage"
 										state={{ option: 1 }}
 									>
-										&gt; About
+										About
 									</Link>
 									<Link
 										className="dropdown-link"
 										to="/homepage"
 										state={{ option: 2 }}
 									>
-										&gt; News
+										News
 									</Link>
 									<Link
 										className="dropdown-link"
 										to="/homepage"
 										state={{ option: 3 }}
 									>
-										&gt; Contact Us
+										Contact Us
 									</Link>
 								</div>
 								<Link
 									className={
-										isMobile ? "navbar-link nav-responsive-link" : "navbar-link"
+										isMobile ? "navbar-link responsive-link" : "navbar-link"
 									}
-									id={
-										isMobile ? "home nav-responsive-link" : "home-navbar-link"
-									}
+									id={isMobile ? "responsive-link" : ""}
 									to="/homepage"
 								>
 									Home
@@ -100,47 +104,47 @@ function NavigationBar() {
 						</li>
 						<li
 							className={
-								isMobile ? "navbar-item nav-responsive-nav-item" : "navbar-item"
-							}
-							id={
 								isMobile
-									? "activity nav-responsive-nav-item"
-									: "activity-navbar-item"
+									? "group navbar-item responsive-item"
+									: "group navbar-item"
 							}
+							id={isMobile ? "responsive-item" : ""}
 						>
-							<div className="dropdown">
-								<div className="dropdown-content">
-									<Link className="dropdown-link" to="/activity/events">
-										&gt; Events
-									</Link>
-									<Link className="dropdown-link" to="/activity/projects">
-										&gt; Projects
-									</Link>
-								</div>
-								<Link
-									className={
-										isMobile ? "navbar-link nav-responsive-link" : "navbar-link"
-									}
-									id={
-										isMobile
-											? "activity nav-responsive-link"
-											: "activity-navbar-link"
-									}
-									to=""
-								>
-									Activity
-								</Link>
-							</div>
+							<Link
+								className={
+									isMobile ? "navbar-link responsive-link" : "navbar-link"
+								}
+								id={isMobile ? "responsive-link" : ""}
+								to="/events"
+							>
+								Events
+							</Link>
 						</li>
 						<li
 							className={
-								isMobile ? "navbar-item nav-responsive-nav-item" : "navbar-item"
-							}
-							id={
 								isMobile
-									? "resources nav-responsive-nav-item"
-									: "resources-navbar-item"
+									? "group navbar-item responsive-item"
+									: "group navbar-item"
 							}
+							id={isMobile ? "responsive-item" : ""}
+						>
+							<Link
+								className={
+									isMobile ? "navbar-link responsive-link" : "navbar-link"
+								}
+								id={isMobile ? "responsive-link" : ""}
+								to="/projects"
+							>
+								Projects
+							</Link>
+						</li>
+						<li
+							className={
+								isMobile
+									? "group navbar-item responsive-item"
+									: "group navbar-item"
+							}
+							id={isMobile ? "responsive-item" : ""}
 						>
 							<div className="dropdown">
 								<div className="dropdown-content">
@@ -149,32 +153,28 @@ function NavigationBar() {
 										to="/resources"
 										state={{ option: 1 }}
 									>
-										&gt; Tutorials
+										Tutorials
 									</Link>
 									<Link
 										className="dropdown-link"
 										to="/resources"
 										state={{ option: 2 }}
 									>
-										&gt; Readings
+										Readings
 									</Link>
 									<Link
 										className="dropdown-link"
 										to="/resources"
 										state={{ option: 3 }}
 									>
-										&gt; Organizations
+										Organizations
 									</Link>
 								</div>
 								<Link
 									className={
-										isMobile ? "navbar-link nav-responsive-link" : "navbar-link"
+										isMobile ? "navbar-link responsive-link" : "navbar-link"
 									}
-									id={
-										isMobile
-											? "resources nav-responsive-link"
-											: "resources-navbar-link"
-									}
+									id={isMobile ? "responsive-link" : ""}
 									to="/resources"
 									state={{ option: 1 }}
 								>

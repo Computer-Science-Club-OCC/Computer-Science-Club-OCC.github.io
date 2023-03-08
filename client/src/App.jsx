@@ -6,7 +6,6 @@ import NavigationBar from "./components/navbar/NavigationBar";
 import { ErrorState, LoadingState } from "./components/states";
 
 const Homepage = lazy(() => import("./pages/home/Homepage"));
-const Activity = lazy(() => import("./pages/activity/Activity"));
 const Events = lazy(() => import("./pages/events/Events"));
 const Projects = lazy(() => import("./pages/projects/Projects"));
 const Resources = lazy(() => import("./pages/resources/Resources"));
@@ -19,9 +18,8 @@ function App() {
 				<Suspense fallback={<LoadingState />}>
 					<Routes>
 						<Route path="/homepage" element={<Homepage />} />
-						<Route path="/activity" element={<Activity />} />
-						<Route path="/activity/events" element={<Events />} />
-						<Route path="/activity/projects" element={<Projects />} />
+						<Route path="/events" element={<Events />} />
+						<Route path="/projects" element={<Projects />} />
 						<Route path="/resources" element={<Resources />} />
 						<Route path="*" element={<Navigate to="/homepage" replace />} />
 					</Routes>

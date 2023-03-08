@@ -8,7 +8,7 @@ function getStatus() {
             break
         case 1:
             console.log("MongoDB status:", "\x1b[36mConnected\x1b[0m")
-            console.log("\x1b[36mcs_club Collection is available\x1b[0m")
+            console.log("\x1b[36mocc-csc Collection is available\x1b[0m")
             break
         case 2:
             console.log("MongoDB status:", "\x1b[32mConnecting\x1b[0m")

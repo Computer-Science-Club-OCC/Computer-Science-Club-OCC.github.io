@@ -29,8 +29,8 @@
 		"preview": "vite preview",
 		"lint": "eslint --cache .",
 		"lint:fix": "eslint --cache --fix .",
-		"format:fix": "prettier-eslint --write \"src/**/*.{jsx,js,css,html,json}\"",
-		"format:diff": "prettier-eslint --list-different \"src/**/*.{jsx,js,css,html,json}\""
+		"format:fix": "prettier-eslint --write \"src/**/*.{js,jsx,css,html,json}\"",
+		"format:diff": "prettier-eslint --list-different \"src/**/*.{js,jsx,css,html,json}\""
 	},
 	"eslintConfig": {
 		"extends": [
