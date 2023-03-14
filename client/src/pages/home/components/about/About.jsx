@@ -1,12 +1,11 @@
 import "./about.css";
-import { faker } from "@faker-js/faker";
 
 function About() {
 	// Demo images
 	const imageList = [
-		faker.image.nature(),
-		faker.image.sports(),
-		faker.image.transport(),
+		"https://loremflickr.com/640/480/nature",
+		"https://loremflickr.com/640/480/sports",
+		"https://loremflickr.com/640/480/transport",
 	];
 
 	return (

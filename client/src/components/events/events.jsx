@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Box, Pagination, IconButton, Tooltip } from "@mui/material"; // replace with tailwind
-import { KeyboardArrowDown } from "@mui/icons-material"; // replace with tailwind
 import { Gallery, Item } from "react-photoswipe-gallery";
+import { ChevronDown } from "../../asset/icons/icons";
 import "photoswipe/dist/photoswipe.css";
 import "./events.css";
 
@@ -122,9 +122,8 @@ function ExpandButton({ handleClick, isExpanded }) {
 				arrow
 			>
 				<IconButton type="button" onClick={handleClick}>
-					<KeyboardArrowDown
+					<ChevronDown
 						className="expand-icon"
-						fontSize="large"
 						id={isExpanded ? "open" : "closed"}
 					/>
 				</IconButton>
