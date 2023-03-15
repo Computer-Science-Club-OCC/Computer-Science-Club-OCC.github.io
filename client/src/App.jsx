@@ -16,9 +16,8 @@ function Client() {
 			<NavigationBar />
 			<Routes>
 				<Route path="/homepage" element={<Homepage />} />
-				<Route path="/activity" element={<Activity />} />
 				<Route path="/activity/events" element={<Events />} />
-				<Route path="/activity/projects" element={<Projects />} />
+				<Route path="/projects" element={<Projects />} />
 				<Route path="/resources" element={<Resources />} />
 				<Route path="*" element={<Navigate to="/homepage" replace />} />
 			</Routes>
