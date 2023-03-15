@@ -54,6 +54,14 @@
 	@apply text-white md:text-[#212121] text-2xl md:text-xl lg:text-2xl text-center md:ease-in-out md:duration-300  group-hover:text-white;
 }
 
+.nav-icon-close {
+	@apply w-12 h-12;
+}
+
+.nav-icon-menu {
+	@apply w-12 h-12 text-black hover:text-white;
+}
+
 .dropdown {
 	@apply w-full flex justify-center;
 }
