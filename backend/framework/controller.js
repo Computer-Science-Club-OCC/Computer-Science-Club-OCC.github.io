@@ -1,131 +1,172 @@
-// --------------------------------------------------------------------------//
-//                           Controller Framwork                             //
-// --------------------------------------------------------------------------//
+// ----------------------------------------------------------------------------------//
+//                                Controller Framework                               //
+// ----------------------------------------------------------------------------------//
 // Descriptions:
-//      - Controller Framework reduces redundancy same logics among data models
-//      when implementing Express js REST API
-//      - This framework won't support user and user-related models at the moment
+//      - Controller Framework reduces the redundancy when implementing REST API
+//          using Express JS
+//      - This framework won't support user or user-related models at the moment
+//      - The framework use query string parameters in api route for flexibility
 //
 //  Usage:
-//      1. In controller file of a data model, import Controller class
-//      2. Create an instance of the class by assign the data model
-//      3. Export the class
-//      4. Import the controller instance to the route file
-//      5. Add a member function that is suitable for an API method (GET, PUT, PATCH,.. etc)
-//          of the routing function
+//      1. Import Controller class to controller file via the directory
+//          controllers/<model_name>/<model_name>-controller.js
+//      2. Create an instance of the class by assigning the data model
+//      3. Export the controller instance
+//      4. Import the controller instance to the route file via the directory
+//          routes/<model_name>/<model_name>-route.js
+//      5. Add a member function that is suitable for an API method
+//          (GET, PUT, PATCH,.. etc) of the routing function
+//      6. Import the model route to index.js under "Import route" section
+//          and add use route
+
+const config = require("../config")
 
 class Controller {
     constructor(model) {
         this.Model = model
     }
 
-    // GET - Respond with limited mutiple instances
-    // Use cursor pagination for efficient query
-    // Retrieve descending order to show latest items on top
     async getAll(req, res) {
-        let prev = req.query.prev
+        const reqSize = parseInt(req.query.size) // get query size from query params
+        const sortOrder = { _id: -1 } // sort in descending order by default
+        let size = config.defaultPageSize
         let next = req.query.next
-        let size = parseInt(req.query.size) || 10
-        if (size < 1) {
-            size = 10
+        let prev = req.query.prev
+        const query = {}
+
+        // Count all instances
+        const total = await this.Model.find().count("_id")
+
+        if (reqSize > config.defaultMaxPageSize) {
+            size = config.defaultMaxPageSize
+        } else if (reqSize > size) {
+            size = reqSize
         }
-        if (size > 50) {
-            size = 10
+
+        if (req.query.last) {
+            sortOrder._id = 1
+            size = total % size === 0 ? size : total % size
+        } else if (next) {
+            query._id = { $lt: next }
+        } else if (prev) {
+            query._id = { $gt: prev }
+            sortOrder._id = 1
         }
 
-        try {
-            let instances = null
-
-            // Initial query
-            if (!prev && !next) {
-                instances = await this.Model.find()
-                    .sort({ _id: -1 })
-                    .limit(size + 1)
-                if (instances.length === size + 1) {
-                    instances.pop()
-                    prev = null
-                    next = instances[size - 1]._id
-                } else {
-                    next = prev = null
+        const data = await this.Model.find(query)
+            .sort(sortOrder)
+            .limit(size)
+            .then((data) => {
+                if (prev || req.query.last) {
+                    return data.reverse()
                 }
-            }
-            // Follow-up query
-            else {
-                // set 1 for ascending order to prevent mongoose from retrieving
-                // items from beginning if in descending order
-                const order = next ? -1 : 1
-                const queryCondition = next ? { $lt: next } : { $gt: prev }
 
-                instances = await this.Model.find({ _id: queryCondition })
-                    .sort({ _id: order })
-                    .limit(size + 1)
-
-                if (instances.length === size + 1) {
-                    instances.pop()
-                    if (next) {
-                        prev = instances[0]._id
-                        next = instances[size - 1]._id
-                    } else {
-                        prev = instances[size - 1]._id
-                        next = instances[0]._id
-                        instances.reverse()
-                    }
-                } else {
-                    if (next) {
-                        prev = instances[0]._id
-                        next = null
-                    } else {
-                        prev = null
-                        next = instances[size - 1]._id
-                        instances.reverse()
-                    }
-                }
-            }
-
-            return res.status(200).send({
-                data: instances,
-                cursors: {
-                    prev,
-                    next,
-                },
+                return data
             })
-        } catch (err) {
-            console.log(err)
-            return res.send(err)
+            .catch((error) => {
+                return res.status(400).json({ error })
+            })
+
+        let firstId, lastId
+        let hasNext = false
+        let hasPrev = false
+
+        if (data.length) {
+            firstId = data[0]._id
+            lastId = data[data.length - 1]._id
+            hasPrev = await this.Model.exists({ _id: { $gt: firstId } })
+            hasNext = await this.Model.exists({ _id: { $lt: lastId } })
         }
+
+        next = hasNext ? lastId : null
+        prev = hasPrev ? firstId : null
+
+        return res.status(200).json({
+            total,
+            size,
+            cursors: {
+                prev,
+                next,
+            },
+            data,
+        })
     }
 
-    // GET - Respond with specific instance
+    // GET - Return a specific instance
     async getOne(req, res) {
-        console.log(req.query.id)
-        try {
-            const instance = await this.Model.findById(req.query.id)
-            res.status(200).send(instance)
-        } catch (err) {
-            res.send(err)
+        const instance = await this.Model.findById(req.query.id)
+
+        if (!instance) {
+            return res.status(204).json({ Error: "Item does not exist" })
         }
+
+        return res.status(200).json(instance)
     }
 
-    // POST - Add a new model instance
+    // POST - Add a new instance
     async create(req, res) {
-        const instance = this.Model(req.body)
-        try {
-            const newInstance = await instance.save()
-            res.status(201).send(newInstance)
-            console.log("a new instance was added to database")
-        } catch (err) {
-            res.send(err)
+        if (!req.body) {
+            return res
+                .status(400)
+                .json({ error: "Request body has no content" })
         }
+
+        const existedData = await this.Model.findOne(req.body)
+
+        if (existedData) {
+            return res.status(403).json({ error: "Data already existed" })
+        }
+
+        const instance = this.Model(req.body)
+        const newInstance = await instance.save().catch((error) => {
+            return res.status(400).json({ error })
+        })
+
+        return res.status(201).json({
+            message: "A new instance was added to database",
+            data: newInstance,
+        })
     }
 
-    // PATCH - Update information for a model instance
+    // PATCH - Update information of an instance
     async update(req, res) {
-        console.log(req)
+        if (!req.query.id) {
+            return res.status(400).json({ error: "Id is required" })
+        }
+
+        await this.Model.findByIdAndUpdate(req.query.id, req.body)
+            .then((data) => {
+                return data
+            })
+            .catch((error) => {
+                return res.status(400).json({ error })
+            })
+
+        return res.status(202).json({
+            message: "Data was updated successfully",
+        })
     }
 
-    // DELETE - Remove a model instance
+    // DELETE - Remove an instance
     async delete(req, res) {
-        console.log(req)
+        if (!req.query.id) {
+            return res.status(400).json({ error: "id is required" })
+        }
+
+        const deletedData = await this.Model.findByIdAndDelete(
+            req.query.id,
+            req.body
+        )
+            .then((data) => {
+                return data
+            })
+            .catch((error) => {
+                return res.status(400).json({ error })
+            })
+
+        return res
+            .status(200)
+            .json({ message: "Data was deleted successfully" })
     }
 }
 
