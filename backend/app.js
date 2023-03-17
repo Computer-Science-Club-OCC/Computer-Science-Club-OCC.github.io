@@ -32,7 +32,7 @@ app.use(`/${apiPath}/images`, imagesRoute)
 app.use(`/${apiPath}/tags`, tagsRoute)
 
 app.get("/", (req, res) => {
-  res.send("GET request to the homepage")
+    res.send("GET request to the homepage")
 })
 
 module.exports = app
