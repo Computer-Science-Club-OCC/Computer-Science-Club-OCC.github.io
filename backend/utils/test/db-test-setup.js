@@ -8,7 +8,6 @@ let mongod
 module.exports.connect = async () => {
     mongod = await MongoMemoryServer.create()
     const uri = mongod.getUri()
-
     mongoose.connect(uri, {
         dbName: "cs_club_test",
         useNewUrlParser: true,

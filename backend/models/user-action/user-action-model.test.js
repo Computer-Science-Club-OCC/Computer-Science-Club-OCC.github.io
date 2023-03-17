@@ -1,6 +1,6 @@
 const { UserModel } = require("../user/user-model")
 const { UserActionModel } = require("./user-action-model")
-const db = require("../db-test-setup")
+const db = require("../../utils/test/db-test-setup")
 
 // Define test instances here
 const testUser1 = {
