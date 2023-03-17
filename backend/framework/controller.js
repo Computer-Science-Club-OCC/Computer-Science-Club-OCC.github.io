@@ -26,6 +26,16 @@ class Controller {
         this.Model = model
     }
 
+    //
+    // Get all instances in batch using cursor pagination
+    // Handle GET request
+    //
+    // This function does not handle random page access
+    // For efficiency, it queries data in batch
+    // This allow frontend to render pagination from a served batch
+    // Whenever frontend exceeds the limit page based on the batch size,
+    // Frontend must handle a request to push a new batch
+    //
     async getAll(req, res) {
         const reqSize = parseInt(req.query.size) // get query size from query params
         const sortOrder = { _id: -1 } // sort in descending order by default
@@ -67,6 +77,7 @@ class Controller {
                 return res.status(400).json({ error })
             })
 
+        // Update next and prev cursors
         let firstId, lastId
         let hasNext = false
         let hasPrev = false
@@ -92,18 +103,24 @@ class Controller {
         })
     }
 
-    // GET - Return a specific instance
+    //
+    // Retrieve a data instance by id
+    // Handle GET request that contains id param.
+    //
     async getOne(req, res) {
         const instance = await this.Model.findById(req.query.id)
 
         if (!instance) {
-            return res.status(204).json({ Error: "Item does not exist" })
+            return res.status(204).json({ Error: "item does not exist" })
         }
 
         return res.status(200).json(instance)
     }
 
-    // POST - Add a new instance
+    //
+    // Add a new data instance to the database.
+    // Handle POST request.
+    //
     async create(req, res) {
         if (!req.body) {
             return res
@@ -128,10 +145,13 @@ class Controller {
         })
     }
 
-    // PATCH - Update information of an instance
+    //
+    // Partially or fully update values for a data instance by id.
+    // Handle PATCH request.
+    //
     async update(req, res) {
         if (!req.query.id) {
-            return res.status(400).json({ error: "Id is required" })
+            return res.status(400).json({ error: "id is required" })
         }
 
         await this.Model.findByIdAndUpdate(req.query.id, req.body)
@@ -147,22 +167,20 @@ class Controller {
         })
     }
 
-    // DELETE - Remove an instance
+    //
+    // Remove a data instance from the database by id.
+    // Handle DELETE request.
+    //
     async delete(req, res) {
         if (!req.query.id) {
             return res.status(400).json({ error: "id is required" })
         }
 
-        const deletedData = await this.Model.findByIdAndDelete(
-            req.query.id,
-            req.body
-        )
-            .then((data) => {
-                return data
-            })
-            .catch((error) => {
+        await this.Model.findByIdAndDelete(req.query.id, req.body).catch(
+            (error) => {
                 return res.status(400).json({ error })
-            })
+            }
+        )
 
         return res
             .status(200)
