@@ -1,5 +1,5 @@
-import About from "./components/about/About";
-import ContactUs from "./components/contact-us/ContactUs";
+import About from "../../components/home/about/About";
+import ContactUs from "../../components/home/contact-us/ContactUs";
 
 function Home() {
 	return (

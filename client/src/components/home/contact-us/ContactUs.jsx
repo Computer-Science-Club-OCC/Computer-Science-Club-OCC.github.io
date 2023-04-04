@@ -3,7 +3,7 @@ import {
 	Instagram,
 	Discord,
 	Mail,
-} from "../../../../asset/icons/icons";
+} from "../../../asset/icons/icons";
 import "./contact-us.css";
 
 function ContactUs() {

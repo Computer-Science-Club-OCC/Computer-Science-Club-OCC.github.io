@@ -85,6 +85,8 @@
 	max-width: 360px;
 	width: 30vw;
 	margin: auto 0;
+	padding: 4px;
+	border: 2px solid #ff9617;
 }
 
 .about-text h1 {
