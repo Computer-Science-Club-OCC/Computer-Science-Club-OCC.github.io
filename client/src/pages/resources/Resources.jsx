@@ -25,7 +25,7 @@ function renderButtons(toggleTab, tabState) {
 				type="button"
 				onClick={() => toggleTab(buttonsList.indexOf(tabButton) + 1)}
 				className={
-					tabState === buttonsList.indexOf(tabButton) + 1 ? "active rounded-md f" : "rounded-md"
+					tabState === buttonsList.indexOf(tabButton) + 1 ? "active rounded-md" : "rounded-md"
 				}
 			>
 				{tabButton}
