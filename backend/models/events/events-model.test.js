@@ -1,5 +1,5 @@
 const EventsModel = require("./events-model")
-const db = require("../db-test-setup")
+const db = require("../../utils/test/db-test-setup")
 
 // Define test instances here
 const testEvent1 = {

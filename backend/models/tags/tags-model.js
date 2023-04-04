@@ -4,11 +4,13 @@ const { Schema } = mongoose
 const tagSchema = new Schema({
     title: {
         type: String,
+        unique: true,
         required: true,
     },
     created_at: {
         type: Date,
-        require: true,
+        immutable: true,
+        default: Date.now(),
     },
 })
 

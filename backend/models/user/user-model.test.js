@@ -1,5 +1,5 @@
 const { UserModel } = require("./user-model")
-const db = require("../db-test-setup")
+const db = require("../../utils/test/db-test-setup")
 
 // TODO: Add user activity tests per user
 

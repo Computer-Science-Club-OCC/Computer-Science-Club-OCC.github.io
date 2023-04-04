@@ -1,5 +1,5 @@
 const { TagsModel } = require("./tags-model")
-const db = require("../db-test-setup")
+const db = require("../../utils/test/db-test-setup")
 
 // Define test instances here
 const testTagCollection = [
@@ -23,7 +23,7 @@ afterEach(async () => await db.clearDatabase())
 afterAll(async () => await db.closeDatabase())
 
 // Add your test here
-describe("Events Model Tests", () => {
+describe("Tags Model Tests", () => {
     test("Database Has Tags Model", () => {
         expect(TagsModel).toBeDefined()
     })

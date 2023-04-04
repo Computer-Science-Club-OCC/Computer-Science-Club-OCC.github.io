@@ -1,6 +1,6 @@
 // const mongoose = require("mongoose")
 const TutorialsModel = require("./tutorials-model")
-const db = require("../db-test-setup")
+const db = require("../../utils/test/db-test-setup")
 const { TagsModel } = require("../tags/tags-model")
 
 // Define test instances here
