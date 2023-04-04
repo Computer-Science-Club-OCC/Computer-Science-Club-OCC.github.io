@@ -32,6 +32,7 @@
 .resources-tabs {
 	display: flex;
 	text-align: center;
+	background-color: #2a2c2e;
 }
 
 .resources-tabs button {
@@ -45,7 +46,10 @@
 	cursor: pointer;
 	text-decoration: none;
 	border: 0;
-	box-shadow: 0px 2px 0px 0px #ccc;
+}
+.resources-tabs button:hover{
+	color: #2A2C2E;
+	background-color: #ff9617;
 }
 
 .resources-tabs button.active {
