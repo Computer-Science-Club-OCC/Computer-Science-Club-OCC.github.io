@@ -5,12 +5,12 @@ module.exports = {
 		extend: {
 			colors: {
 				occ_color: "#b26910",
-				"orange": "#FF9617",
-				"orange-dim": "#D38830", 
-				"blue": "#2196F3",
-				"smoke": "#EEEEEE",
+				orange: "#FF9617",
+				"orange-dim": "#D38830",
+				blue: "#2196F3",
+				smoke: "#EEEEEE",
 				"smoke-dark": "#CCCCCC",
-				"gray": "#212224",
+				gray: "#212224",
 				"gray-dark": "#1F1F21",
 				"gray-med": "#2A2C2E",
 				"gray-mild": "#3D3F43",
