@@ -9,7 +9,7 @@ import "./resources.css";
 function Resources() {
 	return (
 		<>
-			<Title title="Resources" color="text-[#ff9617]" colorTwo="bg-[#ff9617]"/>
+			<Title title="Resources" color="text-[#ff9617]" colorTwo="bg-[#ff9617]" />
 			<div className="resources-container">
 				<Tab />
 			</div>
