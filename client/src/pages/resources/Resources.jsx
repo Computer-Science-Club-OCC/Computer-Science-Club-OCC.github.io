@@ -3,13 +3,17 @@ import { useLocation } from "react-router-dom";
 import Tutorials from "./Tutorials";
 import Readings from "./Readings";
 import Organizations from "./Organizations";
+import Title from "../../components/title/title";
 import "./resources.css";
 
 function Resources() {
 	return (
-		<div className="resources-container">
-			<Tab />
-		</div>
+		<>
+			<Title title="Resources" color="text-[#ff9617]" colorTwo="bg-[#ff9617]"/>
+			<div className="resources-container">
+				<Tab />
+			</div>
+		</>
 	);
 }
 export default Resources;

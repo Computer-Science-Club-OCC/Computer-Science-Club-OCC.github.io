@@ -1,14 +1,14 @@
 /* Header */
-.events-header {
+/* .events-header {
 	display: flex;
 	margin: 0.5rem auto;
 	padding: 0.5rem;
 	max-width: 500px;
 	width: 100%;
 	text-align: center;
-}
+} */
 
-.events-header h1 {
+/* .events-header h1 {
 	width: 100%;
 	object-fit: contain;
 	font-size: 36px;
@@ -18,7 +18,7 @@
 	border-radius: 20px;
 	border: 4px solid rgb(255, 165, 0);
 	box-shadow: 0 0px 10px 0px rgba(255, 165, 0, 0.6);
-}
+} */
 
 @keyframes expanding {
 	0% {
