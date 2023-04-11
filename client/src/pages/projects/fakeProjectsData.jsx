@@ -1,3 +1,5 @@
+import { ProjectCardImg } from "../../asset/icons/icons";
+
 export const projectsMap = [
 	{
 		id: 1,
@@ -10,18 +12,20 @@ export const projectsMap = [
 		discordUrl: "https://discord.com/",
 		gitUrl: "https://github.com/",
 		projectUrl: "https://angular.io/",
+		image: "icon",
 	},
 	{
 		id: 2,
 		title: "Project #2",
 		description:
 			"Porro praesentium nobis sunt sed molestiae. A eaque omnis assumenda dolore iusto maiores id veniam.",
-		status: "Completed",
+		status: "Inactive",
 		startDate: "3/23/2022",
 		endDate: "11/28/2022",
 		discordUrl: "https://discord.com/",
 		gitUrl: "https://github.com/",
 		projectUrl: "https://angular.io/",
+		image: "icon",
 	},
 	{
 		id: 3,
@@ -34,6 +38,7 @@ export const projectsMap = [
 		discordUrl: "https://discord.com/",
 		gitUrl: "https://github.com/",
 		projectUrl: "https://angular.io/",
+		image: "icon",
 	},
 	{
 		id: 4,
@@ -46,18 +51,20 @@ export const projectsMap = [
 		discordUrl: "https://discord.com/",
 		gitUrl: "https://github.com/",
 		projectUrl: "https://angular.io/",
+		image: "icon",
 	},
 	{
 		id: 5,
 		title: "Project #5",
 		description:
 			"Ducimus facilis laboriosam vitae nobis. Dolorum laboriosam consequuntur soluta reiciendis dolorum nihil.",
-		status: "Ongoing",
+		status: "Canceled",
 		startDate: "7/30/2022",
 		endDate: "11/28/2022",
 		discordUrl: "https://discord.com/",
 		gitUrl: "https://github.com/",
 		projectUrl: "https://angular.io/",
+		image: "icon",
 	},
 	{
 		id: 6,
@@ -70,6 +77,7 @@ export const projectsMap = [
 		discordUrl: "https://discord.com/",
 		gitUrl: "https://github.com/",
 		projectUrl: "https://angular.io/",
+		image: "icon",
 	},
 	{
 		id: 7,
@@ -82,6 +90,7 @@ export const projectsMap = [
 		discordUrl: "https://discord.com/",
 		gitUrl: "https://github.com/",
 		projectUrl: "https://angular.io/",
+		image: "icon",
 	},
 	{
 		id: 8,
@@ -94,6 +103,7 @@ export const projectsMap = [
 		discordUrl: "https://discord.com/",
 		gitUrl: "https://github.com/",
 		projectUrl: "https://angular.io/",
+		image: "icon",
 	},
 	{
 		id: 9,
@@ -106,6 +116,7 @@ export const projectsMap = [
 		discordUrl: "https://discord.com/",
 		gitUrl: "https://github.com/",
 		projectUrl: "https://angular.io/",
+		image: "icon",
 	},
 	{
 		id: 10,
@@ -118,5 +129,6 @@ export const projectsMap = [
 		discordUrl: "https://discord.com/",
 		gitUrl: "https://github.com/",
 		projectUrl: "https://angular.io/",
+		image: "icon",
 	},
 ];

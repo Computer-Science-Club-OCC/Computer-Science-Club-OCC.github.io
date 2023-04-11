@@ -44,3 +44,7 @@ a {
 #active {
 	background-color: #b26910;
 }
+
+.projectCardLinks {
+	@apply border border-white border-solid w-10 h-10 rounded-2xl flex justify-center items-center hover:border-projectCardLinkHover hover:text-projectCardLinkHover after:content-[attr(data-tooltip)] after:absolute after:-translate-y-full after:bottom-3 after:bg-projectCardLinkHover after:text-projectCardBg after:p-1 after:rounded after:hidden hover:after:block  before:border-8 before:border-transparent before:border-solid before:border-t-projectCardLinkHover before:absolute before:-translate-y-full before:bottom-4 before:hidden hover:before:block before:transition-all after:transition-all;
+}
