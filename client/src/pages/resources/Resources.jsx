@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import Tutorials from "./Tutorials";
+// import Tutorials from "./Tutorials";
+import Tutorial from "../../components/resources/tutorials";
 import Readings from "./Readings";
 import Organizations from "./Organizations";
 import "./resources.css";
@@ -59,7 +60,7 @@ function Tab() {
 						tabState === 1 ? "resources-content active" : "resources-content"
 					}
 				>
-					<Tutorials />
+					<Tutorial />
 				</div>
 				<div
 					className={
