@@ -10,7 +10,7 @@
 	}
 }
 
-.divv{
+.divv {
 	color: green;
 }
 
@@ -98,14 +98,14 @@
 .resource-list-item {
 	display: flex;
 	flex-direction: column;
-	background-color: #2A2C2E;
+	background-color: #2a2c2e;
 	margin-bottom: 20px;
 	padding: 36px;
 	border-color: transparent !important;
 	border-radius: 9px;
-	-webkit-box-shadow: 0px 10px 9px 0px rgba(0,0,0,0.16);
-	-moz-box-shadow: 0px 10px 9px 0px rgba(0,0,0,0.16);
-	box-shadow: 0px 10px 9px 0px rgba(0,0,0,0.16);
+	-webkit-box-shadow: 0px 10px 9px 0px rgba(0, 0, 0, 0.16);
+	-moz-box-shadow: 0px 10px 9px 0px rgba(0, 0, 0, 0.16);
+	box-shadow: 0px 10px 9px 0px rgba(0, 0, 0, 0.16);
 }
 
 .resource-list-item button {
@@ -117,7 +117,7 @@
 .resource-list-title {
 	position: relative;
 	text-align: left;
-	padding: .1rem 0.75rem;
+	padding: 0.1rem 0.75rem;
 	padding-left: 0px !important;
 	color: white;
 	border-bottom: 2px solid #ff9617 !important;
@@ -153,7 +153,7 @@
 .resource-list-description.active {
 	max-height: 50rem; /* Large number that the height should never reach */
 	opacity: 1;
-	padding: .5rem 0.75rem;
+	padding: 0.5rem 0.75rem;
 	animation: growDown 300ms ease-in-out forwards;
 }
 
@@ -183,21 +183,20 @@ a.resource-link {
 	text-decoration: underline;
 }
 
-
 /* Tags */
-.tagsContainer{
+.tagsContainer {
 	display: flex;
 	flex-wrap: wrap;
 	margin-top: 10px;
 	z-index: 100;
 }
 
-.tag{
+.tag {
 	margin-right: 10px;
 	margin-top: 5px;
 	margin-bottom: 5px;
 	padding: 0px 5px;
-	font-size: 16px; 
+	font-size: 16px;
 	cursor: pointer;
 	color: white;
 	width: fit-content;

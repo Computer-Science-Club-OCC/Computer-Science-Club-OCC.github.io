@@ -26,12 +26,11 @@ function ToggleItem({ id, title, description, url, tags }) {
 					rel="noopener noreferrer"
 				>
 					Watch the video here. {/* Will open link in new tab*/}
-				</a>				
+				</a>
 			</div>
 			<div className="tagsContainer">
-				<Tags tags={tags}/>
+				<Tags tags={tags} />
 			</div>
-			
 		</li>
 	);
 }
@@ -44,9 +43,9 @@ ToggleItem.propTypes = {
 	tags: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-function Tutorial(){
-  return (
-    <ul className="resource-list">
+function Tutorial() {
+	return (
+		<ul className="resource-list">
 			{tutorialsMap.map(tutorial => (
 				<ToggleItem
 					key={tutorial.id}
@@ -58,7 +57,7 @@ function Tutorial(){
 				/>
 			))}
 		</ul>
-  );
+	);
 }
 
 export default Tutorial;
