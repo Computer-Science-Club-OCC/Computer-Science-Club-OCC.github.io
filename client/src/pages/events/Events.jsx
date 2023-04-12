@@ -76,8 +76,8 @@ function Events() {
 
 	return (
 		<div className="event-container">
-			<EventsHeader />
 			<div className="events-list">
+				<EventsHeader />
 				<EventPagination
 					onPageChanged={onPageChanged}
 					page={page}

@@ -7,9 +7,9 @@ class title extends Component {
 
 	render() {
 		return (
-			<div className="flex justify-center items-center h-[72px]">
+			<div className="flex justify-center items-center h-[72px] mb-6">
 				<hr
-					className={`w-1/3 h-1 ${this.props.colorTwo} border-0 mx-1 mt-[15px]`}
+					className={`w-3/4 h-1 ${this.props.colorTwo} border-0 mx-1 mt-[15px]`}
 				/>
 				<div className="flex items-center mx-1">
 					<p className={`text-6xl ${this.props.color} font-medium mx-1`}>
@@ -23,7 +23,7 @@ class title extends Component {
 					</p>
 				</div>
 				<hr
-					className={`w-1/3 h-1 ${this.props.colorTwo} border-0 mx-1 mt-[15px]`}
+					className={`w-3/4 h-1 ${this.props.colorTwo} border-0 mx-1 mt-[15px]`}
 				/>
 			</div>
 		);

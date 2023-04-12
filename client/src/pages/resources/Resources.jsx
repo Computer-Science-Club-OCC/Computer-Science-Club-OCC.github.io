@@ -8,12 +8,10 @@ import "./resources.css";
 
 function Resources() {
 	return (
-		<>
-			<Title title="Resources" color="text-[#ff9617]" colorTwo="bg-[#ff9617]" />
-			<div className="resources-container">
-				<Tab />
-			</div>
-		</>
+		<div className="resources-container">
+			<Title title="Resources" color="text-[#ff9617]" colorTwo="bg-[#ff9617]"/>
+			<Tab />
+		</div>
 	);
 }
 export default Resources;
@@ -29,9 +27,7 @@ function renderButtons(toggleTab, tabState) {
 				type="button"
 				onClick={() => toggleTab(buttonsList.indexOf(tabButton) + 1)}
 				className={
-					tabState === buttonsList.indexOf(tabButton) + 1
-						? "active rounded-md"
-						: "rounded-md"
+					tabState === buttonsList.indexOf(tabButton) + 1 ? "active" : ""
 				}
 			>
 				{tabButton}
@@ -53,10 +49,8 @@ function Tab() {
 	}, [location]);
 
 	return (
-		<div className="flex justify-center items-center flex-col">
-			<div className="resources-tabs rounded-xl w-2/3">
-				{renderButtons(toggleTab, tabState)}
-			</div>
+		<>
+			<div className="resources-tabs">{renderButtons(toggleTab, tabState)}</div>
 			<div className="resources-contents">
 				<div
 					className={
@@ -80,6 +74,6 @@ function Tab() {
 					<Organizations />
 				</div>
 			</div>
-		</div>
+		</>
 	);
 }
