@@ -11,7 +11,7 @@ class title extends Component {
 				<hr
 					className={`w-3/4 h-1 ${this.props.colorTwo} border-0 mx-1 mt-[15px]`}
 				/>
-				<div className="flex items-center mx-1">
+				<div className="flex items-center mx-1 min-w-fit">
 					<p className={`text-6xl ${this.props.color} font-medium mx-1`}>
 						&#123;
 					</p>
