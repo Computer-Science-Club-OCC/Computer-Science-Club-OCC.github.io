@@ -11,8 +11,8 @@ const testEvent1 = {
         "laboris nisi ut aliquip ex ea commodo consequat. ",
     location: "Room 101",
     date: new Date("12-24-2022"),
-    createdDate: new Date("09-27-2022"),
-    updatedDate: new Date("09-30-2022"),
+    created_at: new Date("09-27-2022"),
+    updated_at: new Date("09-30-2022"),
 }
 
 // Database for testing
@@ -39,16 +39,16 @@ describe("Events Model Tests", () => {
             const expectedDetail = testEvent1.detail
             const expectedLocation = testEvent1.location
             const expectedDate = testEvent1.date
-            const expectedCreatedDate = testEvent1.createdDate
-            const expectedUpdatedDate = testEvent1.updatedDate
+            const expectedCreatedAt = testEvent1.created_at
+            const expectedUpdatedAt = testEvent1.updated_at
 
             // Tests
             expect(expectedTitle).toEqual(retrievedEvent.title)
             expect(expectedDetail).toEqual(retrievedEvent.detail)
             expect(expectedLocation).toEqual(retrievedEvent.location)
             expect(expectedDate).toEqual(retrievedEvent.date)
-            expect(expectedCreatedDate).toEqual(retrievedEvent.createdDate)
-            expect(expectedUpdatedDate).toEqual(retrievedEvent.updatedDate)
+            expect(expectedCreatedAt).toEqual(retrievedEvent.created_at)
+            expect(expectedUpdatedAt).toEqual(retrievedEvent.updated_at)
         })
 
         test("Add an Event to Database", async () => {
@@ -61,8 +61,8 @@ describe("Events Model Tests", () => {
             const expectedDetail = testEvent1.detail
             const expectedLocation = testEvent1.location
             const expectedDate = testEvent1.date
-            const expectedCreatedDate = testEvent1.createdDate
-            const expectedUpdatedDate = testEvent1.updatedDate
+            const expectedCreatedAt = testEvent1.created_at
+            const expectedUpdatedAt = testEvent1.updated_at
 
             // Tests
             expect(createdEvent._id).toBeDefined() // Check if event object exist after creating
@@ -70,8 +70,8 @@ describe("Events Model Tests", () => {
             expect(expectedDetail).toEqual(createdEvent.detail)
             expect(expectedLocation).toEqual(createdEvent.location)
             expect(expectedDate).toEqual(createdEvent.date)
-            expect(expectedCreatedDate).toEqual(createdEvent.createdDate)
-            expect(expectedUpdatedDate).toEqual(createdEvent.updatedDate)
+            expect(expectedCreatedAt).toEqual(createdEvent.created_at)
+            expect(expectedUpdatedAt).toEqual(createdEvent.updated_at)
         })
 
         test("Update the Event Instance", async () => {
@@ -82,7 +82,7 @@ describe("Events Model Tests", () => {
             event.detail = "This is the most awesome hackathon!"
             event.location = "Room 555"
             event.date = new Date("11-18-2022")
-            event.updatedDate = new Date("10-22-2022")
+            event.updated_at = new Date("10-22-2022")
 
             const updatedEvent = await event.save()
 
@@ -91,8 +91,8 @@ describe("Events Model Tests", () => {
             const expectedDetail = "This is the most awesome hackathon!" // was "Lorem ipsum dolor...onsequat. "
             const expectedLocation = "Room 555" // was Room 101
             const expectedDate = new Date("11-18-2022") // was 12-24-2022
-            const expectedCreatedDate = testEvent1.createdDate // non-updatable
-            const expectedUpdatedDate = new Date("10-22-2022") // was 09-30-2022
+            const expectedCreatedAt = testEvent1.created_at // non-updatable
+            const expectedUpdatedAt = new Date("10-22-2022") // was 09-30-2022
 
             // Tests
             expect(event._id).toBeDefined() // Check if event object exists to update
@@ -100,8 +100,8 @@ describe("Events Model Tests", () => {
             expect(expectedDetail).toEqual(updatedEvent.detail)
             expect(expectedLocation).toEqual(updatedEvent.location)
             expect(expectedDate).toEqual(updatedEvent.date)
-            expect(expectedCreatedDate).toEqual(updatedEvent.createdDate)
-            expect(expectedUpdatedDate).toEqual(updatedEvent.updatedDate)
+            expect(expectedCreatedAt).toEqual(updatedEvent.created_at)
+            expect(expectedUpdatedAt).toEqual(updatedEvent.updated_at)
         })
 
         test("Delete an Event Instance", async () => {

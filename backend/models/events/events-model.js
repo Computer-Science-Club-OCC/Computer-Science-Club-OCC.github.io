@@ -16,12 +16,12 @@ const eventSchema = new Schema({
         type: Date,
         required: true,
     },
-    createdDate: {
+    created_at: {
         type: Date,
         immutable: true,
         default: Date.now,
     },
-    updatedDate: {
+    updated_at: {
         type: Date,
         default: Date.now,
     },
