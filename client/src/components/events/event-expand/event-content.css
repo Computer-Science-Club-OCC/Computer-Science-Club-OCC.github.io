@@ -1,0 +1,8 @@
+.event-expand {
+	display: flex;
+	background-color: #3d3f43;
+	border-radius: 10px;
+	display: flex;
+	max-height: 800px;
+	width: auto;
+}
