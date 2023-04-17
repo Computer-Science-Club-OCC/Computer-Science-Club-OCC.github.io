@@ -1,49 +1,9 @@
-import PropTypes from "prop-types";
-import { useState } from "react";
 import { tutorialsMap } from "../../pages/resources/fakeData";
 import "./resources.css";
+import ToggleItem from "../toggleItem/ToggleItem";
 import Tags from "./Tags";
 
-function ToggleItem({ id, title, description, url, tags }) {
-	const [showButton, setShowButton] = useState(false);
-
-	return (
-		<li className="resource-list-item" key={id}>
-			<button
-				type="button"
-				className={`resource-list-title ${showButton && "active"}`}
-				onClick={() => setShowButton(prevState => !prevState)}
-			>
-				{title}
-			</button>
-
-			<div className={`resource-list-description ${showButton && "active"}`}>
-				<p>{description}</p>
-				<a
-					className="resource-link"
-					href={url}
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Watch the video here. {/* Will open link in new tab*/}
-				</a>
-			</div>
-			<div className="tagsContainer">
-				<Tags tags={tags} />
-			</div>
-		</li>
-	);
-}
-
-ToggleItem.propTypes = {
-	id: PropTypes.number.isRequired,
-	title: PropTypes.string.isRequired,
-	description: PropTypes.string.isRequired,
-	url: PropTypes.string.isRequired,
-	tags: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
-
-function Tutorial() {
+function Tutorials() {
 	return (
 		<ul className="resource-list">
 			{tutorialsMap.map(tutorial => (
@@ -53,11 +13,13 @@ function Tutorial() {
 					title={tutorial.title}
 					description={tutorial.description}
 					url={tutorial.url}
-					tags={tutorial.tags}
-				/>
+					urlText="Watch the video here"
+				>
+					<Tags tags={tutorial.tags} />
+				</ToggleItem>
 			))}
 		</ul>
 	);
 }
 
-export default Tutorial;
+export default Tutorials;

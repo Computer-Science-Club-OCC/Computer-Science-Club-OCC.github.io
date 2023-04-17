@@ -108,7 +108,7 @@
 	padding: 1rem 0.75rem;
 	color: white;
 	background-color: transparent;
-	font-size: min(4vw, 1.3rem);
+	font-size: 1.5rem;
 	font-family: serif;
 	transition: all 300ms;
 }
