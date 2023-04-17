@@ -2,12 +2,11 @@ import { useState, useCallback, useEffect } from "react";
 import {
 	EventBrief,
 	EventDate,
-	EventDetails,
 	EventPagination,
-	EventPosters,
 	EventsHeader,
 	ExpandButton,
 } from "../../components/events/events";
+import EventExpand from "../../components/events/event-expand/event-content";
 import { eventsMap } from "./fake-data-events"; // Todo: Replace with api service
 import "./events-page.css";
 
@@ -63,13 +62,12 @@ function Events() {
 						isExpanded={isExpanded[event.id] ?? false}
 					/>
 				</div>
-				<div
-					className="event-expand"
-					id={isExpanded[event.id] ? "expanded" : "collapsed"}
-				>
-					<EventDetails detail={event.detail} meetingUrl={event.meetingUrl} />
-					<EventPosters posterImages={event.images} />
-				</div>
+				<EventExpand
+					isExpand={isExpanded[event.id]}
+					detail={event.detail}
+					meetingUrl={event.meetingUrl}
+					images={event.images}
+				/>
 			</div>
 		);
 	});
