@@ -106,7 +106,7 @@ EventPosters.propTypes = {
 function EventsHeader() {
 	return (
 		<div className="events-header">
-			<Title title="Events" color="text-blue"/>
+			<Title title="Events" color="blue"/>
 		</div>
 	);
 }
