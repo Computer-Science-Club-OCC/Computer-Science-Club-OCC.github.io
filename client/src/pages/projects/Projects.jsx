@@ -3,7 +3,7 @@ import Title from "../../components/title/title";
 function Projects() {
 	return (
 		<div>
-			<Title title="Projects" color="blue"/>
+			<Title title="Projects" color="blue" />
 		</div>
 	);
 }

@@ -11,7 +11,7 @@ function About() {
 
 	return (
 		<div className="about-container">
-			<Title title="About Us" color="orange"/>
+			<Title title="About Us" color="orange" />
 			<div className="about-grid">
 				<div className="about-item right">
 					<div className="about-image">
