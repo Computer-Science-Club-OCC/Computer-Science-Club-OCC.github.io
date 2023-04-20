@@ -4,10 +4,10 @@ function Title({color, title}) {
  let line;
  let braces;
 
-	if (color = "orange") {line = "bg-orange", braces = "text-orange"}
-	else if (color = "blue") {line = "bg-blue", braces = "text-blue"}
-
-		return (
+ if (color == "orange") {line = "bg-orange", braces = "text-orange"}
+ else if (color == "blue") {line = "bg-blue", braces = "text-blue"}
+ 
+ return (
 			<div className="flex justify-center items-center h-[72px] my-5">
 				<hr
 					className={`w-3/4 h-1 ${line} border-0 mx-1 mt-3`}
