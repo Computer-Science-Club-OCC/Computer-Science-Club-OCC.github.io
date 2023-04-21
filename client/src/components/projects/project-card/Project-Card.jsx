@@ -6,6 +6,7 @@ import {
 	ProjectIcon,
 } from "../../../asset/icons/icons";
 import "./project-card.css"
+import PropTypes from "prop-types";
 
 function ProjectCard({
 	title,
@@ -14,7 +15,6 @@ function ProjectCard({
 	gitUrl,
 	discordUrl,
 	projectUrl,
-	image,
 }) {
 	const statusColor = statusText => {
 		if (statusText === "Ongoing") return "text-onGoing";
@@ -26,7 +26,7 @@ function ProjectCard({
 	return (
 		<div className="w-96 h-96 rounded-3xl bg-gray-med p-8 text-white drop-shadow-lg flex flex-col gap-4 hover:scale-110 mt-8 transition-all ease-in">
 			<div className="text-orange flex justify-center items-center">
-				<ProjectCardImg />
+				<ProjectCardImg/>
 			</div>
 			<div className="flex flex-col gap-6">
 				<p className="text-2xl">{title}</p>
@@ -58,4 +58,14 @@ function ProjectCard({
 	);
 }
 
+ProjectCard.propTypes={
+	title:PropTypes.string.isRequired,
+	description:PropTypes.string.isRequired,
+	status:PropTypes.string.isRequired,
+	gitUrl:PropTypes.string.isRequired,
+	discordUrl:PropTypes.string.isRequired,
+	projectUrl:PropTypes.string.isRequired,
+}
+
 export default ProjectCard;
+
