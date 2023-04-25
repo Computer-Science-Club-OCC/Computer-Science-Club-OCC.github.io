@@ -22,7 +22,7 @@ function ProjectCard({
 		if (statusText === "Completed") return "text-completed";
 		return "text-canceled";
 	};
-
+	
 	return (
 		<div className="w-96 h-96 rounded-3xl bg-gray-med p-8 text-white drop-shadow-lg flex flex-col gap-4 hover:scale-110 mt-8 transition-all ease-in">
 			<div className="text-orange flex justify-center items-center">
