@@ -1,12 +1,13 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 function Title({ color, title }) {
 	let line;
 	let braces;
 
-	if (color == "orange") {
+	if (color === "orange") {
 		(line = "bg-orange"), (braces = "text-orange");
-	} else if (color == "blue") {
+	} else if (color === "blue") {
 		(line = "bg-blue"), (braces = "text-blue");
 	}
 
@@ -24,5 +25,10 @@ function Title({ color, title }) {
 		</div>
 	);
 }
+
+Title.propTypes = {
+	color: PropTypes.string,
+	title: PropTypes.string,
+};
 
 export default Title;
