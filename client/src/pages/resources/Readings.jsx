@@ -1,50 +1,7 @@
-import PropTypes from "prop-types";
-import { useState } from "react";
 import { readingsMap } from "./fakeData";
 import "./resources.css";
-
-// tags is currently unused
-function ToggleItem({ id, title, publicationDate, description, url, tags }) {
-	const [showButton, setShowButton] = useState(false);
-
-	return (
-		<li className="resource-list-item" key={id}>
-			<button
-				type="button"
-				className={`resource-list-title ${showButton && "active"}`}
-				onClick={() => setShowButton(prevState => !prevState)}
-			>
-				{title}
-			</button>
-
-			<div className={`resource-list-description ${showButton && "active"}`}>
-				<p>{description}</p>
-				<a
-					className="resource-link"
-					href={url}
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Read it here. {/* Open link in new tab*/}
-				</a>
-				<p>
-					Publication date: {publicationDate}
-					<br />
-					Tags: {tags.join(", ")}
-				</p>
-			</div>
-		</li>
-	);
-}
-
-ToggleItem.propTypes = {
-	id: PropTypes.number.isRequired,
-	title: PropTypes.string.isRequired,
-	publicationDate: PropTypes.string.isRequired,
-	description: PropTypes.string.isRequired,
-	url: PropTypes.string.isRequired,
-	tags: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
+import ToggleItem from "../../components/toggleItem/ToggleItem";
+import Tags from "../../components/resources/Tags";
 
 function Readings() {
 	return (
@@ -58,8 +15,10 @@ function Readings() {
 						publicationDate={reading.publicationDate}
 						description={reading.description}
 						url={reading.url}
-						tags={reading.tags}
-					/>
+						urlText="Read it here"
+					>
+						<Tags tags={reading.tags} />
+					</ToggleItem>
 				);
 			})}
 		</div>
