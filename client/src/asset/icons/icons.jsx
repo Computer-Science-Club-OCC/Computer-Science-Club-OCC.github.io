@@ -139,7 +139,10 @@ export function Menu(props) {
 		</svg>
 	);
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> siddhantJain-Project-Card
 export function GithubIcon(props) {
 	return (
 		<svg

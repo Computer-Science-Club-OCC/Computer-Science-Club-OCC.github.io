@@ -1,5 +1,5 @@
 import React from "react";
-import ProjectCard from "./ProjectCard";
+import ProjectCard from "../../components/projects/project-card/Project-Card";
 import { projectsMap } from "./fakeProjectsData";
 
 function Projects() {

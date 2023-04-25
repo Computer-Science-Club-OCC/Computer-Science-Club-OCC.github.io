@@ -5,13 +5,16 @@ module.exports = {
 		extend: {
 			colors: {
 				occ_color: "#b26910",
-				projectCardBg: "#2a2c2e",
-				projectCardDescription: "#f5f5f5",
-				onGoing: "#4CDC4C",
-				completed: "#3498db",
-				inActive: "#f1c40f",
-				canceled: "#ff2d55",
-				projectCardLinkHover: "#ff9617",
+				orange: "#FF9617",
+				"orange-dim": "#D38830",
+				blue: "#2196F3",
+				smoke: "#EEEEEE",
+				"smoke-dark": "#CCCCCC",
+				gray: "#212224",
+				"gray-dark": "#1F1F21",
+				"gray-med": "#2A2C2E",
+				"gray-mild": "#3D3F43",
+				"gray-light": "#494c50",
 			},
 			animation: {
 				bounce200: "bounce 1s infinite 200ms",
