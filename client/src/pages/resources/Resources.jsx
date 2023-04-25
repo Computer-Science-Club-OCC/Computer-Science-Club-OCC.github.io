@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import Tutorials from "./Tutorials";
+import Tutorials from "../../components/resources/tutorials";
 import Readings from "./Readings";
 import Organizations from "./Organizations";
 import Title from "../../components/title/title";
