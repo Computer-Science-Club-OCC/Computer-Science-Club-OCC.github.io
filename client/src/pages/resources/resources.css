@@ -23,11 +23,11 @@
 	z-index: 3;
 }
 
-.resources-container h1 {
+/* .resources-container h1 {
 	margin: auto;
 	margin-bottom: 4rem;
 	color: white;
-}
+} */
 
 .resources-tabs {
 	display: flex;

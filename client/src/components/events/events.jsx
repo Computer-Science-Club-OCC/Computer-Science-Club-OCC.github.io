@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Box, Pagination, IconButton, Tooltip } from "@mui/material"; // replace with tailwind
 import { Gallery, Item } from "react-photoswipe-gallery";
 import { ChevronDown } from "../../asset/icons/icons";
+import Title from "../title/title";
 import "photoswipe/dist/photoswipe.css";
 import "./events.css";
 
@@ -105,7 +106,7 @@ EventPosters.propTypes = {
 function EventsHeader() {
 	return (
 		<div className="events-header">
-			<h1>Events</h1>
+			<Title title="Events" color="blue" />
 		</div>
 	);
 }

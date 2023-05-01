@@ -1,4 +1,5 @@
 import "./about.css";
+import Title from "../../../../components/title/title";
 
 function About() {
 	// Demo images
@@ -10,7 +11,7 @@ function About() {
 
 	return (
 		<div className="about-container">
-			<h1>About Us</h1>
+			<Title title="About Us" color="orange" />
 			<div className="about-grid">
 				<div className="about-item right">
 					<div className="about-image">
