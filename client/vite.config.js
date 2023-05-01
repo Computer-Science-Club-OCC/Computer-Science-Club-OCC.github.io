@@ -29,6 +29,10 @@ export default defineConfig({
 			module: true,
 		},
 	},
+	server: {
+		host: true,
+		port: 3000,
+	},
 	plugins: [
 		react(),
 		visualizer({
