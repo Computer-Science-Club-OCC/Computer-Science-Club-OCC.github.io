@@ -5,6 +5,7 @@
 html,
 body {
 	overflow: visible;
+	overflow-x: hidden;
 	margin: 0;
 	padding: 0;
 	background-color: #21262d;

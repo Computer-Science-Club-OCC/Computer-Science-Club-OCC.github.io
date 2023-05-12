@@ -6,9 +6,9 @@ import { visualizer } from "rollup-plugin-visualizer";
 export default defineConfig({
 	build: {
 		outDir: "build",
-		assetsDir: "assets",
+		assetsDir: "asset",
 		emptyOutDir: true,
-		polyfillModulePreload: true,
+		polyfill: true,
 		commonjsOptions: {
 			include: [/node_modules/],
 		},
