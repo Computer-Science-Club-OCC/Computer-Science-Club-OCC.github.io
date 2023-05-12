@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { ErrorBoundary } from "react-error-boundary";
-import NavigationBar from "./components/navbar/NavigationBar";
+import Navbar from "./components/navbar/Navbar";
 import { ErrorState, LoadingState } from "./components/states";
 
 const Homepage = lazy(() => import("./pages/home/Homepage"));
@@ -13,7 +13,7 @@ const Login = lazy(() => import("./pages/manager/login/Login"));
 function Client() {
 	return (
 		<>
-			<NavigationBar />
+			<Navbar />
 			<Routes>
 				<Route path="/homepage" element={<Homepage />} />
 				<Route path="/events" element={<Events />} />
